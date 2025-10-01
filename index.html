@@ -168,10 +168,11 @@
         </svg>
         <p>Your go-to solution for cutting-edge DevOps consulting. Join us on our journey!</p>
         <div class="email-input">
-  <form action="https://formspree.io/f/xanpjwjp" method="POST">
+  <form id="notify-form">
     <input type="email" name="email" placeholder="Enter your email" required>
     <button type="submit">Notify Me</button>
   </form>
+  <p id="message" style="color:green;"></p>
 </div>
 
         <div class="social-icons">
@@ -183,5 +184,33 @@
             &copy; 2025 DevOps Consulting. All Rights Reserved.
         </footer>
     </div>
+<script>
+const form = document.getElementById('notify-form');
+const message = document.getElementById('message');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    });
+
+    if (response.ok) {
+      message.textContent = 'Thanks! You will be notified.';
+      form.reset();
+    } else {
+      message.textContent = 'Oops! Something went wrong.';
+    }
+  } catch (error) {
+    message.textContent = 'Oops! Something went wrong.';
+    console.error(error);
+  }
+});
+</script>
+
 </body>
 </html>
