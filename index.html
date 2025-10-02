@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon - DevOps Consulting</title>
+    <title>Coming Soon - AI-Ops Consulting</title>
+    <meta name="description" content="We help businesses unlock the power of AI in DevOps & IT operations. AI-driven monitoring, automation, and cost optimization consulting.">
     <style>
         body {
             margin: 0;
@@ -19,7 +20,7 @@
         }
 
         .container {
-            max-width: 600px;
+            max-width: 650px;
             padding: 20px;
             border: 2px solid #00ffcc;
             border-radius: 10px;
@@ -50,6 +51,7 @@
         p {
             font-size: 1.2rem;
             margin-bottom: 30px;
+            line-height: 1.6;
         }
 
         .email-input {
@@ -67,6 +69,7 @@
             color: #00ffcc;
             outline: none;
             margin-right: 10px;
+            width: 70%;
         }
 
         button {
@@ -163,17 +166,20 @@
     <div class="container">
         <svg class="typography" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100">
             <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="48" font-family="Courier New, Courier, monospace">
-                Launching Soon
+                AI-Ops Consulting
             </text>
         </svg>
-        <p>Your go-to solution for cutting-edge DevOps consulting. Join us on our journey!</p>
+        <p>
+            Transforming IT Operations with <strong>AI-driven automation, monitoring, and cost optimization</strong>.  
+            Subscribe to be the first to know when we launch!
+        </p>
         <div class="email-input">
-  <form id="notify-form">
-    <input type="email" name="email" placeholder="Enter your email" required>
-    <button type="submit">Notify Me</button>
-  </form>
-  <p id="message" style="color:green;"></p>
-</div>
+            <form id="notify-form">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Notify Me</button>
+            </form>
+        </div>
+        <p id="message" style="color:green;"></p>
 
         <div class="social-icons">
             <a href="#" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
@@ -181,7 +187,7 @@
             <a href="#" aria-label="Follow us on GitHub"><i class="fab fa-github"></i></a>
         </div>
         <footer>
-            &copy; 2025 DevOps Consulting. All Rights Reserved.
+            &copy; 2025 AI-Ops Consulting. All Rights Reserved.
         </footer>
     </div>
 <script>
@@ -200,13 +206,13 @@ form.addEventListener('submit', async (e) => {
     });
 
     if (response.ok) {
-      message.textContent = 'Thanks! You will be notified.';
+      message.textContent = '✅ Thanks! You will be notified when we launch.';
       form.reset();
     } else {
-      message.textContent = 'Oops! Something went wrong.';
+      message.textContent = '⚠️ Oops! Something went wrong.';
     }
   } catch (error) {
-    message.textContent = 'Oops! Something went wrong.';
+    message.textContent = '⚠️ Oops! Something went wrong.';
     console.error(error);
   }
 });
