@@ -60,12 +60,11 @@
         right: 0;
         width: 100%;
         height: 100vh;
-        background-color: antiquewhite;
+        background-color: #1a3e7c;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 30px;
-
         /* Start hidden */
         opacity: 0;
         pointer-events: none;
@@ -96,7 +95,6 @@
         width: 24px; /* desired width */
         height: 24px; /* desired height */
         display: none; /* remove inline spacing */
-        stroke: white;
     }
     /* When the menu is open, hide the hamburger and show the close (X) icon */
     .hamburger .icon-hamburger.active {
