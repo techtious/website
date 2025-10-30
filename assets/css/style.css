@@ -129,6 +129,10 @@ body{
 }
 }
 
+.hero-section {
+    text-align: center;
+
+}
 .hero-text {
   background-color: #ffffff;
   padding: 1rem 0;
@@ -158,10 +162,10 @@ body{
     margin-bottom: 2rem;
 }
 
-.hero-text a.cta-button {
+.hero-section a.cta-button {
   display: inline-block;
   padding: 1rem 2rem;
-  background-color: #2563eb;
+  background-color: #494747;
   color: #fff;
   font-weight: 700;
   text-transform: uppercase;
