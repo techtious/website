@@ -131,3 +131,54 @@ body{
     stroke: black;
 }
 }
+
+
+.hero-text {
+  background-color: #ffffff;
+  padding: 6rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-text h1 {
+    grid-column: 1 /-1;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  align-items: center;
+    text-align: center;
+
+}
+
+.hero-text p {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.25rem;
+    color: #4b5563;
+    margin-bottom: 2rem;
+}
+
+.hero-text a.cta-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #2563eb;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.hero-text a.cta-button:hover {
+  background-color: #1e40af;
+}
+
+.hero-section img {
+  max-width: 100%;
+  height: auto;
+}

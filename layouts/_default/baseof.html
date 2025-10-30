@@ -8,30 +8,7 @@
   <link rel="stylesheet" href="{{ $style.Permalink }}">
 </head>
 <body>
-  <nav class="top-nav">
-    <div class="container">
-      <div class="logo">
-        <img src="favicon.ico">
-        <a href="/">{{ .Site.Title }}</a>
-      </div>
-      <button id="hamburger" class="hamburger" onclick="toggleMenu()">
-        {{ with resources.Get "icons/hamburger.svg" }}
-          <span class="icon-hamburger">{{ .Content | safeHTML }}</span>
-        {{ end }}
-        {{ with resources.Get "icons/close.svg" }}
-          <span class="icon-close">{{ .Content | safeHTML }}</span>
-        {{ end }}
-      </button>
-      <ul id="navLinks" class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="https://blog.techtious.com">Blogs</a></li>
-        <li><a href="#careers">Careers</a></li>
-        <li><a>Demo</a></li>
-      </ul>
-
-    </div>
-  </nav>
+  {{ partial "navbar.html" . }}
   {{ block "main" . }}{{ end }}
   <script>
     function toggleMenu() {
