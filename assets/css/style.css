@@ -21,17 +21,14 @@ body{
 }
 .top-nav .logo  {
     display: flex;
-    align-items: center;
+    text-decoration: none;
+}
+.top-nav .logo img {
+  height: 3rem;           /* Adjust as per text size */
+  width: auto;
 
 }
-.top-nav .logo a {
-    padding-left: 0.5rem;
-    font-size: 1.5rem;
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-    display: inline-block;
-}
+
 .top-nav .nav-links {
     list-style: none;
     display: flex;
@@ -132,10 +129,9 @@ body{
 }
 }
 
-
 .hero-text {
   background-color: #ffffff;
-  padding: 6rem 0;
+  padding: 1rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
