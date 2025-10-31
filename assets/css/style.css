@@ -3,6 +3,9 @@ body{
     margin: 0;
     color: green;
 }
+
+/*top navigation*/
+
 .top-nav {
     background-color: white;
     padding: 1.5rem 0;
@@ -28,7 +31,6 @@ body{
   width: auto;
 
 }
-
 .top-nav .nav-links {
     list-style: none;
     display: flex;
@@ -45,9 +47,9 @@ body{
     padding-left: 2rem;
 
 }
-.top-nav .nav-links li a:hover {
-    text-decoration: underline;
-}
+
+
+
 .hamburger {
     display: none;
     font-size: 2rem;
@@ -129,7 +131,11 @@ body{
 }
 }
 
+
+/*hero section*/
+
 .hero-section {
+    height: 100vh;
     text-align: center;
 
 }
@@ -141,7 +147,6 @@ body{
   align-items: center;
   gap: 3rem;
 }
-
 .hero-text h1 {
     grid-column: 1 /-1;
   font-size: 4rem;
@@ -153,7 +158,6 @@ body{
     text-align: center;
 
 }
-
 .hero-text p {
     grid-column: 1 / -1;
     text-align: center;
@@ -161,7 +165,6 @@ body{
     color: #4b5563;
     margin-bottom: 2rem;
 }
-
 .hero-section a.cta-button {
   display: inline-block;
   padding: 1rem 2rem;
@@ -173,12 +176,13 @@ body{
   text-decoration: none;
   transition: background-color 0.3s;
 }
-
 .hero-text a.cta-button:hover {
   background-color: #1e40af;
 }
-
 .hero-section img {
   max-width: 100%;
   height: auto;
 }
+
+
+
