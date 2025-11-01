@@ -1,38 +1,48 @@
-<nav class="top-nav">
-    <div class="container">
-      <div class="logo">
-        <img src="{{ "images/Logo.png" | relURL }}">
-      </div>
-      <button id="hamburger" class="hamburger" onclick="toggleMenu()">
-        {{ with resources.Get "icons/hamburger.svg" }}
-          <span class="icon-hamburger">{{ .Content | safeHTML }}</span>
-        {{ end }}
-        {{ with resources.Get "icons/close.svg" }}
-          <span class="icon-close">{{ .Content | safeHTML }}</span>
-        {{ end }}
-      </button>
-      <ul id="navLinks" class="nav-links">
-        <li class="dropdown">
-              <a id="services" href="{{ "#" | relURL }}" class="dropdown-toggle">
-                Services
-                {{ with resources.Get "icons/chevron-down.svg" }}
-                <span class="chevron">{{ .Content | safeHTML }}</span>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body data-layout="desktop">
+    <nav class="top-nav">
+        <div class="container">
+            <div class="logo">
+                <img src="{{ "images/Logo.png" | relURL }}">
+            </div>
+            <button id="hamburger" class="hamburger" onclick="toggleMenu()">
+                {{ with resources.Get "icons/hamburger.svg" }}
+                  <span class="icon-hamburger">{{ .Content | safeHTML }}</span>
                 {{ end }}
-            </a>
+                {{ with resources.Get "icons/close.svg" }}
+                  <span class="icon-close">{{ .Content | safeHTML }}</span>
+                {{ end }}
+            </button>
+            <ul id="navLinks" class="nav-links">
+                <li class="dropdown">
+                    <a id="services" href="{{ "#" | relURL }}" class="dropdown-toggle">
+                        Services
+                        {{ with resources.Get "icons/chevron-down.svg" }}
+                        <span class="chevron">{{ .Content | safeHTML }}</span>
+                        {{ end }}
+                    </a>
 
-              <ul class="dropdown-menu">
-                <li><a href="{{ "#" | relURL }}">Migration & Modernization</a></li>
-                <li><a href="{{ "#" | relURL }}">Observability & SRE</a></li>
-                <li><a href="{{ "#" | relURL }}">Cloud Engineering</a></li>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Migration & Modernization</a></li>
+                        <li><a href="#">Observability & SRE</a></li>
+                        <li><a href="#">Cloud Engineering</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">Solutions</a></li>
+                <li><a href="https://blog.techtious.com">Blogs</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#" class="cta-button" data-cal-link="techtious/30min"
+                data-cal-namespace="30min"
+                data-cal-config='{"layout":"month_view"}'> Connect</a></li>
               </ul>
-            </li>
-
-        <li><a href="#">Solutions</a></li>
-        <li><a href="https://blog.techtious.com">Blogs</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#" class="cta-button" data-cal-link="techtious/30min"
-    data-cal-namespace="30min"
-    data-cal-config='{"layout":"month_view"}'> Connect</a></li>
-      </ul>
-    </div>
-</nav>
+            </div>
+        </nav>
+    </body>
+</html>
