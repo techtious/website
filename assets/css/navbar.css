@@ -93,3 +93,19 @@ li.active .dropdown-menu {
 .top-nav .nav-links li:hover .dropdown-menu {
   display: block;
 }
+
+
+/* Mobile: always show dropdown and hide chevron */
+@media (max-width: 768px) {  /* Adjust breakpoint as needed */
+  .dropdown-menu {
+    display: block !important;  /* Always visible on mobile */
+    position: static;           /* Flow naturally in the document */
+    box-shadow: none;           /* Optional: remove shadow for mobile */
+    padding: 0 0.5rem 0 0.5rem;            /* Adjust padding as needed */
+  }
+
+  /* Hide chevron on mobile */
+  .dropdown .chevron {
+    display: none;
+  }
+}
