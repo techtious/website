@@ -31,22 +31,23 @@ body{
         align-items: flex-start;
         justify-content: flex-start;
         padding-top: 4rem;
-        font-size: 24px;
+        font-size: 0.875rem;
         opacity: 1;
         pointer-events: auto;
         gap: 30px;
-        transform: translateX(100%);
-        transition: transform 0.4s ease, opacity 0.5s ease;
+        transform: translateY(-100%);
+        transition: transform 1s ease, opacity 1s ease;
         margin: 0
     }
     .top-nav .nav-links.active {
         align-items: flex-start;
         justify-content: flex-start;
         padding-top: 4rem;
-        font-size: 0.875rem;
+        font-size: 1.5rem;
+        font-weight: 500;
         opacity: 1;
         pointer-events: auto;
-        transform: translateY(0);  /* Slide down to normal position */
+        transform: translateX(0);  /* Slide down to normal position */
     }
 
     .top-nav .nav-links.active li {
