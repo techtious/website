@@ -5,26 +5,25 @@
     top: 0;
     width: 100%;
     z-index: 1000;
-
-
 }
+
 .top-nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 2rem;
-
-
 }
-.top-nav .logo  {
+
+.top-nav .logo {
     display: flex;
     text-decoration: none;
 }
-.top-nav .logo img {
-  height: 2.5rem;        /* Adjust as per text size */
-  width: auto;
 
+.top-nav .logo img {
+    height: 2.5rem;
+    width: auto;
 }
+
 .top-nav .nav-links {
     list-style: none;
     display: flex;
@@ -33,9 +32,8 @@
     padding-right: 5rem;
     width: 100%;
     justify-content: flex-end;
-
-
 }
+
 .top-nav .nav-links li a {
     text-decoration: none;
     font-weight: 500;
@@ -45,28 +43,26 @@
     padding-bottom: 1rem;
     display: flex;
     flex-wrap: nowrap;
-
 }
+
 .top-nav .nav-links li {
-  position: relative;
+    position: relative;
 }
 
 /* Parent li positioning */
 .dropdown {
-  position: relative;  /* Important: allows dropdown-menu to position absolutely relative to li */
+    position: relative;  /* Important: allows dropdown-menu to position absolutely relative to li */
 }
+
 .dropdown-menu {
     display: none;
-    position: absolute;
-    top: 100%; /* Position just below the Services link */
-    left: 0;
+    position: static; /* Changed from absolute to static */
     background: #fff;
     padding: 2rem;
     list-style: none;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Optional: for better UI */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     white-space: nowrap;
-
 }
 
 /* Initial state */
@@ -78,14 +74,14 @@
 
 /* Rotate chevron on hover only if not active */
 .dropdown:not(.active):hover .chevron {
-  transform: rotate(180deg);
-  transition: transform 0.3s ease;
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
 }
 
 /* If dropdown is active (clicked), keep chevron normal */
 .dropdown.active .chevron {
-  transform: rotate(0deg);
-  transition: transform 0.3s ease;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
 }
 
 li.active .dropdown-menu {
@@ -93,21 +89,20 @@ li.active .dropdown-menu {
 }
 
 .top-nav .nav-links li:hover .dropdown-menu {
-  display: block;
+    display: block;
 }
-
 
 /* Mobile: always show dropdown and hide chevron */
 @media (max-width: 768px) {  /* Adjust breakpoint as needed */
-  .dropdown-menu {
-    display: none !important;  /* Always visible on mobile */
-    position: static;           /* Flow naturally in the document */
-    box-shadow: none;           /* Optional: remove shadow for mobile */
-    padding: 0 0.5rem 0 0.5rem;            /* Adjust padding as needed */
-  }
+    .dropdown-menu {
+        display: none !important;  /* Always visible on mobile */
+        position: static;           /* Flow naturally in the document */
+        box-shadow: none;           /* Optional: remove shadow for mobile */
+        padding: 0 0.5rem 0 0.5rem;            /* Adjust padding as needed */
+    }
 
-  /* Hide chevron on mobile */
-  .dropdown .chevron {
-    display: none;
-  }
+    /* Hide chevron on mobile */
+    .dropdown .chevron {
+        display: none;
+    }
 }
