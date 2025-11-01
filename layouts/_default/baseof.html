@@ -5,12 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ .Title }} - {{ .Site.Title }}</title>
   {{ $style := resources.Get "css/style.css" | minify | fingerprint }}
+  {{ $navbar := resources.Get "css/navbar.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $navbar.RelPermalink }}">
+
   <link rel="stylesheet" href="{{ $style.Permalink }}">
 </head>
 <body>
   {{ partial "navbar.html" . }}
   {{ block "main" . }}{{ end }}
   <script>
+
+      document.getElementById("services").addEventListener("click", function(event) {
+      event.preventDefault(); // stop link navigation
+      //document.getElementById("dropdownMenu").classList.toggle("show");
+    });
+
+
     function toggleMenu() {
       const navLinks = document.getElementById("navLinks");
       const hamburger = document.getElementById("hamburger");
@@ -20,13 +30,14 @@
       hamburgerIcon.classList.toggle("active");
       closeIcon.classList.toggle("active");
     }
-    document.querySelectorAll('#navLinks a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById("navLinks").classList.remove("active");
-        document.querySelector(".icon-hamburger").classList.remove("active");
-        document.querySelector(".icon-close").classList.remove("active");
-      });
-    });
+
+    function toggleNavigations() {
+  const parentLi = document.getElementById("services").parentElement;
+  parentLi.classList.toggle("active");
+}
+
+
+
 
     <!-- Cal element-click embed code begins -->
   (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");

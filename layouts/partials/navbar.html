@@ -1,7 +1,7 @@
 <nav class="top-nav">
     <div class="container">
       <div class="logo">
-        <img src="images/Logo.png">
+        <img src="{{ "images/Logo.png" | relURL }}">
       </div>
       <button id="hamburger" class="hamburger" onclick="toggleMenu()">
         {{ with resources.Get "icons/hamburger.svg" }}
@@ -12,16 +12,39 @@
         {{ end }}
       </button>
       <ul id="navLinks" class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="#services">Services</a></li>
+        <!-- Services dropdown Opens-->
+        <li>
+<!--              <a id = "services" href="{{ "#services" | relURL }}">-->
+<!--              Services-->
+<!--              {{ with resources.Get "icons/chevron-down.svg" }}-->
+<!--              <span class="chevron-down">{{ .Content | safeHTML }}</span>-->
+<!--              {{ end }}-->
+<!--              {{ with resources.Get "icons/chevron-up.svg" }}-->
+<!--              <span class="chevron-up">{{ .Content | safeHTML }}</span>-->
+<!--              {{ end }}-->
+<!--              </a>-->
+
+              <a id="services" href="{{ "#services" | relURL }}" class="dropdown-toggle">
+  Services
+  {{ with resources.Get "icons/chevron-down.svg" }}
+    <span class="chevron">{{ .Content | safeHTML }}</span>
+  {{ end }}
+</a>
+
+              <ul class="dropdown-menu">
+                <li><a href="{{ "services" | relURL }}">Migration & Modernization</a></li>
+                <li><a href="{{ "services" | relURL }}">Observability & SRE</a></li>
+                <li><a href="{{ "services" | relURL }}">Cloud Engineering</a></li>
+              </ul>
+            </li>
+        <!-- Services dropdown Closes-->
+
         <li><a href="#solutions">Solutions</a></li>
         <li><a href="https://blog.techtious.com">Blogs</a></li>
         <li><a href="#careers">Careers</a></li>
-        <li><a href="#demo">Demo</a></li>
         <li><a href="#contact" class="cta-button" data-cal-link="techtious/30min"
     data-cal-namespace="30min"
-    data-cal-config='{"layout":"month_view"}'> Contact Us</a></li>
+    data-cal-config='{"layout":"month_view"}'> Connect</a></li>
       </ul>
-
     </div>
-  </nav>
+</nav>

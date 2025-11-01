@@ -6,47 +6,7 @@ body{
 
 /*top navigation*/
 
-.top-nav {
-    background-color: white;
-    padding: 1.5rem 0;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
 
-}
-.top-nav .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 2rem;
-
-}
-.top-nav .logo  {
-    display: flex;
-    text-decoration: none;
-}
-.top-nav .logo img {
-  height: 3rem;           /* Adjust as per text size */
-  width: auto;
-
-}
-.top-nav .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    margin: 1.5rem;
-    padding-right: 5rem;
-
-
-}
-.top-nav .nav-links li a {
-    text-decoration: none;
-    font-weight: 500;
-    color: black;
-    padding-left: 2rem;
-
-}
 
 
 
@@ -185,4 +145,8 @@ body{
 }
 
 
-
+.nav-links.dropdown.chevron-down {
+    color: pink;
+    width: 12px;           /* explicit size */
+  height: 12px;
+}
