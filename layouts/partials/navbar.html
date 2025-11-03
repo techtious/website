@@ -1,38 +1,50 @@
 <nav class="top-nav">
-    <div class="container">
+   <div class="container">
+      <button id="backbutton" class="back-btn" onclick="goBackToMainMenu()">
+         {{ with resources.Get "icons/back.svg" }}
+         <span class="icon-back">{{ .Content | safeHTML }}</span>
+         {{ end }}
+      </button>
       <div class="logo">
-        <img src="{{ "images/Logo.png" | relURL }}">
+         <img src="{{ "images/Logo.png" | relURL }}">
       </div>
       <button id="hamburger" class="hamburger" onclick="toggleMenu()">
-        {{ with resources.Get "icons/hamburger.svg" }}
-          <span class="icon-hamburger">{{ .Content | safeHTML }}</span>
-        {{ end }}
-        {{ with resources.Get "icons/close.svg" }}
-          <span class="icon-close">{{ .Content | safeHTML }}</span>
-        {{ end }}
+      {{ with resources.Get "icons/hamburger.svg" }}
+      <span class="icon-hamburger">{{ .Content | safeHTML }}</span>
+      {{ end }}
+      {{ with resources.Get "icons/close.svg" }}
+      <span class="icon-close">{{ .Content | safeHTML }}</span>
+      {{ end }}
       </button>
-      <ul id="navLinks" class="nav-links">
-        <li class="dropdown">
-              <a id="services" href="{{ "#" | relURL }}" class="dropdown-toggle">
-                Services
-                {{ with resources.Get "icons/chevron-down.svg" }}
+      <ul id="navLinks" class="topMenu">
+         <li class="topMenuItem">
+            <a href="#" onclick="openSubmenu(event, 'servicesMenu')">
+            Services
+               {{ with resources.Get "icons/chevron-down.svg" }}
                 <span class="chevron">{{ .Content | safeHTML }}</span>
                 {{ end }}
             </a>
-
-              <ul class="dropdown-menu">
-                <li><a href="{{ "#" | relURL }}">Migration & Modernization</a></li>
-                <li><a href="{{ "#" | relURL }}">Observability & SRE</a></li>
-                <li><a href="{{ "#" | relURL }}">Cloud Engineering</a></li>
-              </ul>
-            </li>
-
-        <li><a href="#">Solutions</a></li>
-        <li><a href="https://blog.techtious.com">Blogs</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#" class="cta-button" data-cal-link="techtious/30min"
-    data-cal-namespace="30min"
-    data-cal-config='{"layout":"month_view"}'> Connect</a></li>
+            <ul id="servicesMenu" class="subMenu">
+               <li><a href="#">Migration & Modernization</a></li>
+               <li><a href="#">Observability & SRE</a></li>
+               <li><a href="#">Cloud Engineering</a></li>
+            </ul>
+         </li>
+         <li class="topMenuItem">
+            <a href="#" onclick="openSubmenu(event, 'solutionsMenu')">
+               Solutions
+               {{ with resources.Get "icons/chevron-down.svg" }}
+                <span class="chevron">{{ .Content | safeHTML }}</span>
+                {{ end }}
+            </a>
+            <ul id="solutionsMenu" class="subMenu">
+<!--               <li><a href="#">Arthain: Cloud Cost Optimization </a></li>-->
+<!--               <li><a href="#">KubeCut: Kubernetes Cost Optimization </a></li>-->
+            </ul>
+         </li>
+         <li class="topMenuItem"><a href="#">Blogs</a></li>
+         <li><a href="#">Careers</a></li>
+         <li><a href="#" class="cta-button">Connect</a></li>
       </ul>
-    </div>
+   </div>
 </nav>
