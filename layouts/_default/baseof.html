@@ -6,13 +6,16 @@
   <title>{{ .Title }} - {{ .Site.Title }}</title>
   {{ $style := resources.Get "css/style.css" | minify | fingerprint }}
   {{ $navbar := resources.Get "css/navbar.css" | minify | fingerprint }}
+  {{ $footer := resources.Get "css/footer.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $navbar.RelPermalink }}">
-
   <link rel="stylesheet" href="{{ $style.Permalink }}">
+  <link rel="stylesheet" href="{{ $footer.Permalink }}">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="9a9152d5-622e-4956-a0ae-99a470879ec4"></script>
 </head>
 <body>
   {{ partial "navbar.html" . }}
   {{ block "main" . }}{{ end }}
+  {{ partial "footer.html" . }}
   <script>
 
 
@@ -59,6 +62,9 @@
 Cal("init", "30min", {origin:"https://app.cal.com"});
   Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
 <!-- Cal element-click embed code ends -->
+
+
+
   </script>
 </body>
 </html>
