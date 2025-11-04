@@ -41,15 +41,10 @@
     }
 
     function openSubmenu(event, submid) {
-      //Prevents Default navigation from the event
-
         const subMenu = document.getElementById(submid);
         const backIcon = document.querySelector(".back-btn");
         subMenu.classList.add('active');
         backIcon.classList.add('active');
-        console.log(subMenu.classList)
-
-
     }
 
     function goBackToMainMenu() {
