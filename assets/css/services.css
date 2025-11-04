@@ -1,0 +1,81 @@
+
+.service-section {
+  padding: 2rem 2rem 2rem 2rem  ;
+}
+.service-container {
+  display: flex;
+  gap: 2rem; /* spacing between columns */
+  padding: 3rem 1rem 3rem 1rem;
+
+}
+
+.service-container .service-name {
+  flex: 1;
+  padding: 60px 20px;
+  background-color: white;
+  color: black;
+  border-right: 2px solid #ccc;
+    font-size: 44px;
+  font-family: sans-serif;
+  font-weight: 500;
+  align-content: center;
+
+}
+
+.service-name p {
+  align-content: center;
+  text-align: center;
+}
+
+.service-content {
+  flex: 2;/* right column - 2/3 */
+  min-width: 300px;
+  color: black;
+  font-weight: 500;
+  font-family: sans-serif;
+  font-size: 22px;
+}
+
+.intro {
+  font-size: 1.125rem;
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+.key-benefits h3 {
+  font-family: sans-serif;
+  color: #393939;
+  font-weight: 500;
+  font-size: 33px;
+}
+
+.key-benefits ul li{
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  margin-bottom: 15px;
+
+
+}
+.process h3 {
+  font-family: sans-serif;
+  color: #393939;
+  font-weight: 500;
+  font-size: 33px;
+}
+
+.process ul li{
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  margin-bottom: 15px;
+
+
+}
+
+.service-description {
+  font-family: sans-serif;
+  font-size: 1.125rem;
+  color: black
+;
+}
