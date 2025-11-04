@@ -79,3 +79,50 @@
   color: black
 ;
 }
+
+/* Mobile-first adjustments */
+@media (max-width: 767px) {
+  .service-container {
+    flex-direction: column; /* Stack columns */
+    padding: 1.5rem 1rem; /* smaller padding for mobile */
+    gap: 1.5rem;
+  }
+
+  .service-container .service-name {
+    padding: 30px 10px;
+    font-size: 28px; /* smaller title */
+    border-right: none; /* remove desktop border */
+    text-align: center;
+  }
+
+  .service-name p {
+    text-align: center;
+  }
+
+  .service-content {
+    flex: unset; /* remove flex ratio */
+    min-width: unset;
+    font-size: 18px; /* slightly smaller text */
+  }
+
+  .intro {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .key-benefits h3,
+  .process h3 {
+    font-size: 24px; /* smaller headings */
+    text-align: left;
+  }
+
+  .key-benefits ul li,
+  .process ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .service-description {
+    font-size: 1rem;
+  }
+}
