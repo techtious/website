@@ -6,7 +6,9 @@
          {{ end }}
       </button>
       <div class="logo">
+         <a href="{{ "/" | relURL }}">
          <img src="{{ "images/Logo.png" | relURL }}">
+         </a>
       </div>
       <button id="hamburger" class="hamburger" onclick="toggleMenu()">
       {{ with resources.Get "icons/hamburger.svg" }}
