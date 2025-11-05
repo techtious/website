@@ -1,0 +1,45 @@
+<section class="careers-section">
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="career-header">
+      <h1>Join Our Team</h1>
+      <p>We’re always looking for passionate, innovative, and driven individuals to be part of our journey.
+      If you love solving real-world challenges and building impactful solutions — we’d love to meet you.</p>
+    </div>
+
+    <!-- Why Work With Us -->
+    <div class="career-benefits">
+      <h2>Why Work With Us?</h2>
+      <ul>
+        <li>🚀 Work on cutting-edge cloud & automation technologies</li>
+        <li>🌍 Remote-first & flexible working culture</li>
+        <li>💡 Freedom to innovate and take ownership</li>
+        <li>📚 Learning budget & mentorship from industry experts</li>
+        <li>❤️ Inclusive, supportive & growth-focused environment</li>
+      </ul>
+    </div>
+
+    <!-- Open Positions -->
+    <div class="job-openings">
+      <h2>Open Positions</h2>
+      {{ if .Site.Data.jobs }}
+        {{ range .Site.Data.jobs }}
+        <div class="job-card">
+          <h3>{{ .title }}</h3>
+          <p><strong>Location:</strong> {{ .location }}</p>
+          <p><strong>Type:</strong> {{ .type }}</p>
+          <p>{{ .description }}</p>
+          <a href="mailto:careers@techtious.com?subject=Application for {{ .title }}" class="apply-btn">
+            Apply Now →
+          </a>
+        </div>
+        {{ end }}
+      {{ else }}
+        <p class="no-jobs">Currently, we don’t have active openings. But we’re always happy to connect with talented people.<br>
+        Send your resume to <a href="mailto:careers@techtious.com">careers@techtious.com</a></p>
+      {{ end }}
+    </div>
+
+  </div>
+</section>

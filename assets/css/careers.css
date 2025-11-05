@@ -1,0 +1,54 @@
+.careers-section {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+}
+
+.career-header h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.career-header p {
+  margin-top: 1rem;
+  max-width: 700px;
+}
+
+.career-benefits ul {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+
+}
+
+.career-benefits h2 {
+  font-weight: 300;
+}
+.job-openings {
+  margin-top: 3rem;
+}
+
+.job-card {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.apply-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+}
+
+.apply-btn:hover {
+  border-color: #000;
+}
+
+.no-jobs {
+  color: #777;
+  font-style: italic;
+}
