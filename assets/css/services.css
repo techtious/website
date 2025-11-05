@@ -78,7 +78,6 @@
   font-size: 1.125rem;
   font-weight: 500;
   color: black;
-  text-align: center;
   margin: 2rem;
 ;
 }
@@ -96,16 +95,21 @@
     font-size: 28px; /* smaller title */
     border-right: none; /* remove desktop border */
     text-align: center;
+    border-bottom: 2px solid #ccc;
+
   }
 
   .service-name p {
     text-align: center;
+
   }
 
   .service-content {
     flex: unset; /* remove flex ratio */
     min-width: unset;
     font-size: 18px; /* slightly smaller text */
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 2rem;
   }
 
   .intro {
