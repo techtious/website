@@ -76,7 +76,10 @@
 .service-description {
   font-family: sans-serif;
   font-size: 1.125rem;
-  color: black
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  margin: 2rem;
 ;
 }
 
@@ -124,5 +127,6 @@
 
   .service-description {
     font-size: 1rem;
+
   }
 }
