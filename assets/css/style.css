@@ -2,7 +2,6 @@ body {
     font-family: sans-serif;
     margin: 0;
     font-weight: 300;
-    background: linear-gradient(135deg, #f7f7f7, #ffffff);
     color: #111; /* ensures text contrast */
     min-height: 100vh;
 }
