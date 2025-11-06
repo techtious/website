@@ -5,6 +5,7 @@
     top: 0;
     width: 100%;
     z-index: 1000;
+    display: flex;
 }
 .top-nav .topMenu{
     position: relative;  /* Important: allows dropdown-menu to position absolutely relative to li */

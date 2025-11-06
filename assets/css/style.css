@@ -25,6 +25,7 @@ ul, ol {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 3rem;
+    margin: 6rem;
 }
 .hero-text h1 {
     grid-column: 1 /-1;
