@@ -1,8 +1,10 @@
 body {
     font-family: sans-serif;
     margin: 0;
-    color: black;
     font-weight: 300;
+    background: linear-gradient(135deg, #f7f7f7, #ffffff);
+    color: #111; /* ensures text contrast */
+    min-height: 100vh;
 }
 ul, ol {
   list-style-type: none; /* Removes bullets/numbers */
@@ -19,7 +21,6 @@ ul, ol {
 
 }
 .hero-text {
-  background-color: #ffffff;
   padding: 1rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
