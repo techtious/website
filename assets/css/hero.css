@@ -1,0 +1,7 @@
+.hero-section .hero-image {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* two equal columns */
+    gap: 1rem; /* space between columns and rows */
+    align-items: start; /* align items vertically */
+    margin: 2rem;
+}

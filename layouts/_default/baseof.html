@@ -10,6 +10,7 @@
   {{ $footer := resources.Get "css/footer.css" | minify | fingerprint }}
   {{ $careers := resources.Get "css/careers.css" | minify | fingerprint }}
   {{ $services_overview := resources.Get "css/services-overview.css" | minify | fingerprint }}
+  {{ $hero := resources.Get "css/hero.css" | minify | fingerprint }}
 
   <link rel="stylesheet" href="{{ $navbar.RelPermalink }}">
   <link rel="stylesheet" href="{{ $style.Permalink }}">
@@ -17,6 +18,7 @@
   <link rel="stylesheet" href="{{ $services.Permalink }}">
   <link rel="stylesheet" href="{{ $careers.Permalink }}">
   <link rel="stylesheet" href="{{ $services_overview.RelPermalink }}">
+  <link rel="stylesheet" href="{{ $hero.RelPermalink }}">
   <script defer src="https://cloud.umami.is/script.js" data-website-id="9a9152d5-622e-4956-a0ae-99a470879ec4"></script>
 </head>
 <body>
