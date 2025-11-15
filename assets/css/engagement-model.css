@@ -1,4 +1,73 @@
-.engagement-model {
-    display: grid;
-    height: auto;
+/* How We Work - minimal */
+.how-we-work {   display: grid;
+    padding: 36px 20px;
+    background:#ffffff;
+    border-radius:8px;
+    box-shadow:0 6px 18px rgba(10,20,40,0.04);
 }
+.hw-hero {
+    margin-bottom:18px;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* first column smaller, second column twice as wide */
+    gap: 16px;
+
+}
+
+.hw-hero h2 {
+  grid-column: 1; /* stays in first column */
+    align-content: center;
+    text-align: center;
+}
+
+.hw-hero .hw-subtitle {
+  grid-column: 2; /* takes the wider 2fr column */
+  font-size: 1.2rem; /* increase text size */
+  line-height: 1.6;
+    text-align: center;
+}
+
+/*.btn-primary, .btn-secondary { display:inline-block; padding:8px 14px; border-radius:8px; text-decoration:none; font-weight:600; }*/
+/*.btn-primary { background:#0b74de; color:#fff; }*/
+/*.btn-secondary { background:transparent; color:#0b74de; border:1px solid #dbeafe; }*/
+
+.hw-models {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-bottom:20px;
+    text-align: center;
+}
+
+/*@media (max-width:920px) { .hw-models { grid-template-columns:repeat(2,1fr);} }*/
+/*@media (max-width:520px) { .hw-models { grid-template-columns:1fr;} }*/
+@media screen and (max-width: 768px) {
+    .hw-hero {
+        grid-template-columns: 1fr; /* collapse to 1 column */
+        text-align: left;
+    }
+    .hw-hero h2,
+  .hw-hero .hw-subtitle {
+    grid-column: 1; /* both stacked */
+  }
+
+  .hw-hero .hw-subtitle {
+    margin-top: 10px;
+    font-size: 1rem; /* adjust for mobile if needed */
+  }
+
+
+}
+.hw-model-card { padding:14px; border-radius:10px; background:#f8fafc; border:1px solid #eef3fb; }
+.hw-model-card h3 { margin:0 0 6px; font-size:1rem; }
+.muted { color:#6b7280; font-size:0.95rem; }
+.small { font-size:0.9rem; color:#475569; }
+
+.hw-service-teaser { display:grid; grid-template-columns:300px 1fr; gap:18px; align-items:start; margin-top:10px; padding:18px; border-radius:10px; background:#fff; border:1px solid #eef3fb; }
+@media (max-width:820px) { .hw-service-teaser { grid-template-columns:1fr; } }
+
+.teaser-left h4 { margin:0 0 6px; }
+.teaser-meta { font-size:0.9rem; color:#6b7280; margin:0 0 8px; }
+.teaser-bullets { margin:8px 0 12px; padding-left:20px; }
+.teaser-cta .btn-secondary { padding:8px 12px; border-radius:8px; }
+
+.hw-choose { margin-top:18px; padding-top:12px; border-top:1px dashed #eef3fb; color:#475569; }
