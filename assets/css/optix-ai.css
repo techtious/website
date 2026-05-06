@@ -1,0 +1,324 @@
+/* Solutions page — Optix AI */
+
+.solution-section {
+  padding: 2rem 2rem;
+}
+
+/* ── Hero row ── */
+.solution-hero-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding: 3rem 1rem;
+  border-bottom: 2px solid #ccc;
+}
+
+.solution-identity {
+  padding: 40px 20px;
+  border-right: 2px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.solution-badge {
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+
+.solution-name {
+  font-family: sans-serif;
+  font-size: 52px;
+  font-weight: 500;
+  color: black;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.1;
+}
+
+.solution-sub {
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: #555;
+  font-weight: 400;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.solution-intro {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-weight: 400;
+  color: black;
+}
+
+.solution-intro p {
+  margin: 0 0 1rem 0;
+}
+
+.solution-intro code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  background: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.solution-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn-solution-github {
+  display: inline-block;
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.btn-solution-github:hover {
+  background: #333;
+}
+
+/* ── Capabilities grid ── */
+.solution-capabilities {
+  padding: 3rem 1rem;
+  border-bottom: 2px solid #ccc;
+}
+
+.solution-capabilities h2 {
+  font-family: sans-serif;
+  font-size: 33px;
+  font-weight: 500;
+  color: #393939;
+  margin-bottom: 2rem;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.capability-card {
+  background: #f8f8f8;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.capability-card h3 {
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: black;
+  margin: 0 0 0.5rem 0;
+}
+
+.capability-card p {
+  font-family: sans-serif;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.55;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* ── Report section ── */
+.solution-report {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding: 3rem 1rem;
+  border-bottom: 2px solid #ccc;
+}
+
+.solution-report-left {
+  padding: 40px 20px;
+  border-right: 2px solid #ccc;
+  display: flex;
+  align-items: center;
+}
+
+.solution-report-left h2 {
+  font-family: sans-serif;
+  font-size: 33px;
+  font-weight: 500;
+  color: #393939;
+}
+
+.solution-report-right {
+  padding: 20px;
+}
+
+.solution-report-right ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.solution-report-right ul li {
+  font-family: sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  padding-left: 1.75rem;
+  position: relative;
+}
+
+.solution-report-right ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #888;
+}
+
+/* ── Get started ── */
+.solution-getstarted {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 3rem 1rem;
+  align-items: center;
+}
+
+.solution-getstarted-left h2 {
+  font-family: sans-serif;
+  font-size: 33px;
+  font-weight: 500;
+  color: #393939;
+  margin-bottom: 0.75rem;
+}
+
+.solution-getstarted-left p {
+  font-family: sans-serif;
+  font-size: 1.125rem;
+  color: #555;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.btn-solution-github-lg {
+  padding: 12px 24px;
+  font-size: 1rem;
+}
+
+.solution-terminal {
+  background: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.terminal-bar {
+  padding: 10px 14px;
+  background: #2a2a2a;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.terminal-bar span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminal-bar span:nth-child(1) { background: #ff5f57; }
+.terminal-bar span:nth-child(2) { background: #febc2e; }
+.terminal-bar span:nth-child(3) { background: #28c840; }
+
+.solution-terminal pre {
+  margin: 0;
+  padding: 1.25rem 1.5rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: #d4d4d4;
+  line-height: 1.7;
+  overflow-x: auto;
+}
+
+.solution-terminal pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .solution-section {
+    padding: 1rem;
+  }
+
+  .solution-hero-row,
+  .solution-report,
+  .solution-getstarted {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 0.5rem;
+  }
+
+  .solution-identity {
+    border-right: none;
+    border-bottom: 2px solid #ccc;
+    padding: 20px 10px;
+  }
+
+  .solution-name {
+    font-size: 36px;
+  }
+
+  .solution-intro {
+    padding: 10px 0;
+    font-size: 1rem;
+  }
+
+  .solution-report-left {
+    border-right: none;
+    border-bottom: 2px solid #ccc;
+    padding: 20px 10px;
+  }
+
+  .solution-capabilities h2,
+  .solution-report-left h2,
+  .solution-getstarted-left h2 {
+    font-size: 24px;
+  }
+
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .solution-capabilities,
+  .solution-getstarted-left {
+    padding: 0.5rem;
+  }
+
+  .solution-report-right ul li {
+    font-size: 1rem;
+  }
+}

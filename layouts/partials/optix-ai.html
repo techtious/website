@@ -1,0 +1,104 @@
+<section class="solution-section">
+
+  <!-- Hero row: product identity + intro -->
+  <div class="solution-hero-row">
+    <div class="solution-identity">
+      <span class="solution-badge">FinOps · Open Source</span>
+      <h1 class="solution-name">Optix AI</h1>
+      <p class="solution-sub">The open-source FinOps agent that makes your cloud spend smarter.</p>
+    </div>
+    <div class="solution-intro">
+      <p>
+        Optix AI connects directly to AWS Cost Explorer and uses large language models to deliver actionable cloud cost optimization insights — automatically. No dashboards to configure, no manual analysis. Just run <code>optix</code> and get a comprehensive report in seconds.
+      </p>
+      <p>
+        Built for engineers and FinOps practitioners who want real recommendations, not just charts. Powered by Anthropic Claude or Google Gemini, Optix AI surfaces exactly what to act on and why.
+      </p>
+      <div class="solution-actions">
+        <a href="https://github.com/techtious/optix-ai" class="btn-solution-github" target="_blank" rel="noopener">View on GitHub ↗</a>
+        <a href="#"
+           class="cta-button"
+           data-cal-link="techtious/30min"
+           data-cal-namespace="30min"
+           data-cal-config='{"layout":"month_view"}'>Book a Demo</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Capabilities grid -->
+  <div class="solution-capabilities">
+    <h2>What Optix AI analyzes</h2>
+    <div class="capabilities-grid">
+
+      <div class="capability-card">
+        <h3>Cost Breakdown</h3>
+        <p>Identifies top-spending AWS services over the last 30 days so you know exactly where your budget is going.</p>
+      </div>
+
+      <div class="capability-card">
+        <h3>Trend Analysis</h3>
+        <p>Compares month-over-month spending across three months to surface cost drift before it compounds.</p>
+      </div>
+
+      <div class="capability-card">
+        <h3>EC2 Rightsizing</h3>
+        <p>Detects oversized instances and calculates estimated monthly savings per recommendation.</p>
+      </div>
+
+      <div class="capability-card">
+        <h3>Savings Plans</h3>
+        <p>Recommends committed-use discount opportunities based on your actual usage patterns.</p>
+      </div>
+
+      <div class="capability-card">
+        <h3>Anomaly Detection</h3>
+        <p>Flags unexpected cost spikes using configurable thresholds before they turn into budget overruns.</p>
+      </div>
+
+      <div class="capability-card">
+        <h3>Multi-Model Support</h3>
+        <p>Works with Anthropic Claude (default) or Google Gemini. Bring your own API key, keep your data private.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Report output section -->
+  <div class="solution-report">
+    <div class="solution-report-left">
+      <h2>What the report includes</h2>
+    </div>
+    <div class="solution-report-right">
+      <ul>
+        <li><strong>Executive Summary</strong> — total spend, top findings, and recommended next steps at a glance.</li>
+        <li><strong>Service Cost Landscape</strong> — line-by-line breakdown of every AWS service with trend indicators.</li>
+        <li><strong>Ranked Optimizations</strong> — prioritized list of actions with projected savings for each.</li>
+        <li><strong>Anomaly Log</strong> — flagged spikes with context on when they occurred and by how much.</li>
+        <li><strong>Action Plan</strong> — numbered, implementable steps your team can act on immediately.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Get started -->
+  <div class="solution-getstarted">
+    <div class="solution-getstarted-left">
+      <h2>Get started in minutes</h2>
+      <p>Open-source under the Apache 2.0 license. Requires Python 3.11+ and AWS credentials with Cost Explorer permissions.</p>
+      <a href="https://github.com/techtious/optix-ai" class="btn-solution-github btn-solution-github-lg" target="_blank" rel="noopener">View on GitHub →</a>
+    </div>
+    <div class="solution-terminal">
+      <div class="terminal-bar">
+        <span></span><span></span><span></span>
+      </div>
+      <pre><code>git clone https://github.com/techtious/optix-ai
+cd optix-ai && pip install -e .
+
+# Add your credentials to .env
+ANTHROPIC_API_KEY=sk-...
+AWS_PROFILE=your-profile
+
+optix</code></pre>
+    </div>
+  </div>
+
+</section>
