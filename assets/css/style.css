@@ -4,6 +4,7 @@ body {
     color: black;
     font-weight: 300;
 }
+
 ul, ol {
   list-style-type: none; /* Removes bullets/numbers */
   padding: 0;            /* Optional: remove default padding */
