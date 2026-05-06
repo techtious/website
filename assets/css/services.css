@@ -1,12 +1,11 @@
-
 .service-section {
-  padding: 2rem 2rem 2rem 2rem  ;
+  padding: 2rem;
 }
+
 .service-container {
   display: flex;
-  gap: 2rem; /* spacing between columns */
-  padding: 3rem 1rem 3rem 1rem;
-
+  gap: 2rem;
+  padding: 3rem 1rem;
 }
 
 .service-container .service-name {
@@ -15,20 +14,18 @@
   background-color: white;
   color: black;
   border-right: 2px solid #ccc;
-    font-size: 44px;
+  font-size: 44px;
   font-family: sans-serif;
   font-weight: 500;
-  align-content: center;
-
 }
 
 .service-name p {
-  align-content: center;
   text-align: center;
+  margin: 0;
 }
 
 .service-content {
-  flex: 2;/* right column - 2/3 */
+  flex: 2;
   min-width: 300px;
   color: black;
   font-weight: 500;
@@ -42,21 +39,7 @@
   line-height: 1.5;
 }
 
-.key-benefits h3 {
-  font-family: sans-serif;
-  color: #393939;
-  font-weight: 500;
-  font-size: 33px;
-}
-
-.key-benefits ul li{
-  font-family: sans-serif;
-  font-weight: 400;
-  font-size: 1.125rem;
-  margin-bottom: 15px;
-
-
-}
+.key-benefits h3,
 .process h3 {
   font-family: sans-serif;
   color: #393939;
@@ -64,50 +47,54 @@
   font-size: 33px;
 }
 
-.process ul li{
+.key-benefits ul li,
+.process ul li {
   font-family: sans-serif;
   font-weight: 400;
   font-size: 1.125rem;
   margin-bottom: 15px;
-
-
 }
 
 .service-description {
   font-family: sans-serif;
   font-size: 1.125rem;
-  font-weight: 500;
+  font-weight: 400;
+  line-height: 1.7;
   color: black;
-
-;
+  padding: 0 1rem 2rem;
 }
 
-/* Mobile-first adjustments */
+.service-description p {
+  margin: 0 0 1rem 0;
+}
+
+.service-description p:last-child {
+  margin-bottom: 0;
+}
+
 @media (max-width: 767px) {
   .service-container {
-    flex-direction: column; /* Stack columns */
-    padding: 1.5rem 1rem; /* smaller padding for mobile */
+    flex-direction: column;
+    padding: 1.5rem 1rem;
     gap: 1.5rem;
   }
 
   .service-container .service-name {
     padding: 30px 10px;
-    font-size: 28px; /* smaller title */
-    border-right: none; /* remove desktop border */
-    text-align: center;
+    font-size: 28px;
+    border-right: none;
     border-bottom: 2px solid #ccc;
-
+    text-align: center;
   }
 
   .service-name p {
     text-align: center;
-
   }
 
   .service-content {
-    flex: unset; /* remove flex ratio */
+    flex: unset;
     min-width: unset;
-    font-size: 18px; /* slightly smaller text */
+    font-size: 18px;
     border-bottom: 2px solid #ccc;
     padding-bottom: 2rem;
   }
@@ -119,7 +106,7 @@
 
   .key-benefits h3,
   .process h3 {
-    font-size: 24px; /* smaller headings */
+    font-size: 24px;
     text-align: left;
   }
 
@@ -131,6 +118,6 @@
 
   .service-description {
     font-size: 1rem;
-
+    padding: 0 0.5rem 1.5rem;
   }
 }
