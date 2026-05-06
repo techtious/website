@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84 84" role="img" aria-label="Techtious">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g filter="url(#glow)" stroke="#F59E0B" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <polygon points="42,18 63,30 63,54 42,66 21,54 21,30"/>
+    <line x1="42" y1="18" x2="42" y2="8"/>
+    <line x1="63" y1="30" x2="72" y2="25"/>
+    <line x1="63" y1="54" x2="72" y2="59"/>
+    <line x1="42" y1="66" x2="42" y2="76"/>
+    <line x1="21" y1="54" x2="12" y2="59"/>
+    <line x1="21" y1="30" x2="12" y2="25"/>
+  </g>
+</svg>
