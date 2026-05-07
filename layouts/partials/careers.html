@@ -1,47 +1,56 @@
 <section class="careers-section">
 
-  <div class="careers-hero">
-    <div class="careers-title">
+  <div class="careers-row careers-hero">
+    <div class="careers-row-label">
       <h1>Careers</h1>
     </div>
-    <div class="careers-intro">
-      <p>We're always looking for passionate, innovative people to join our journey. If you love solving real-world challenges and building impactful cloud solutions — we'd love to meet you.</p>
+    <div class="careers-row-content">
+      <p>We're a focused team of cloud engineers and DevOps specialists working with companies across the region. We care about craft, move quickly, and take pride in the work we ship. If that sounds like you — we'd like to meet you.</p>
     </div>
   </div>
 
-  <div class="career-benefits">
-    <div class="career-benefits-left">
-      <h2>Why work with us</h2>
+  <div class="careers-row careers-benefits">
+    <div class="careers-row-label">
+      <h2>Why work<br>with us</h2>
     </div>
-    <div class="career-benefits-right">
-      <ul>
-        <li>Work on cutting-edge cloud &amp; automation technologies</li>
-        <li>Remote-first &amp; flexible working culture</li>
-        <li>Freedom to innovate and take ownership</li>
-        <li>Learning budget &amp; mentorship from industry experts</li>
-        <li>Inclusive, supportive &amp; growth-focused environment</li>
+    <div class="careers-row-content">
+      <ul class="benefits-list">
+        <li>Work directly on complex, real-world cloud infrastructure — no ticket-chasing</li>
+        <li>Remote-first with flexible hours and no micromanagement</li>
+        <li>Full ownership of your work — you architect, build, and ship</li>
+        <li>Learning budget, supported certifications, and time to grow</li>
+        <li>Small senior team where good work is visible and rewarded</li>
       </ul>
     </div>
   </div>
 
-  <div class="job-openings">
-    <h2>Open Positions</h2>
-    {{ if .Site.Data.jobs }}
-      {{ range .Site.Data.jobs }}
-      <div class="job-card">
-        <h3>{{ .title }}</h3>
-        <p><strong>Location:</strong> {{ .location }}</p>
-        <p><strong>Type:</strong> {{ .type }}</p>
-        <p>{{ .description }}</p>
-        <a href="mailto:careers@techtious.com?subject=Application for {{ .title }}" class="apply-btn">Apply Now →</a>
-      </div>
+  <div class="careers-row careers-openings">
+    <div class="careers-row-label">
+      <h2>Open<br>Positions</h2>
+    </div>
+    <div class="careers-row-content careers-row-content--top">
+      {{ if .Site.Data.jobs }}
+        {{ range .Site.Data.jobs }}
+        <a href="mailto:careers@techtious.com?subject=Application for {{ .title }}" class="job-row">
+          <div class="job-row-main">
+            <span class="job-title">{{ .title }}</span>
+            <div class="job-tags">
+              <span class="job-tag">{{ .location }}</span>
+              <span class="job-tag">{{ .type }}</span>
+            </div>
+          </div>
+          <p class="job-desc">{{ .description }}</p>
+          <span class="job-arrow">→</span>
+        </a>
+        {{ end }}
+      {{ else }}
+        <div class="no-jobs">
+          <p class="no-jobs-heading">Not actively hiring right now.</p>
+          <p class="no-jobs-body">The right person is always welcome though. If you're a cloud engineer, SRE, or DevOps specialist looking for meaningful work, send us a note and we'll keep it in mind.</p>
+          <a href="mailto:careers@techtious.com" class="apply-btn">Get in touch →</a>
+        </div>
       {{ end }}
-    {{ else }}
-      <div class="no-jobs">
-        <p>No active openings right now — but we're always happy to connect with talented people.</p>
-        <a href="mailto:careers@techtious.com" class="apply-btn">Send us your CV →</a>
-      </div>
-    {{ end }}
+    </div>
   </div>
 
 </section>

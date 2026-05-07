@@ -17,10 +17,10 @@
   {{ $optix_ai := resources.Get "css/optix-ai.css" | minify | fingerprint }}
 
   <link rel="stylesheet" href="{{ $navbar.RelPermalink }}">
-  <link rel="stylesheet" href="{{ $style.Permalink }}">
-  <link rel="stylesheet" href="{{ $footer.Permalink }}">
-  <link rel="stylesheet" href="{{ $services.Permalink }}">
-  <link rel="stylesheet" href="{{ $careers.Permalink }}">
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  <link rel="stylesheet" href="{{ $footer.RelPermalink }}">
+  <link rel="stylesheet" href="{{ $services.RelPermalink }}">
+  <link rel="stylesheet" href="{{ $careers.RelPermalink }}">
   <link rel="stylesheet" href="{{ $engagement_model.RelPermalink }}">
   <link rel="stylesheet" href="{{ $optix_ai.RelPermalink }}">
   <script defer src="https://cloud.umami.is/script.js" data-website-id="9a9152d5-622e-4956-a0ae-99a470879ec4"></script>
