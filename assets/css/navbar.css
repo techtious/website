@@ -190,7 +190,7 @@
     background: #f9f9f9;
   }
 
-  /* Chevron visible and rotates on open */
+  /* Chevron — controlled only by .open class on mobile, not hover */
   .chevron {
     display: inline-block;
     margin-left: 0.5rem;
@@ -199,11 +199,19 @@
     pointer-events: none;
   }
 
+  .topMenuItem:hover .chevron {
+    transform: none;
+  }
+
   .topMenuItem.open > a .chevron {
     transform: rotate(180deg);
   }
 
-  /* Accordion submenus */
+  /* Accordion submenus — override desktop hover rule */
+  .top-nav .topMenu li:hover .subMenu {
+    display: none;
+  }
+
   .subMenu {
     position: static;
     display: none;
@@ -216,7 +224,7 @@
     white-space: normal;
   }
 
-  .subMenu.active {
+  .top-nav .topMenu li .subMenu.active {
     display: block;
   }
 
