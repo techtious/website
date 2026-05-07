@@ -158,8 +158,8 @@
 
 /* ── CTA (dark accent panel) ── */
 .svc-cta {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
+  width: calc(100% + 4rem);
+  margin-left: -2rem;
   background: #0d0d0d;
   padding: 5rem 2rem;
   display: flex;
@@ -216,7 +216,7 @@
 /* ── Mobile ── */
 @media (max-width: 767px) {
   .service-section {
-    padding: 0 1rem 1.5rem;
+    padding: 0 1rem 0;
   }
 
   .svc-row {
@@ -252,8 +252,8 @@
   }
 
   .svc-cta {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
+    width: calc(100% + 2rem);
+    margin-left: -1rem;
     padding: 3.5rem 1.5rem;
   }
 
