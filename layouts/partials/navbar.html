@@ -1,55 +1,53 @@
 <nav class="top-nav">
-   <div class="container">
-      <button id="backbutton" class="back-btn" onclick="goBackToMainMenu()">
-         {{ with resources.Get "icons/back.svg" }}
-         <span class="icon-back">{{ .Content | safeHTML }}</span>
-         {{ end }}
-      </button>
-      <div class="logo">
-         <a href="{{ "/" | relURL }}">
-         <img src="{{ "images/Logo.svg" | relURL }}" alt="Techtious">
-         </a>
-      </div>
-      <button id="hamburger" class="hamburger" onclick="toggleMenu()">
+  <div id="navOverlay" class="nav-overlay" onclick="toggleMenu()"></div>
+  <div class="container">
+    <div class="logo">
+      <a href="{{ "/" | relURL }}">
+        <img src="{{ "images/Logo.svg" | relURL }}" alt="Techtious">
+      </a>
+    </div>
+    <button id="hamburger" class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
       {{ with resources.Get "icons/hamburger.svg" }}
       <span class="icon-hamburger">{{ .Content | safeHTML }}</span>
       {{ end }}
       {{ with resources.Get "icons/close.svg" }}
       <span class="icon-close">{{ .Content | safeHTML }}</span>
       {{ end }}
-      </button>
-      <ul id="navLinks" class="topMenu">
-         <li class="topMenuItem">
-            <a href="#" onclick="openSubmenu(event, 'servicesMenu')">
-            Services
-               {{ with resources.Get "icons/chevron-down.svg" }}
-                <span class="chevron">{{ .Content | safeHTML }}</span>
-                {{ end }}
-            </a>
-            <ul id="servicesMenu" class="subMenu">
-               <li><a href="/services/cloud-engineering">Cloud Engineering</a></li>
-               <li><a href="/services/platform-engineering">Platform Engineering</a></li>
-               <li><a href="/services/migration-and-modernization">Migration & Modernization</a></li>
-               <li><a href="/services/observability-and-sre">Observability & SRE</a></li>
-            </ul>
-         </li>
-         <li class="topMenuItem">
-            <a href="#" onclick="openSubmenu(event, 'solutionsMenu')">
-               Solutions
-               {{ with resources.Get "icons/chevron-down.svg" }}
-                <span class="chevron">{{ .Content | safeHTML }}</span>
-                {{ end }}
-            </a>
-            <ul id="solutionsMenu" class="subMenu">
-               <li><a href="/solutions/optix-ai">Optix AI: FinOps Agent</a></li>
-            </ul>
-         </li>
-         <li><a href="/engagement-model">How we Work</a></li>
-         <li class="topMenuItem"><a href="https://blog.techtious.com">Blogs</a></li>
-         <li><a href="/careers">Careers</a></li>
-         <li><a href="#" class="cta-button" data-cal-link="techtious/30min"
-    data-cal-namespace="30min"
-    data-cal-config='{"layout":"month_view"}'>Connect</a></li>
-      </ul>
-   </div>
+    </button>
+    <ul id="navLinks" class="topMenu">
+      <li class="topMenuItem">
+        <a href="#" onclick="toggleSubmenu(event, 'servicesMenu')">
+          Services
+          {{ with resources.Get "icons/chevron-down.svg" }}
+          <span class="chevron">{{ .Content | safeHTML }}</span>
+          {{ end }}
+        </a>
+        <ul id="servicesMenu" class="subMenu">
+          <li><a href="/services/cloud-engineering">Cloud Engineering</a></li>
+          <li><a href="/services/platform-engineering">Platform Engineering</a></li>
+          <li><a href="/services/migration-and-modernization">Migration & Modernization</a></li>
+          <li><a href="/services/observability-and-sre">Observability & SRE</a></li>
+        </ul>
+      </li>
+      <li class="topMenuItem">
+        <a href="#" onclick="toggleSubmenu(event, 'solutionsMenu')">
+          Solutions
+          {{ with resources.Get "icons/chevron-down.svg" }}
+          <span class="chevron">{{ .Content | safeHTML }}</span>
+          {{ end }}
+        </a>
+        <ul id="solutionsMenu" class="subMenu">
+          <li><a href="/solutions/optix-ai">Optix AI: FinOps Agent</a></li>
+        </ul>
+      </li>
+      <li><a href="/engagement-model">How we Work</a></li>
+      <li><a href="https://blog.techtious.com">Blogs</a></li>
+      <li><a href="/careers">Careers</a></li>
+      <li class="nav-cta-item">
+        <a href="#" class="cta-button" data-cal-link="techtious/30min"
+          data-cal-namespace="30min"
+          data-cal-config='{"layout":"month_view"}'>Connect</a>
+      </li>
+    </ul>
+  </div>
 </nav>
