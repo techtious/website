@@ -1,123 +1,235 @@
 .service-section {
-  padding: 2rem;
+  padding: 0 2rem 2rem;
 }
 
-.service-container {
-  display: flex;
+/* ── Scroll animation ── */
+.svc-row {
+  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+}
+
+.svc-row.svc-hidden {
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+/* ── Shared row layout ── */
+.svc-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   gap: 2rem;
-  padding: 3rem 1rem;
+  padding: 2.5rem 0;
+  border-bottom: 2px solid #e8e8e8;
 }
 
-.service-container .service-name {
-  flex: 1;
-  padding: 60px 20px;
-  background-color: white;
-  color: black;
-  border-right: 2px solid #ccc;
-  font-size: 44px;
+.svc-row:last-of-type {
+  border-bottom: none;
+}
+
+.svc-label {
+  padding: 20px;
+  border-right: 2px solid #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svc-label h1 {
   font-family: sans-serif;
-  font-weight: 500;
-}
-
-.service-name p {
-  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: #111;
   margin: 0;
+  text-align: center;
+  line-height: 1.2;
 }
 
-.service-content {
-  flex: 2;
-  min-width: 300px;
-  color: black;
+.svc-label h2 {
+  font-family: sans-serif;
+  font-size: 1.75rem;
   font-weight: 500;
-  font-family: sans-serif;
-  font-size: 22px;
-}
-
-.intro {
-  font-size: 1.125rem;
-  font-family: sans-serif;
-  line-height: 1.5;
-}
-
-.key-benefits h3,
-.process h3 {
-  font-family: sans-serif;
   color: #393939;
-  font-weight: 500;
-  font-size: 33px;
+  margin: 0;
+  text-align: center;
+  line-height: 1.3;
 }
 
-.key-benefits ul li,
-.process ul li {
+.svc-body {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Intro ── */
+.svc-intro {
   font-family: sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #333;
+  margin: 0;
   font-weight: 400;
-  font-size: 1.125rem;
-  margin-bottom: 15px;
 }
 
-.service-description {
+/* ── Benefit cards ── */
+.svc-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+}
+
+.svc-card {
+  padding: 1.25rem 1.4rem;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.svc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.svc-card h3 {
   font-family: sans-serif;
-  font-size: 1.125rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 0.4rem 0;
+}
+
+.svc-card p {
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.6;
   font-weight: 400;
-  line-height: 1.7;
-  color: black;
-  padding: 0 1rem 2rem;
 }
 
-.service-description p {
-  margin: 0 0 1rem 0;
+/* ── Numbered steps ── */
+.svc-steps {
+  width: 100%;
 }
 
-.service-description p:last-child {
-  margin-bottom: 0;
+.svc-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.1rem 0.5rem;
+  border-bottom: 1px solid #f0f0f0;
+  border-radius: 4px;
+  transition: background 0.2s;
 }
 
+.svc-step:hover {
+  background: #f9f9f9;
+}
+
+.svc-step:last-child {
+  border-bottom: none;
+}
+
+.svc-step-num {
+  font-family: sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #bbb;
+  letter-spacing: 0.06em;
+  min-width: 1.75rem;
+  padding-top: 0.2rem;
+}
+
+.svc-step-content h3 {
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 0.3rem 0;
+}
+
+.svc-step-content p {
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* ── CTA ── */
+.svc-cta {
+  padding: 2.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes svcCtaPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.15); }
+  50%       { box-shadow: 0 0 0 8px rgba(0, 0, 0, 0); }
+}
+
+.svc-cta a {
+  display: inline-block;
+  padding: 1rem 2.25rem;
+  background-color: #111;
+  color: #fff;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s;
+  animation: svcCtaPulse 2.5s ease-in-out infinite;
+}
+
+.svc-cta a:hover {
+  background-color: #333;
+  transform: scale(1.03);
+  animation: none;
+}
+
+/* ── Mobile ── */
 @media (max-width: 767px) {
-  .service-container {
-    flex-direction: column;
-    padding: 1.5rem 1rem;
-    gap: 1.5rem;
+  .service-section {
+    padding: 0 1rem 1.5rem;
   }
 
-  .service-container .service-name {
-    padding: 30px 10px;
-    font-size: 28px;
+  .svc-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 1.5rem 0;
+  }
+
+  .svc-label {
     border-right: none;
-    border-bottom: 2px solid #ccc;
-    text-align: center;
+    border-bottom: 2px solid #e8e8e8;
+    padding: 12px 4px;
+    justify-content: flex-start;
   }
 
-  .service-name p {
-    text-align: center;
-  }
-
-  .service-content {
-    flex: unset;
-    min-width: unset;
-    font-size: 18px;
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 2rem;
-  }
-
-  .intro {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-
-  .key-benefits h3,
-  .process h3 {
-    font-size: 24px;
+  .svc-label h1 {
+    font-size: 1.8rem;
     text-align: left;
   }
 
-  .key-benefits ul li,
-  .process ul li {
-    font-size: 1rem;
-    margin-bottom: 10px;
+  .svc-label h2 {
+    font-size: 1.2rem;
+    text-align: left;
   }
 
-  .service-description {
-    font-size: 1rem;
-    padding: 0 0.5rem 1.5rem;
+  .svc-body {
+    padding: 8px 0;
+    align-items: flex-start;
+  }
+
+  .svc-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .svc-cta {
+    padding: 2rem 0;
+    justify-content: center;
   }
 }
