@@ -4,12 +4,16 @@
   padding: 3rem max(1rem, 5%) 1.5rem;
   font-family: sans-serif;
   border-top: 2px solid #00ADB5;
-  width: 100%;
+  width: 100vw;
+  left: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
+  position: relative;
 }
 
 .footer-container {
-  max-width: 1200px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -17,6 +21,7 @@
   justify-content: space-between;
   padding-bottom: 2.5rem;
   border-bottom: 1px solid #393E46;
+  box-sizing: border-box;
 }
 
 .footer-column h2 {
@@ -82,11 +87,13 @@
 }
 
 .footer-bottom {
-  max-width: 1200px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   padding-top: 1.25rem;
   font-size: 0.8rem;
   color: #393E46;
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {

@@ -60,6 +60,8 @@ ul, ol {
     position: relative;
     overflow: hidden;
     background-color: #222831;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .hero-section::after {
