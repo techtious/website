@@ -10,7 +10,7 @@
   display: flex;
   border-bottom: 2px solid #00ADB5;
   box-sizing: border-box;
-  overflow-x: hidden;
+  overflow: visible;
 }
 
 .top-nav .container {
@@ -22,6 +22,7 @@
   max-width: 100%;
   padding: 0 max(1rem, 5%);
   box-sizing: border-box;
+  overflow: visible;
 }
 
 .top-nav .logo {
@@ -38,8 +39,9 @@
   position: relative;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-start;
   margin: 0 2rem;
+  overflow: visible;
 }
 
 .top-nav .topMenu li {
