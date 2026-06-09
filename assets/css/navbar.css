@@ -262,6 +262,28 @@
     display: block;
   }
 
+  /* Blur page content when submenu is open on mobile */
+  .topMenuItem.open ~ * {
+    filter: blur(3px);
+    pointer-events: none;
+  }
+
+  body.submenu-open {
+    overflow: hidden;
+  }
+
+  body.submenu-open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    pointer-events: auto;
+  }
+
   .subMenu li a {
     display: block;
     padding: 0.8rem 1.5rem 0.8rem 2.25rem;

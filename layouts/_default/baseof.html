@@ -67,8 +67,23 @@
       if (!isOpen) {
         subMenu.classList.add("active");
         parentLi.classList.add("open");
+        document.body.classList.add("submenu-open");
+      } else {
+        document.body.classList.remove("submenu-open");
       }
     }
+
+    // Close submenu when clicking overlay
+    document.addEventListener("click", function(event) {
+      var hamburger = document.getElementById("hamburger");
+      if (window.getComputedStyle(hamburger).display !== "none") {
+        if (!event.target.closest(".topMenu") && !event.target.closest(".hamburger")) {
+          document.querySelectorAll(".subMenu").forEach(function(m) { m.classList.remove("active"); });
+          document.querySelectorAll(".topMenuItem").forEach(function(m) { m.classList.remove("open"); });
+          document.body.classList.remove("submenu-open");
+        }
+      }
+    });
 
 
     // Scroll-triggered fade-up for service page rows and cards
