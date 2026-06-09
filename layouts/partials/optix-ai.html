@@ -3,61 +3,98 @@
   <!-- Hero row: product identity + intro -->
   <div class="solution-hero-row">
     <div class="solution-identity">
-      <span class="solution-badge">FinOps · Open Source</span>
+      <span class="solution-badge">AI-Native FinOps · Open Source</span>
       <h1 class="solution-name">Optix AI</h1>
-      <p class="solution-sub">The open-source FinOps agent that makes your cloud spend smarter.</p>
+      <p class="solution-sub">Transform cloud cost analysis from manual drudgery into intelligent, actionable insights in seconds.</p>
     </div>
     <div class="solution-intro">
       <p>
-        Optix AI connects directly to AWS Cost Explorer and uses large language models to deliver actionable cloud cost optimization insights — automatically. No dashboards to configure, no manual analysis. Just run <code>optix</code> and get a comprehensive report in seconds.
+        Optix AI is Techtious's flagship FinOps product: an open-source, AI-native agent that connects to your AWS account and delivers ranked, actionable cost optimization recommendations—automatically. No complex dashboards. No manual spreadsheet analysis. Just one command: <code>optix</code>
       </p>
       <p>
-        Built for engineers and FinOps practitioners who want real recommendations, not just charts. Powered by Anthropic Claude or Google Gemini, Optix AI surfaces exactly what to act on and why.
+        Unlike traditional FinOps tools that show you charts, Optix uses large language models (Claude or Gemini, your choice) to reason about your costs, spot inefficiencies, and tell you exactly what to optimize and why. Built for engineers, SREs, and FinOps practitioners who want real answers, not noise.
+      </p>
+      <p>
+        <strong>Privacy first.</strong> Your AWS credentials stay on your machine. Your cost data is never stored on our servers. You control everything.
       </p>
       <div class="solution-actions">
-        <a href="https://github.com/techtious/optix-ai" class="btn-solution-github" target="_blank" rel="noopener">View on GitHub ↗</a>
+        <a href="https://github.com/techtious/optix-ai" class="btn-solution-github" target="_blank" rel="noopener">Star on GitHub ↗</a>
         <a href="#"
            class="cta-button"
            data-cal-link="techtious/30min"
            data-cal-namespace="30min"
-           data-cal-config='{"layout":"month_view"}'>Book a Demo</a>
+           data-cal-config='{"layout":"month_view"}'>Schedule a Demo</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vision section -->
+  <div class="solution-vision">
+    <div class="vision-content">
+      <h2>The Roadmap: From Tool to Platform</h2>
+      <p>Optix AI is just the beginning. Over the next 18 months, we're expanding from a clever open-source CLI into a complete FinOps platform for enterprises and self-hosted organizations alike.</p>
+      <div class="vision-phases">
+        <div class="phase">
+          <h4>Phase 1 (Q2-Q3 2025)</h4>
+          <ul>
+            <li>Multi-cloud support (GCP, Azure)</li>
+            <li>Real-time cost alerts (Slack, PagerDuty)</li>
+            <li>12-month historical analysis & cost forecasting</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <h4>Phase 2 (Q4 2025-Q1 2026)</h4>
+          <ul>
+            <li>Web dashboard for cost exploration</li>
+            <li>Cost chargeback & tagging recommendations</li>
+            <li>Kubernetes & container optimization</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <h4>Phase 3 (Q2-Q3 2026)</h4>
+          <ul>
+            <li>Enterprise SaaS tier with governance controls</li>
+            <li>Industry benchmarking & competitive analytics</li>
+            <li>Advanced ML for root-cause analysis</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Capabilities grid -->
   <div class="solution-capabilities">
-    <h2>What Optix AI analyzes</h2>
+    <h2>Core Capabilities (v1.0)</h2>
     <div class="capabilities-grid">
 
       <div class="capability-card">
         <h3>Cost Breakdown</h3>
-        <p>Identifies top-spending AWS services over the last 30 days so you know exactly where your budget is going.</p>
+        <p>Identifies top-spending AWS services over the last 30 days so you know exactly where your budget is going. Service-by-service clarity in seconds.</p>
       </div>
 
       <div class="capability-card">
         <h3>Trend Analysis</h3>
-        <p>Compares month-over-month spending across three months to surface cost drift before it compounds.</p>
+        <p>Compares month-over-month spending across three months to surface cost drift before it spirals. Spot trends that point to waste.</p>
       </div>
 
       <div class="capability-card">
         <h3>EC2 Rightsizing</h3>
-        <p>Detects oversized instances and calculates estimated monthly savings per recommendation.</p>
+        <p>Detects oversized instances and calculates exact monthly savings per recommendation. Easy wins your team can implement immediately.</p>
       </div>
 
       <div class="capability-card">
-        <h3>Savings Plans</h3>
-        <p>Recommends committed-use discount opportunities based on your actual usage patterns.</p>
+        <h3>Savings Plans Intelligence</h3>
+        <p>Recommends committed-use discount opportunities aligned with your actual usage patterns. No guessing—AI-backed precision.</p>
       </div>
 
       <div class="capability-card">
         <h3>Anomaly Detection</h3>
-        <p>Flags unexpected cost spikes using configurable thresholds before they turn into budget overruns.</p>
+        <p>Flags unexpected cost spikes in real-time using intelligent thresholds. Catch budget overruns before finance gets the surprise.</p>
       </div>
 
       <div class="capability-card">
         <h3>Multi-Model Support</h3>
-        <p>Works with Anthropic Claude (default) or Google Gemini. Bring your own API key, keep your data private.</p>
+        <p>Works with Anthropic Claude or Google Gemini. Bring your own API key, zero data residency concerns, zero vendor lock-in.</p>
       </div>
 
     </div>
@@ -66,15 +103,15 @@
   <!-- Report output section -->
   <div class="solution-report">
     <div class="solution-report-left">
-      <h2>What the report includes</h2>
+      <h2>Every Report Includes</h2>
     </div>
     <div class="solution-report-right">
       <ul>
-        <li><strong>Executive Summary</strong> — total spend, top findings, and recommended next steps at a glance.</li>
-        <li><strong>Service Cost Landscape</strong> — line-by-line breakdown of every AWS service with trend indicators.</li>
-        <li><strong>Ranked Optimizations</strong> — prioritized list of actions with projected savings for each.</li>
-        <li><strong>Anomaly Log</strong> — flagged spikes with context on when they occurred and by how much.</li>
-        <li><strong>Action Plan</strong> — numbered, implementable steps your team can act on immediately.</li>
+        <li><strong>Executive Summary</strong> — total spend, key findings, and top priorities. Perfect for sharing with your finance team.</li>
+        <li><strong>Service Cost Landscape</strong> — complete AWS service breakdown with 3-month trends. See exactly where money flows.</li>
+        <li><strong>AI-Ranked Recommendations</strong> — prioritized by estimated impact. Implementation difficulty flagged. Savings calculated.</li>
+        <li><strong>Anomaly Alerts</strong> — unexpected spikes flagged with context. When it happened. What triggered it. What to investigate.</li>
+        <li><strong>Action Plan</strong> — step-by-step implementation guide. Your team can start optimizing in the next sprint.</li>
       </ul>
     </div>
   </div>
@@ -82,9 +119,10 @@
   <!-- Get started -->
   <div class="solution-getstarted">
     <div class="solution-getstarted-left">
-      <h2>Get started in minutes</h2>
-      <p>Open-source under the Apache 2.0 license. Requires Python 3.11+ and AWS credentials with Cost Explorer permissions.</p>
-      <a href="https://github.com/techtious/optix-ai" class="btn-solution-github btn-solution-github-lg" target="_blank" rel="noopener">View on GitHub →</a>
+      <h2>Start optimizing in 5 minutes</h2>
+      <p><strong>Open-source.</strong> Apache 2.0 license. <strong>Self-hosted.</strong> Your data, your infrastructure. <strong>Free forever.</strong></p>
+      <p>Requires Python 3.11+, AWS credentials (with Cost Explorer read access), and an API key for Claude or Gemini. No account signup. No SaaS waiting lists.</p>
+      <a href="https://github.com/techtious/optix-ai" class="btn-solution-github btn-solution-github-lg" target="_blank" rel="noopener">Clone on GitHub →</a>
     </div>
     <div class="solution-terminal">
       <div class="terminal-bar">
@@ -98,6 +136,28 @@ ANTHROPIC_API_KEY=sk-...
 AWS_PROFILE=your-profile
 
 optix</code></pre>
+    </div>
+  </div>
+
+  <!-- Community & Support -->
+  <div class="solution-community">
+    <h2>Built by engineers, for engineers</h2>
+    <div class="community-grid">
+      <div class="community-card">
+        <h3>Join the Community</h3>
+        <p>Discuss ideas, share cost optimization wins, and get help from fellow practitioners in our Discord community.</p>
+        <a href="https://discord.gg/techtious" class="community-link" target="_blank" rel="noopener">Join Discord ↗</a>
+      </div>
+      <div class="community-card">
+        <h3>Get Hands-On Help</h3>
+        <p>Schedule a 30-min working session with the Techtious team. We'll assess your cloud costs and build a custom optimization roadmap.</p>
+        <a href="#" class="community-link" data-cal-link="techtious/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>Book a Session ↗</a>
+      </div>
+      <div class="community-card">
+        <h3>Contribute & Extend</h3>
+        <p>Open-source means you can fork, customize, and extend Optix to fit your exact needs. Contributions welcome.</p>
+        <a href="https://github.com/techtious/optix-ai/issues" class="community-link" target="_blank" rel="noopener">View Issues ↗</a>
+      </div>
     </div>
   </div>
 
