@@ -15,7 +15,10 @@
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  width: 95%;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 max(1rem, 5%);
+  box-sizing: border-box;
 }
 
 .top-nav .logo {
