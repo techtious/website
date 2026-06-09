@@ -2,9 +2,9 @@
 .top-nav {
   background-color: #EEEEEE;
   padding: 0.75rem 0;
-  position: sticky;
+  position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
   left: 0;
   z-index: 1000;
   display: flex;
