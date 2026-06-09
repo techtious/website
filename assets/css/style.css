@@ -14,8 +14,10 @@ body {
     font-weight: 300;
     width: 100%;
     overflow-x: hidden;
-    /* Fixed navbar height: ~3.5rem (0.75rem padding + 2rem logo + 0.75rem padding) */
-    scroll-padding-top: 3.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    scroll-margin-top: 5rem;
 }
 
 ul, ol {
@@ -56,8 +58,7 @@ ul, ol {
 }
 
 .hero-section {
-    height: calc(100vh - 3.5rem);
-    margin-top: 3.5rem;
+    height: 100vh;
     text-align: center;
     padding-bottom: 1.5rem;
     position: relative;
