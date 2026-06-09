@@ -26,6 +26,10 @@
   scroll-margin-top: 4rem;
 }
 
+.svc-row:first-of-type {
+  padding-top: 4rem;
+}
+
 .svc-row:last-of-type {
   border-bottom: none;
 }

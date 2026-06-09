@@ -13,7 +13,7 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 16px;
-  padding: 1rem 1.5rem;
+  padding: 4rem 1.5rem 1rem;
 }
 
 .hw-hero h2 {
