@@ -3,6 +3,7 @@
   background: #EEEEEE;
   width: 100%;
   box-sizing: border-box;
+  scroll-margin-top: 4rem;
 }
 
 /* ── Scroll animation ── */
@@ -22,6 +23,7 @@
   gap: 2rem;
   padding: 2.5rem 0;
   border-bottom: 2px solid #00ADB5;
+  scroll-margin-top: 4rem;
 }
 
 .svc-row:last-of-type {
