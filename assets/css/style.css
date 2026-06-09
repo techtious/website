@@ -1,7 +1,7 @@
 body {
     font-family: sans-serif;
     margin: 0;
-    color: black;
+    color: #222831;
     font-weight: 300;
 }
 
@@ -48,7 +48,7 @@ ul, ol {
     padding-bottom: 1.5rem;
     position: relative;
     overflow: hidden;
-    background-color: #0d0d0d;
+    background-color: #222831;
 }
 
 .hero-section::after {
@@ -58,7 +58,7 @@ ul, ol {
   left: 0;
   right: 0;
   height: 100px;
-  background: linear-gradient(to bottom, transparent, #ffffff);
+  background: linear-gradient(to bottom, transparent, #EEEEEE);
   z-index: 2;
   pointer-events: none;
 }
@@ -130,15 +130,15 @@ ul, ol {
     grid-column: 1 / -1;
     text-align: center;
     font-size: 1.25rem;
-    color: #94a3b8;
+    color: #EEEEEE;
     margin-bottom: 2rem;
     animation: heroFadeUp 0.8s ease-out 0.25s both;
 }
 .hero-section a.cta-button {
   display: inline-block;
   padding: 1rem 2rem;
-  background-color: #ffffff;
-  color: #0d0d0d;
+  background-color: #00ADB5;
+  color: #222831;
   font-weight: 700;
   text-transform: uppercase;
   border-radius: 0.25rem;
@@ -147,8 +147,8 @@ ul, ol {
 }
 .hero-text a.cta-button:hover,
 .hero-section a.cta-button:hover {
-  background-color: #6366f1;
-  color: #fff;
+  background-color: #222831;
+  color: #00ADB5;
 }
 .hero-section img {
   max-width: 100%;

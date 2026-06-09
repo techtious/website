@@ -3,7 +3,7 @@
 .how-we-work {
   display: grid;
   padding: 36px 20px;
-  background: #ffffff;
+  background: #EEEEEE;
 }
 
 .hw-hero {
@@ -20,7 +20,8 @@
   text-align: center;
   font-family: sans-serif;
   font-size: 44px;
-  font-weight: 500;
+  font-weight: 600;
+  color: #222831;
 }
 
 .hw-hero .hw-subtitle {
@@ -29,6 +30,7 @@
   font-size: 1.2rem;
   line-height: 1.6;
   align-self: center;
+  color: #222831;
 }
 
 .hw-models {
@@ -42,36 +44,60 @@
 .hw-model-card {
   padding: 14px;
   border-radius: 10px;
-  background: #f8fafc;
-  border: 1px solid #eef3fb;
+  background: #EEEEEE;
+  border: 2px solid #00ADB5;
+  transition: all 0.3s;
+}
+
+.hw-model-card:hover {
+  background: #393E46;
+  box-shadow: 0 4px 12px rgba(0, 173, 181, 0.2);
 }
 
 .hw-model-card h3 {
   margin: 0 0 6px;
   font-size: 1rem;
   font-family: sans-serif;
+  color: #222831;
+  transition: color 0.3s;
+}
+
+.hw-model-card:hover h3 {
+  color: #00ADB5;
 }
 
 .muted {
   font-family: sans-serif;
   font-size: 0.95rem;
+  color: #393E46;
+  transition: color 0.3s;
+}
+
+.hw-model-card:hover .muted {
+  color: #EEEEEE;
 }
 
 .small {
   font-family: sans-serif;
   font-size: 0.9rem;
+  color: #393E46;
+  transition: color 0.3s;
+}
+
+.hw-model-card:hover .small {
+  color: #EEEEEE;
 }
 
 .hw-cta {
   text-align: center;
   padding: 2rem 1rem 1rem;
-  border-top: 1px solid #eef3fb;
+  border-top: 2px solid #00ADB5;
 }
 
 .hw-cta p {
   font-family: sans-serif;
   font-size: 1.1rem;
-  color: #555;
+  color: #222831;
   margin-bottom: 1rem;
 }
 

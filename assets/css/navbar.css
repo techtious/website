@@ -1,12 +1,13 @@
 /* ── Desktop ── */
 .top-nav {
-  background-color: #ffffff;
+  background-color: #EEEEEE;
   padding: 1.5rem 0;
   position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000;
   display: flex;
+  border-bottom: 2px solid #00ADB5;
 }
 
 .top-nav .container {
@@ -42,23 +43,30 @@
 .top-nav .topMenu li a {
   text-decoration: none;
   font-weight: 500;
-  color: black;
+  color: #222831;
   padding-left: 1rem;
   margin: 0 1rem 0 0;
   padding-bottom: 1rem;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
+  transition: color 0.2s;
+}
+
+.top-nav .topMenu li a:hover {
+  color: #00ADB5;
 }
 
 .chevron {
   display: inline-block;
   margin: 0 0 0 0.5rem;
   transition: transform 0.3s ease;
+  color: #393E46;
 }
 
 .topMenuItem:hover .chevron {
   transform: rotate(180deg);
+  color: #00ADB5;
 }
 
 .subMenu {
@@ -66,19 +74,27 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: #fff;
+  background: #EEEEEE;
   padding: 0.5rem 0;
   list-style: none;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   white-space: nowrap;
   border-radius: 4px;
+  border: 1px solid #00ADB5;
 }
 
 .subMenu li a {
   padding: 0.6rem 1.25rem;
   display: block;
   font-size: 0.9rem;
+  color: #222831;
+  transition: all 0.2s;
+}
+
+.subMenu li a:hover {
+  background: #393E46;
+  color: #00ADB5;
 }
 
 .top-nav .topMenu li:hover .subMenu {
@@ -147,7 +163,7 @@
     right: 0;
     width: min(300px, 82vw);
     height: 100vh;
-    background: #ffffff;
+    background: #EEEEEE;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
@@ -178,16 +194,18 @@
     padding: 1rem 1.5rem;
     font-size: 1rem;
     font-weight: 500;
-    color: #111;
-    border-bottom: 1px solid #f0f0f0;
+    color: #222831;
+    border-bottom: 1px solid #00ADB5;
     text-decoration: none;
     width: 100%;
     box-sizing: border-box;
     margin: 0;
+    transition: all 0.2s;
   }
 
   .top-nav .topMenu > li > a:hover {
-    background: #f9f9f9;
+    background: #393E46;
+    color: #00ADB5;
   }
 
   /* Chevron — controlled only by .open class on mobile, not hover */
@@ -219,7 +237,7 @@
     height: auto;
     box-shadow: none;
     border-radius: 0;
-    background: #f7f7f7;
+    background: #393E46;
     padding: 0.25rem 0;
     white-space: normal;
   }
@@ -233,9 +251,10 @@
     padding: 0.8rem 1.5rem 0.8rem 2.25rem;
     font-size: 0.92rem;
     font-weight: 400;
-    color: #444;
-    border-bottom: 1px solid #efefef;
+    color: #EEEEEE;
+    border-bottom: 1px solid #222831;
     margin: 0;
+    transition: all 0.2s;
   }
 
   .subMenu li:last-child a {
@@ -243,8 +262,8 @@
   }
 
   .subMenu li a:hover {
-    background: #efefef;
-    color: #111;
+    background: #222831;
+    color: #00ADB5;
   }
 
   /* CTA item */
@@ -256,8 +275,8 @@
   .nav-cta-item > a {
     display: inline-block !important;
     padding: 0.75rem 1.75rem !important;
-    background: #111 !important;
-    color: #fff !important;
+    background: #222831 !important;
+    color: #00ADB5 !important;
     border-radius: 0.25rem !important;
     font-weight: 700 !important;
     font-size: 0.9rem !important;
@@ -266,9 +285,11 @@
     border-bottom: none !important;
     width: auto !important;
     box-sizing: border-box !important;
+    transition: all 0.2s !important;
   }
 
   .nav-cta-item > a:hover {
-    background: #333 !important;
+    background: #00ADB5 !important;
+    color: #222831 !important;
   }
 }
