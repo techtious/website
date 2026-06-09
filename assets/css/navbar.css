@@ -21,28 +21,11 @@
 .top-nav .logo {
   display: flex;
   text-decoration: none;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.top-nav .logo a {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
 }
 
 .top-nav .logo img {
   height: 2.5rem;
   width: auto;
-}
-
-.top-nav .logo-text {
-  font-family: sans-serif;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #222831;
-  white-space: nowrap;
 }
 
 .top-nav .topMenu {
