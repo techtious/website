@@ -253,9 +253,10 @@
     box-shadow: none;
     border-radius: 0;
     background: #EEEEEE;
-    padding: 0.25rem 0;
+    padding: 0.5rem 0;
     white-space: normal;
     border-left: 4px solid #00ADB5;
+    border-top: 2px solid #00ADB5;
   }
 
   .top-nav .topMenu li .subMenu.active {
@@ -284,25 +285,51 @@
     pointer-events: auto;
   }
 
+  .subMenu li {
+    margin: 0;
+  }
+
   .subMenu li a {
     display: block;
-    padding: 0.8rem 1.5rem 0.8rem 2.25rem;
-    font-size: 0.92rem;
-    font-weight: 400;
+    padding: 1.25rem 1.5rem 1.25rem 2.25rem;
+    font-size: 1rem;
+    font-weight: 500;
     color: #222831;
-    border-bottom: 1px solid #00ADB5;
+    border-bottom: 1px solid rgba(0, 173, 181, 0.3);
     margin: 0;
-    transition: all 0.2s;
+    transition: all 0.3s;
     background: #EEEEEE;
+    line-height: 1.6;
+    position: relative;
+  }
+
+  .subMenu li:first-child a {
+    padding-top: 1.5rem;
   }
 
   .subMenu li:last-child a {
     border-bottom: none;
+    padding-bottom: 1.5rem;
   }
 
+  .subMenu li a:active,
   .subMenu li a:hover {
     background: #393E46;
     color: #00ADB5;
+    padding-left: 2.75rem;
+  }
+
+  .subMenu li a::before {
+    content: '→';
+    position: absolute;
+    left: 1rem;
+    color: #00ADB5;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .subMenu li a:hover::before {
+    opacity: 1;
   }
 
   /* CTA item */
