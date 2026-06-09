@@ -2,10 +2,11 @@
 /* Color Palette: #222831 (dark charcoal), #393E46 (dark gray), #00ADB5 (teal), #EEEEEE (off-white) */
 
 .solution-section {
-  padding: 2rem max(1rem, 5%);
+  padding: 3.5rem max(1rem, 5%) 2rem;
   background: #EEEEEE;
   width: 100%;
   box-sizing: border-box;
+  margin-top: 0;
 }
 
 /* ── Hero row ── */

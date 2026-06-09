@@ -1,8 +1,9 @@
 .service-section {
-  padding: 0 max(1rem, 5%);
+  padding: 3.5rem max(1rem, 5%) 0;
   background: #EEEEEE;
   width: 100%;
   box-sizing: border-box;
+  margin-top: 0;
 }
 
 /* ── Scroll animation ── */

@@ -1,8 +1,9 @@
 .careers-section {
-  padding: 2rem max(1rem, 5%);
+  padding: 3.5rem max(1rem, 5%) 2rem;
   background: #EEEEEE;
   width: 100%;
   box-sizing: border-box;
+  margin-top: 0;
 }
 
 /* ── Shared row layout ── */
