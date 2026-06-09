@@ -1,7 +1,7 @@
 /* ── Desktop ── */
 .top-nav {
   background-color: #EEEEEE;
-  padding: 1.5rem 0;
+  padding: 0.75rem 0;
   position: sticky;
   top: 0;
   width: 100vw;
@@ -30,7 +30,7 @@
 }
 
 .top-nav .logo img {
-  height: 2.5rem;
+  height: 2rem;
   width: auto;
 }
 
@@ -50,9 +50,10 @@
   text-decoration: none;
   font-weight: 500;
   color: #222831;
-  padding-left: 1rem;
-  margin: 0 1rem 0 0;
-  padding-bottom: 1rem;
+  padding-left: 0.75rem;
+  margin: 0 0.75rem 0 0;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
