@@ -21,11 +21,28 @@
 .top-nav .logo {
   display: flex;
   text-decoration: none;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.top-nav .logo a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
 }
 
 .top-nav .logo img {
   height: 2.5rem;
   width: auto;
+}
+
+.top-nav .logo-text {
+  font-family: sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #222831;
+  white-space: nowrap;
 }
 
 .top-nav .topMenu {
@@ -237,9 +254,10 @@
     height: auto;
     box-shadow: none;
     border-radius: 0;
-    background: #393E46;
+    background: #EEEEEE;
     padding: 0.25rem 0;
     white-space: normal;
+    border-left: 4px solid #00ADB5;
   }
 
   .top-nav .topMenu li .subMenu.active {
@@ -251,10 +269,11 @@
     padding: 0.8rem 1.5rem 0.8rem 2.25rem;
     font-size: 0.92rem;
     font-weight: 400;
-    color: #EEEEEE;
-    border-bottom: 1px solid #222831;
+    color: #222831;
+    border-bottom: 1px solid #00ADB5;
     margin: 0;
     transition: all 0.2s;
+    background: #EEEEEE;
   }
 
   .subMenu li:last-child a {
@@ -262,7 +281,7 @@
   }
 
   .subMenu li a:hover {
-    background: #222831;
+    background: #393E46;
     color: #00ADB5;
   }
 
