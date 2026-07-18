@@ -30,11 +30,11 @@ const SOLUTIONS = [
 ];
 
 const SERVICES = [
-  { name: 'Cloud Engineering', sub: 'AWS · GCP · Azure architecture' },
-  { name: 'Platform Engineering', sub: 'Kubernetes · IDP · developer portals' },
-  { name: 'Gen AI Solutions', sub: 'Agentic systems · LLM pipelines' },
-  { name: 'Observability & SRE', sub: 'Monitoring · reliability · SLOs' },
-  { name: 'Migration & Modernization', sub: 'Lift-shift · re-architecture' },
+  { name: 'Cloud Engineering', sub: 'AWS · GCP · Azure architecture', anchor: 'cloud-engineering' },
+  { name: 'Platform Engineering', sub: 'Kubernetes · IDP · developer portals', anchor: 'platform-engineering' },
+  { name: 'Gen AI Solutions', sub: 'Agentic systems · LLM pipelines', anchor: 'gen-ai-solutions' },
+  { name: 'Observability & SRE', sub: 'Monitoring · reliability · SLOs', anchor: 'observability-sre' },
+  { name: 'Migration & Modernization', sub: 'Lift-shift · re-architecture', anchor: 'migration-modernization' },
 ];
 
 const ServiceIcon = ({ name }: { name: string }) => {
@@ -53,6 +53,7 @@ export default function Nav() {
   const [mobileServices, setMobileServices] = useState(false);
 
   return (
+    <>
     <nav className="site-nav">
       <div className="nav-inner">
         {/* Logo */}
@@ -97,7 +98,7 @@ export default function Nav() {
             {servicesOpen && (
               <div style={{ position: 'absolute', top: 'calc(100% + 10px)', left: '50%', transform: 'translateX(-50%)', background: '#fff', border: '1px solid #E2EAF0', borderRadius: 12, padding: 8, boxShadow: '0 8px 28px rgba(11,30,48,.14)', minWidth: 280, zIndex: 300 }}>
                 {SERVICES.map(s => (
-                  <a key={s.name} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 14px', borderRadius: 8, textDecoration: 'none', cursor: 'pointer' }}>
+                  <a key={s.name} href={`${BASE}/services#${s.anchor}`} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 14px', borderRadius: 8, textDecoration: 'none', cursor: 'pointer' }}>
                     <div style={{ width: 32, height: 32, background: '#EEF6FB', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><ServiceIcon name={s.name}/></div>
                     <div>
                       <div style={{ fontSize: 13, fontWeight: 600, color: '#0B1E30' }}>{s.name}</div>
@@ -123,46 +124,47 @@ export default function Nav() {
           }
         </button>
       </div>
-
-      {/* Mobile panel */}
-      <div className={`nav-mobile-panel${mobileOpen ? ' open' : ''}`}>
-        <div className="nav-mobile-inner">
-          {/* Solutions */}
-          <button className="nav-mobile-link" onClick={() => setMobileSolutions(o => !o)}>
-            Solutions
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8AA0B0" strokeWidth="2" strokeLinecap="round" style={{ transform: mobileSolutions ? 'rotate(180deg)' : 'none', transition: 'transform .2s' }}><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          {mobileSolutions && (
-            <div className="nav-mobile-sub">
-              {SOLUTIONS.map(s => (
-                <a key={s.name} href={s.href} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '11px 16px', borderBottom: '1px solid #F0F4F8', textDecoration: 'none' }}>
-                  <div style={{ width: 26, height: 26, background: s.gradient, borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{s.icon}</div>
-                  <div>
-                    <div style={{ fontSize: 13.5, fontWeight: 600, color: '#0B1E30' }}>{s.name}</div>
-                    <div style={{ fontSize: 11.5, color: '#8AA0B0', fontWeight: 300 }}>{s.sub}</div>
-                  </div>
-                </a>
-              ))}
-            </div>
-          )}
-
-          {/* Services */}
-          <button className="nav-mobile-link" onClick={() => setMobileServices(o => !o)}>
-            Services
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8AA0B0" strokeWidth="2" strokeLinecap="round" style={{ transform: mobileServices ? 'rotate(180deg)' : 'none', transition: 'transform .2s' }}><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          {mobileServices && (
-            <div className="nav-mobile-sub">
-              {SERVICES.map(s => (
-                <a key={s.name} style={{ display: 'block', padding: '11px 16px', borderBottom: '1px solid #F0F4F8', fontSize: 13.5, fontWeight: 400, color: '#4A5F72', textDecoration: 'none' }}>{s.name}</a>
-              ))}
-            </div>
-          )}
-
-          <a href={`${BASE}/about`} className="nav-mobile-link" style={{ textDecoration: 'none' }}>About Us</a>
-          <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" className="nav-mobile-cta">Book a Call</a>
-        </div>
-      </div>
     </nav>
+
+    {/* Mobile panel — rendered OUTSIDE <nav> to avoid backdrop-filter containing-block bug */}
+    <div className={`nav-mobile-panel${mobileOpen ? ' open' : ''}`}>
+      <div className="nav-mobile-inner">
+        {/* Solutions */}
+        <button className="nav-mobile-link" onClick={() => setMobileSolutions(o => !o)}>
+          Solutions
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8AA0B0" strokeWidth="2" strokeLinecap="round" style={{ transform: mobileSolutions ? 'rotate(180deg)' : 'none', transition: 'transform .2s' }}><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        {mobileSolutions && (
+          <div className="nav-mobile-sub">
+            {SOLUTIONS.map(s => (
+              <a key={s.name} href={s.href} onClick={() => setMobileOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '11px 16px', borderBottom: '1px solid #F0F4F8', textDecoration: 'none' }}>
+                <div style={{ width: 26, height: 26, background: s.gradient, borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{s.icon}</div>
+                <div>
+                  <div style={{ fontSize: 13.5, fontWeight: 600, color: '#0B1E30' }}>{s.name}</div>
+                  <div style={{ fontSize: 11.5, color: '#8AA0B0', fontWeight: 300 }}>{s.sub}</div>
+                </div>
+              </a>
+            ))}
+          </div>
+        )}
+
+        {/* Services */}
+        <button className="nav-mobile-link" onClick={() => setMobileServices(o => !o)}>
+          Services
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8AA0B0" strokeWidth="2" strokeLinecap="round" style={{ transform: mobileServices ? 'rotate(180deg)' : 'none', transition: 'transform .2s' }}><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        {mobileServices && (
+          <div className="nav-mobile-sub">
+            {SERVICES.map(s => (
+              <a key={s.name} href={`${BASE}/services#${s.anchor}`} onClick={() => setMobileOpen(false)} style={{ display: 'block', padding: '11px 16px', borderBottom: '1px solid #F0F4F8', fontSize: 13.5, fontWeight: 400, color: '#4A5F72', textDecoration: 'none' }}>{s.name}</a>
+            ))}
+          </div>
+        )}
+
+        <a href={`${BASE}/about`} onClick={() => setMobileOpen(false)} className="nav-mobile-link" style={{ textDecoration: 'none' }}>About Us</a>
+        <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" onClick={() => setMobileOpen(false)} className="nav-mobile-cta">Book a Call</a>
+      </div>
+    </div>
+    </>
   );
 }

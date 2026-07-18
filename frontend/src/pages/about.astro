@@ -8,113 +8,186 @@ const B = import.meta.env.BASE_URL.replace(/\/$/, '');
   <Nav client:load />
 
   <!-- Hero -->
-  <section class="section" style="position:relative;overflow:hidden;background:#FAFAF8;">
-    <div class="dot-grid" style="position:absolute;inset:0;opacity:.35;pointer-events:none;"></div>
+  <section class="section" style="position:relative;overflow:hidden;background:#FAFAF8;padding-bottom:80px;">
+    <div class="dot-grid" style="position:absolute;inset:0;opacity:.38;pointer-events:none;"></div>
     <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#0891B2,#06B6D4 40%,transparent);"></div>
     <div class="wrap">
-      <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:24px;">
+      <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:28px;">
         <div style="width:20px;height:1px;background:#0891B2;"></div>
-        <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#0891B2;">About us</span>
+        <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#0891B2;">About Techtious</span>
       </div>
-      <div style="max-width:760px;">
-        <h1 class="h1-xl">
-          Built by engineers<br>who ran the clouds<br>we now <em style="font-style:italic;color:#0891B2;">optimise</em>
+      <div style="display:grid;grid-template-columns:1fr 480px;gap:96px;align-items:end;">
+        <h1 class="h1-xl" style="margin-bottom:0;">
+          We build products.<br>We ship what<br>we <em style="font-style:italic;color:#0891B2;">promise.</em>
         </h1>
-        <p style="font-size:18px;font-weight:300;line-height:1.8;color:#5A7080;max-width:600px;">Techtious Labs started with a simple frustration: cloud bills that kept climbing despite best efforts, and SRE teams that spent more time reacting than building. We set out to solve both — with agents that live inside your infrastructure and work continuously, not just when you log in.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mission -->
-  <section class="section" style="background:#0B1E30;">
-    <div class="wrap">
-      <div class="grid-halves">
-        <div>
-          <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;">
-            <div style="width:20px;height:1px;background:#06B6D4;"></div>
-            <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#06B6D4;">Our mission</span>
-          </div>
-          <h2 class="h2-lg h2-white" style="margin-bottom:24px;">Make cloud infrastructure<br><em style="font-style:italic;color:#06B6D4;">self-managing</em></h2>
-          <p style="font-size:15px;font-weight:300;line-height:1.8;color:#6A8EA0;margin-bottom:20px;">We believe the next generation of cloud tooling isn't dashboards you stare at — it's agents that act. Agents that catch the cost spike before it lands on the bill. That page you with a probable cause, not just an alert. That keep your environments in sync without a manual audit.</p>
-          <p style="font-size:15px;font-weight:300;line-height:1.8;color:#6A8EA0;">And crucially — agents that run inside your cloud, not ours. Your data, your perimeter, your control.</p>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:24px;">
-          {[
-            { n:'3', label:'Autonomous agents in the suite' },
-            { n:'<30m', label:'Time to deploy any agent' },
-            { n:'Zero', label:'Data egress — runs in your cloud' },
-            { n:'∞', label:'Hours saved for your SRE team' },
-          ].map(s => (
-            <div style="border-left:2px solid rgba(6,182,212,.3);padding-left:24px;">
-              <div style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:#06B6D4;line-height:1;">{s.n}</div>
-              <div style="font-size:14px;font-weight:300;color:#8AA0B0;margin-top:4px;">{s.label}</div>
-            </div>
-          ))}
+        <div style="padding-bottom:8px;">
+          <p style="font-size:17px;font-weight:300;line-height:1.75;color:#5A7080;margin-bottom:24px;">Techtious Labs is a cloud intelligence product company based in Dehradun, Uttarakhand, India. We build autonomous agents that deploy inside your cloud — reducing costs, catching drift, and keeping platforms stable.</p>
+          <p style="font-size:15px;font-weight:300;line-height:1.75;color:#7A8EA0;">We're a small, focused team that goes all in for every customer we work with. We choose our partnerships carefully — because when we commit, we deliver completely.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Values -->
-  <section class="section" style="background:#fff;">
+  <section style="background:#fff;padding:96px 0;">
     <div class="wrap">
-      <div style="margin-bottom:48px;">
-        <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;">
-          <div style="width:20px;height:1px;background:#0891B2;"></div>
-          <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#0891B2;">How we work</span>
-        </div>
-        <h2 class="h2-lg">The principles that <em style="font-style:italic;color:#0891B2;">guide us</em></h2>
-      </div>
-      <div class="grid-3">
-        {[
-          { title:'Your cloud stays yours', body:'Every agent deploys inside your AWS, GCP, or Azure account using a role you control. No data leaves your perimeter. No vendor lock-in. We have read-write access only to what you explicitly grant.' },
-          { title:'Explainability over magic', body:'Every recommendation, every automated action, every alert comes with a plain-language explanation. We want your team to understand what the agent did and why — not just trust a black box.' },
-          { title:'Compound, not one-shot', body:"Cost savings and platform stability aren't one-time wins. Our agents get smarter as your infrastructure evolves — continuously compounding the value they deliver week over week." },
-          { title:'Engineering-led, product-minded', body:'We are engineers who build tools for engineers. Every feature decision is grounded in real operational experience — not analyst reports or feature-request bingo.' },
-          { title:'Deliberate product scope', body:'We build fewer things, better. Rather than shipping a sprawling platform no one fully uses, we ship agents with clear scope and genuine depth — then expand once each is excellent.' },
-          { title:'Honest about limitations', body:"We tell you when a recommendation is uncertain. We show confidence levels. We don't oversell what AI can do — we show you what it actually does in your specific environment." },
-        ].map(v => (
-          <div style="padding:28px;border:1px solid #E2EAF0;border-radius:12px;background:#FAFAF8;">
-            <div style="width:36px;height:3px;background:linear-gradient(90deg,#0891B2,#06B6D4);border-radius:2px;margin-bottom:18px;"></div>
-            <h3 style="font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:#0B1E30;margin-bottom:10px;">{v.title}</h3>
-            <p style="font-size:13.5px;font-weight:300;line-height:1.75;color:#5A7080;">{v.body}</p>
+
+      <!-- Section header -->
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:48px;margin-bottom:80px;padding-bottom:32px;border-bottom:1px solid #E2EAF0;flex-wrap:wrap;">
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;">
+            <div style="width:20px;height:1px;background:#0891B2;"></div>
+            <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#0891B2;">Core Values</span>
           </div>
-        ))}
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:600;letter-spacing:-.02em;color:#0B1E30;line-height:1.08;">What we stand for</h2>
+        </div>
+        <p style="font-size:14px;font-weight:300;line-height:1.8;color:#5A7080;max-width:340px;">Five principles, lived every day. Real commitments that shape how we build, how we work, and who we are as a team.</p>
+      </div>
+
+    </div>
+
+    <!-- Value 01 — image left, light -->
+    <div style="display:grid;grid-template-columns:560px 1fr;max-width:1440px;margin:0 auto 3px;padding:0 72px;gap:0;border-radius:16px;overflow:hidden;">
+      <div style="width:100%;height:420px;overflow:hidden;flex-shrink:0;border-radius:12px 0 0 12px;">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#EFF8FB 0%,#C8E6F0 50%,#A8D4E8 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+          <svg viewBox="0 0 400 420" style="width:100%;height:100%;position:absolute;inset:0;opacity:.18;" fill="none"><circle cx="200" cy="210" r="180" stroke="#0891B2" stroke-width="1"/><circle cx="200" cy="210" r="130" stroke="#0891B2" stroke-width="1"/><circle cx="200" cy="210" r="80" stroke="#0891B2" stroke-width="1"/><line x1="20" y1="210" x2="380" y2="210" stroke="#0891B2" stroke-width=".8"/><line x1="200" y1="30" x2="200" y2="390" stroke="#0891B2" stroke-width=".8"/></svg>
+          <div style="text-align:center;z-index:1;padding:32px;">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:700;color:#0891B2;opacity:.4;line-height:1;">01</div>
+          </div>
+        </div>
+      </div>
+      <div style="background:#FAFAF8;border:1px solid #E2EAF0;border-left:none;border-radius:0 12px 12px 0;padding:60px 64px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
+          <span style="font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:#0891B2;">Energetic</span>
+          <div style="flex:1;height:1px;background:#E2EAF0;"></div>
+          <span style="font-size:11px;font-weight:600;color:#C8D8E4;">01</span>
+        </div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;color:#0B1E30;line-height:1.06;margin-bottom:22px;">Pursuit of<br><em style="font-style:italic;color:#0891B2;">Excellence</em></h3>
+        <p style="font-size:16px;font-weight:300;line-height:1.8;color:#5A7080;max-width:420px;">We push ourselves and each other toward better work, bigger impact, continuous growth. Good enough is never the goal.</p>
+      </div>
+    </div>
+
+    <!-- Value 02 — image right, light -->
+    <div style="display:grid;grid-template-columns:1fr 560px;max-width:1440px;margin:0 auto 3px;padding:0 72px;gap:0;overflow:hidden;">
+      <div style="background:#FAFAF8;border:1px solid #E2EAF0;border-right:none;border-radius:12px 0 0 12px;padding:60px 64px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
+          <span style="font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:#0891B2;">Energetic</span>
+          <div style="flex:1;height:1px;background:#E2EAF0;"></div>
+          <span style="font-size:11px;font-weight:600;color:#C8D8E4;">02</span>
+        </div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;color:#0B1E30;line-height:1.06;margin-bottom:22px;">Pragmatic<br><em style="font-style:italic;color:#0891B2;">Problem Solving</em></h3>
+        <p style="font-size:16px;font-weight:300;line-height:1.8;color:#5A7080;max-width:420px;">We ship solutions. We don't over-engineer or overthink. Results over process — always.</p>
+      </div>
+      <div style="width:100%;height:420px;overflow:hidden;flex-shrink:0;border-radius:0 12px 12px 0;">
+        <div style="width:100%;height:100%;background:linear-gradient(225deg,#EFF8FB 0%,#BDD8E8 50%,#92C0D8 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+          <svg viewBox="0 0 400 420" style="width:100%;height:100%;position:absolute;inset:0;opacity:.15;" fill="none"><rect x="40" y="40" width="320" height="340" stroke="#0891B2" stroke-width="1" rx="8"/><rect x="80" y="80" width="240" height="260" stroke="#0891B2" stroke-width="1" rx="6"/><rect x="120" y="120" width="160" height="180" stroke="#0891B2" stroke-width="1" rx="4"/></svg>
+          <div style="text-align:center;z-index:1;padding:32px;">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:700;color:#0891B2;opacity:.4;line-height:1;">02</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Value 03 — image left, dark navy -->
+    <div style="display:grid;grid-template-columns:560px 1fr;max-width:1440px;margin:0 auto 3px;padding:0 72px;gap:0;overflow:hidden;">
+      <div style="width:100%;height:420px;overflow:hidden;flex-shrink:0;border-radius:12px 0 0 12px;">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#0B1E30 0%,#132D45 60%,#1A3D5C 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+          <svg viewBox="0 0 400 420" style="width:100%;height:100%;position:absolute;inset:0;opacity:.12;" fill="none"><polygon points="200,30 370,380 30,380" stroke="#06B6D4" stroke-width="1"/><polygon points="200,80 320,340 80,340" stroke="#06B6D4" stroke-width="1"/><polygon points="200,130 270,300 130,300" stroke="#06B6D4" stroke-width="1"/></svg>
+          <div style="text-align:center;z-index:1;padding:32px;">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:700;color:#06B6D4;opacity:.3;line-height:1;">03</div>
+          </div>
+        </div>
+      </div>
+      <div style="background:#0B1E30;border:1px solid #0E2840;border-left:none;border-radius:0 12px 12px 0;padding:60px 64px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
+          <span style="font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:#0891B2;">Discipline &amp; Consistency</span>
+          <div style="flex:1;height:1px;background:rgba(255,255,255,.1);"></div>
+          <span style="font-size:11px;font-weight:600;color:rgba(255,255,255,.2);">03</span>
+        </div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;color:#fff;line-height:1.06;margin-bottom:22px;">Integrity in<br><em style="font-style:italic;color:#06B6D4;">Commitment</em></h3>
+        <p style="font-size:16px;font-weight:300;line-height:1.8;color:#8AADBE;max-width:420px;">We say what we do and do what we say. No empty promises. Accountability in every word.</p>
+      </div>
+    </div>
+
+    <!-- Value 04 — image right, dark navy -->
+    <div style="display:grid;grid-template-columns:1fr 560px;max-width:1440px;margin:0 auto 3px;padding:0 72px;gap:0;overflow:hidden;">
+      <div style="background:#0B1E30;border:1px solid #0E2840;border-right:none;border-radius:12px 0 0 12px;padding:60px 64px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
+          <span style="font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:#0891B2;">Discipline &amp; Consistency</span>
+          <div style="flex:1;height:1px;background:rgba(255,255,255,.1);"></div>
+          <span style="font-size:11px;font-weight:600;color:rgba(255,255,255,.2);">04</span>
+        </div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;color:#fff;line-height:1.06;margin-bottom:22px;">Respect<br><em style="font-style:italic;color:#06B6D4;">Contributors</em></h3>
+        <p style="font-size:16px;font-weight:300;line-height:1.8;color:#8AADBE;max-width:420px;">We build fairly. Everyone who works with us — team, contractors, partners — gets paid well, credited honestly, treated with dignity. No shortcuts on people.</p>
+      </div>
+      <div style="width:100%;height:420px;overflow:hidden;flex-shrink:0;border-radius:0 12px 12px 0;">
+        <div style="width:100%;height:100%;background:linear-gradient(225deg,#0B1E30 0%,#0E2840 50%,#142E48 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+          <svg viewBox="0 0 400 420" style="width:100%;height:100%;position:absolute;inset:0;opacity:.14;" fill="none">
+            <circle cx="200" cy="210" r="140" stroke="#06B6D4" stroke-width="1"/>
+            <circle cx="140" cy="210" r="80" stroke="#0891B2" stroke-width="1"/>
+            <circle cx="260" cy="210" r="80" stroke="#0891B2" stroke-width="1"/>
+          </svg>
+          <div style="text-align:center;z-index:1;padding:32px;">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:700;color:#06B6D4;opacity:.3;line-height:1;">04</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Value 05 — image left, cyan-tinted -->
+    <div style="display:grid;grid-template-columns:560px 1fr;max-width:1440px;margin:0 auto;padding:0 72px;gap:0;overflow:hidden;">
+      <div style="width:100%;height:460px;overflow:hidden;flex-shrink:0;border-radius:12px 0 0 12px;">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#EFF8FB 0%,#D0EBF4 40%,#BDDFF0 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+          <svg viewBox="0 0 400 460" style="width:100%;height:100%;position:absolute;inset:0;opacity:.2;" fill="none">
+            <path d="M200 40 L360 420 L40 420 Z" stroke="#0891B2" stroke-width="1"/>
+            <path d="M200 100 L320 400 L80 400 Z" stroke="#0891B2" stroke-width=".7"/>
+            <line x1="40" y1="420" x2="360" y2="420" stroke="#0891B2" stroke-width="1"/>
+            <line x1="200" y1="40" x2="200" y2="420" stroke="#0891B2" stroke-width=".7" stroke-dasharray="6 4"/>
+          </svg>
+          <div style="text-align:center;z-index:1;padding:32px;">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:700;color:#0891B2;opacity:.35;line-height:1;">05</div>
+          </div>
+        </div>
+      </div>
+      <div style="background:linear-gradient(135deg,#EFF8FB,#F0F7FF);border:1px solid #DDE8F0;border-left:none;border-radius:0 12px 12px 0;padding:64px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
+          <span style="font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:#0891B2;">Customer Needs</span>
+          <div style="flex:1;height:1px;background:#DDE8F0;"></div>
+          <span style="font-size:11px;font-weight:600;color:#C8D8E4;">05</span>
+        </div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:600;color:#0B1E30;line-height:1.04;margin-bottom:22px;">Customer-Centric<br><em style="font-style:italic;color:#0891B2;">Delivery</em></h3>
+        <p style="font-size:16px;font-weight:300;line-height:1.8;color:#5A7080;max-width:480px;margin-bottom:28px;">We know who we serve and what they actually need. We respect their time by shipping lean, focused solutions. We only commit to customers we can deliver for — not every deal is worth taking.</p>
+        <div style="display:flex;align-items:center;gap:10px;padding-top:24px;border-top:1px solid #DDE8F0;">
+          <div style="width:6px;height:6px;background:#0891B2;border-radius:50%;flex-shrink:0;"></div>
+          <span style="font-size:13.5px;font-weight:500;color:#0891B2;font-style:italic;">"Not every deal is worth taking."</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Location -->
-  <section class="section" style="background:#F4F7FA;border-top:1px solid #E2EAF0;">
+  <!-- Location strip -->
+  <section class="section-sm" style="background:#F4F7FA;border-top:1px solid #E2EAF0;">
     <div class="wrap">
-      <div class="grid-halves">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:48px;flex-wrap:wrap;">
         <div>
-          <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;">
-            <div style="width:20px;height:1px;background:#0891B2;"></div>
-            <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#0891B2;">Where we are</span>
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#8AA0B0;margin-bottom:12px;">Registered in</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:#0B1E30;line-height:1.1;">Dehradun, Uttarakhand</div>
+          <div style="font-size:13.5px;font-weight:300;color:#8AA0B0;margin-top:6px;">India · Operating across UAE &amp; beyond</div>
+        </div>
+        <div style="display:flex;gap:48px;flex-wrap:wrap;">
+          <div>
+            <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#8AA0B0;margin-bottom:8px;">Reach us</div>
+            <a href="mailto:sales@techtious.com" style="font-size:15px;color:#0891B2;text-decoration:none;font-weight:400;">sales@techtious.com</a>
           </div>
-          <h2 class="h2-lg" style="margin-bottom:20px;">Dehradun, Uttarakhand, <em style="font-style:italic;color:#0891B2;">India</em></h2>
-          <p style="font-size:15px;font-weight:300;line-height:1.8;color:#5A7080;margin-bottom:28px;">We're headquartered in Dehradun — building world-class cloud intelligence from the foothills of the Himalayas. Our team serves customers globally on AWS, GCP, and Azure.</p>
-          <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="display:inline-block;background:#0891B2;color:#FAFAF8;font-size:13.5px;font-weight:500;padding:14px 32px;border-radius:5px;text-decoration:none;letter-spacing:.02em;">Talk to the team</a>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:16px;">
-          {[
-            { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>, label:'Headquarters', value:'Dehradun, Uttarakhand, India' },
-            { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>, label:'Email', value:'sales@techtious.com', href:'mailto:sales@techtious.com' },
-            { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>, label:"We're hiring", value:'View open roles →', href:'/careers' },
-          ].map(item => (
-            <div style="background:#fff;border:1px solid #DDE8F0;border-radius:12px;padding:24px;display:flex;align-items:center;gap:16px;">
-              <div style="width:44px;height:44px;background:#EEF6FB;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">{item.icon}</div>
-              <div>
-                <div style="font-size:13px;font-weight:600;color:#0B1E30;margin-bottom:2px;">{item.label}</div>
-                {item.href
-                  ? <a href={item.href} style="font-size:13px;font-weight:300;color:#0891B2;text-decoration:none;">{item.value}</a>
-                  : <div style="font-size:13px;font-weight:300;color:#5A7080;">{item.value}</div>
-                }
-              </div>
+          <div>
+            <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#8AA0B0;margin-bottom:8px;">Follow</div>
+            <div style="display:flex;gap:16px;">
+              <a href="https://www.linkedin.com/company/techtious" target="_blank" rel="noopener" style="font-size:14px;font-weight:500;color:#4A5F72;text-decoration:none;">LinkedIn</a>
+              <a href="https://github.com/techtious" target="_blank" rel="noopener" style="font-size:14px;font-weight:500;color:#4A5F72;text-decoration:none;">GitHub</a>
             </div>
-          ))}
+          </div>
         </div>
+        <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="background:#0891B2;color:#FAFAF8;font-size:13px;font-weight:500;padding:13px 28px;border-radius:5px;text-decoration:none;letter-spacing:.02em;flex-shrink:0;">Book a Free Consultation</a>
       </div>
     </div>
   </section>
@@ -155,4 +228,87 @@ const B = import.meta.env.BASE_URL.replace(/\/$/, '');
     </div>
   </footer>
 
+<style>
+  /* Responsive adjustments for the values panels */
+  @media (max-width: 1024px) {
+    [style*="grid-template-columns:560px"] {
+      grid-template-columns: 1fr !important;
+    }
+    [style*="grid-template-columns:1fr 560px"] {
+      grid-template-columns: 1fr !important;
+    }
+    [style*="height:420px"][style*="border-radius:12px 0 0 12px"],
+    [style*="height:420px"][style*="border-radius:0 12px 12px 0"],
+    [style*="height:460px"] {
+      height: 280px !important;
+      border-radius: 12px 12px 0 0 !important;
+    }
+    [style*="border-left:none;border-radius:0 12px"] {
+      border-left: 1px solid #E2EAF0 !important;
+      border-radius: 0 0 12px 12px !important;
+    }
+    [style*="border-right:none;border-radius:12px 0 0 12px"] {
+      border-right: 1px solid #E2EAF0 !important;
+      border-radius: 0 0 12px 12px !important;
+    }
+    [style*="border:1px solid #0E2840;border-left:none"] {
+      border-left: 1px solid #0E2840 !important;
+      border-radius: 0 0 12px 12px !important;
+    }
+    [style*="border:1px solid #0E2840;border-right:none"] {
+      border-right: 1px solid #0E2840 !important;
+      border-radius: 0 0 12px 12px !important;
+    }
+    [style*="border:1px solid #DDE8F0;border-left:none"] {
+      border-left: 1px solid #DDE8F0 !important;
+      border-radius: 0 0 12px 12px !important;
+    }
+    [style*="padding:0 72px;gap:0;border-radius:16px"] {
+      padding: 0 40px !important;
+    }
+    [style*="gap:96px;align-items:end"] {
+      grid-template-columns: 1fr !important;
+      gap: 40px !important;
+    }
+  }
+  @media (max-width: 640px) {
+    [style*="font-size:52px;font-weight:600;letter-spacing"] {
+      font-size: 36px !important;
+    }
+    [style*="font-size:48px;font-weight:600;color:#0B1E30"] {
+      font-size: 32px !important;
+    }
+    [style*="font-size:52px;font-weight:600;color:#0B1E30"] {
+      font-size: 32px !important;
+    }
+    [style*="font-size:48px;font-weight:600;color:#fff"] {
+      font-size: 32px !important;
+    }
+    [style*="padding:60px 64px"] {
+      padding: 32px 24px !important;
+    }
+    [style*="padding:64px 64px"] {
+      padding: 32px 24px !important;
+    }
+    [style*="padding:64px;display:flex"] {
+      padding: 32px 24px !important;
+    }
+    [style*="font-size:36px;font-weight:600;color:#0B1E30"] {
+      font-size: 24px !important;
+    }
+    [style*="display:flex;align-items:center;justify-content:space-between;gap:48px"] {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 24px !important;
+    }
+    [style*="display:flex;align-items:baseline;justify-content:space-between"] {
+      flex-direction: column !important;
+      gap: 16px !important;
+    }
+    [style*="max-width:340px;text-align:right"] {
+      text-align: left !important;
+      max-width: 100% !important;
+    }
+  }
+</style>
 </Base>

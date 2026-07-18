@@ -1,0 +1,310 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.tsx';
+const B = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const SERVICES = [
+  {
+    id: 'cloud-engineering',
+    label: 'Cloud Engineering',
+    accent: '#0891B2',
+    gradient: 'linear-gradient(135deg,#0891B2,#06B6D4)',
+    tagline: 'Scalable, resilient, secure cloud infrastructure',
+    intro: 'Our cloud engineering expertise transforms how organisations design, build, and manage cloud environments. We combine deep technical knowledge with strategic insight to deliver cloud solutions that scale with your business and hold up under pressure.',
+    why: [
+      { head: 'Scalability', body: 'Architect cloud systems that grow seamlessly with your business — elastic by design, not by accident.' },
+      { head: 'Reliability', body: 'High availability and fault-tolerant infrastructure for mission-critical applications and regulated workloads.' },
+      { head: 'Cost efficiency', body: 'Optimise cloud resources to reduce operational expenses without compromising performance or developer velocity.' },
+      { head: 'Innovation', body: 'Leverage cloud-native tools and services to accelerate development and modernise legacy systems.' },
+    ],
+    how: [
+      { head: 'Architecture design', body: 'Craft robust, secure, and scalable cloud architectures tailored to your business goals and compliance requirements.' },
+      { head: 'Implementation', body: 'Deploy cloud environments efficiently using best practices, automation, and modern IaC frameworks.' },
+      { head: 'Monitoring & management', body: 'Ongoing performance, reliability, and security through proactive monitoring and runbook-driven operations.' },
+      { head: 'Continuous improvement', body: 'Optimise cloud operations, adopt emerging technologies, and enhance infrastructure agility over time.' },
+    ],
+    stack: ['AWS', 'GCP', 'Azure', 'Terraform', 'Pulumi', 'Kubernetes', 'Helm', 'ArgoCD'],
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>`,
+  },
+  {
+    id: 'platform-engineering',
+    label: 'Platform Engineering',
+    accent: '#0891B2',
+    gradient: 'linear-gradient(135deg,#0B1E30,#1E3A5A)',
+    tagline: 'Internal platforms that make your developers fast',
+    intro: 'Platform Engineering transforms how your engineering teams work. We design and build Internal Developer Platforms (IDPs) that give developers self-service access to the infrastructure and tooling they need — reducing toil and eliminating waiting on ops.',
+    why: [
+      { head: 'Developer velocity', body: 'Self-service environments and golden paths reduce the time from code to production from days to hours.' },
+      { head: 'Reduced cognitive load', body: 'Developers focus on product features, not wrestling with infrastructure config or ticketing queues.' },
+      { head: 'Standardisation', body: 'Consistent, security-hardened paths for building, testing, and deploying — no more snowflake environments.' },
+      { head: 'Operational excellence', body: 'Platform teams own the shared infrastructure layer, freeing product engineers to move faster with confidence.' },
+    ],
+    how: [
+      { head: 'Platform assessment', body: 'Evaluate your current developer experience, bottlenecks, and automation gaps.' },
+      { head: 'IDP design & build', body: 'Architect and implement a developer platform using tools like Backstage, Port, or custom solutions on Kubernetes.' },
+      { head: 'Golden path definition', body: 'Define opinionated, secure deployment workflows and templates that teams adopt by default.' },
+      { head: 'Adoption & enablement', body: 'Embed with your teams to ensure the platform is actually used — documentation, onboarding, and feedback loops.' },
+    ],
+    stack: ['Backstage', 'Port', 'Kubernetes', 'GitHub Actions', 'Crossplane', 'Argo Workflows', 'Vault', 'OPA'],
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>`,
+  },
+  {
+    id: 'gen-ai-solutions',
+    label: 'Gen AI Solutions',
+    accent: '#06B6D4',
+    gradient: 'linear-gradient(135deg,#0891B2,#06B6D4)',
+    tagline: 'Agentic systems and LLM pipelines that actually ship',
+    intro: 'We design and build production-grade Gen AI systems — agentic workflows, RAG pipelines, LLM-powered tooling, and AI-native features — that integrate cleanly with your existing stack. Not proof-of-concepts. Systems your team owns and can maintain.',
+    why: [
+      { head: 'Compounding advantage', body: 'AI systems that improve over time — better data, better feedback loops, better models — compound into competitive moats.' },
+      { head: 'Automation at scale', body: 'Automate complex decision-making workflows that would otherwise require expensive human-in-the-loop processes.' },
+      { head: 'Faster product iteration', body: 'LLM-powered features ship in weeks, not quarters, when built on the right abstractions and infrastructure.' },
+      { head: 'Responsible by design', body: 'We build with evaluation, observability, and human-override built in from the start — not bolted on later.' },
+    ],
+    how: [
+      { head: 'Discovery & scoping', body: 'Identify the highest-value AI integration points in your product and define measurable success criteria.' },
+      { head: 'Architecture & model selection', body: 'Select the right foundation models, embedding strategies, and retrieval approaches for your specific use case.' },
+      { head: 'Build & evaluate', body: 'Implement the system with evals from day one — so you know it works before it ships.' },
+      { head: 'Productionise & monitor', body: 'Instrument with LLM observability (traces, latency, cost), set up feedback loops, and iterate with data.' },
+    ],
+    stack: ['Anthropic Claude', 'OpenAI', 'LangChain', 'LlamaIndex', 'Pinecone', 'pgvector', 'FastAPI', 'Langfuse'],
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M12 2L9 9l-7 3 7 3 3 7 3-7 7-3-7-3z"/></svg>`,
+  },
+  {
+    id: 'migration-modernization',
+    label: 'Migration & Modernization',
+    accent: '#0891B2',
+    gradient: 'linear-gradient(135deg,#0B1E30,#1E3A5A)',
+    tagline: 'Migrate confidently. Modernise intelligently.',
+    intro: "Migrating to the cloud isn't just about moving infrastructure — it's about transforming the way your business operates. We help you adopt the cloud intelligently, ensuring your systems are secure, scalable, and aligned with your business goals, with minimal disruption in transit.",
+    why: [
+      { head: 'Agility', body: 'Rapid scale and responsiveness to demand. Migrating lets you be dynamic rather than static.' },
+      { head: 'Operational efficiency', body: 'Offload infrastructure overhead, automate processes, and make your systems leaner and cheaper to run.' },
+      { head: 'Innovation at scale', body: 'Beyond moving — leverage cloud-native capabilities to build future-ready solutions on modern foundations.' },
+      { head: 'Reduced risk', body: 'Proven migration patterns, rollback strategies, and parallel-run approaches mean no surprises on go-live day.' },
+    ],
+    how: [
+      { head: 'Assessment', body: 'We dig into your infrastructure, goals, and constraints to see what to move, modernise, or re-architect entirely.' },
+      { head: 'Strategy development', body: 'Build a cloud adoption roadmap aligned to your business objectives, risk tolerance, and team capacity.' },
+      { head: 'Migration & modernisation', body: 'Execute with proven patterns — lift-and-shift, re-platform, or re-architect — with minimal disruption.' },
+      { head: 'Optimisation & growth', body: 'Once live, continuously optimise and help you harness advanced cloud services to compound the value.' },
+    ],
+    stack: ['AWS Migration Hub', 'GCP Migrate', 'Azure Migrate', 'Terraform', 'Docker', 'Kubernetes', 'Ansible', 'CloudEndure'],
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>`,
+  },
+  {
+    id: 'observability-sre',
+    label: 'Observability & SRE',
+    accent: '#D97706',
+    gradient: 'linear-gradient(135deg,#D97706,#F59E0B)',
+    tagline: 'Reliability engineering and full-stack observability',
+    intro: 'We integrate observability and SRE practices to build systems that are reliable, measurable, and self-improving. From real-time monitoring to automation and incident response, we help your teams operate with confidence and ship faster — without compromising reliability.',
+    why: [
+      { head: 'End-to-end visibility', body: 'Monitor infrastructure, applications, and user experience through metrics, logs, and traces in a single coherent system.' },
+      { head: 'Higher reliability', body: 'Reduce outages, improve uptime, and ensure predictable performance through SLO-driven engineering.' },
+      { head: 'Faster incident response', body: 'Detect, resolve, and learn from failures quickly using automation, alerting, and runbooks your team actually follows.' },
+      { head: 'Balanced innovation', body: 'Error budgets and observability insights help teams deliver features faster without risking stability.' },
+    ],
+    how: [
+      { head: 'Assessment & maturity analysis', body: 'Evaluate your monitoring systems, reliability metrics, and on-call processes against SRE best practices.' },
+      { head: 'Observability implementation', body: 'Set up metrics, logs, traces, and dashboards using Prometheus, Grafana, Loki, ELK, or OpenTelemetry.' },
+      { head: 'SRE foundations', body: 'Define SLIs/SLOs, build error budgets, establish on-call workflows, automation, and incident management.' },
+      { head: 'Continuous reliability', body: 'Post-incident reviews, chaos testing, performance tuning, and cost-optimised observability at scale.' },
+    ],
+    stack: ['Prometheus', 'Grafana', 'Loki', 'OpenTelemetry', 'Datadog', 'PagerDuty', 'ELK Stack', 'Jaeger'],
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`,
+  },
+];
+---
+<Base title="Services — Cloud Engineering, Platform Engineering & Gen AI | Techtious Labs" description="Expert consulting across Cloud Engineering, Platform Engineering, Gen AI Solutions, Migration & Modernization, and Observability & SRE.">
+
+  <Nav client:load />
+
+  <!-- Hero -->
+  <section class="section" style="position:relative;overflow:hidden;background:#FAFAF8;">
+    <div class="dot-grid" style="position:absolute;inset:0;opacity:.35;pointer-events:none;"></div>
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#0891B2,#06B6D4 40%,transparent);"></div>
+    <div class="wrap">
+      <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:24px;">
+        <div style="width:20px;height:1px;background:#0891B2;"></div>
+        <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#0891B2;">Expert Consulting</span>
+      </div>
+      <div class="hero-grid">
+        <div>
+          <h1 class="h1-xl">
+            The cloud expertise<br>your team needs to <em style="font-style:italic;color:#0891B2;">move fast</em>
+          </h1>
+          <p style="font-size:17px;font-weight:300;line-height:1.75;color:#5A7080;max-width:520px;margin-bottom:40px;">Five specialised practices — Cloud Engineering, Platform Engineering, Gen AI, Migration & Modernization, and Observability & SRE — delivered by engineers who've built and run production infrastructure at scale.</p>
+          <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="display:inline-block;background:#0891B2;color:#FAFAF8;font-size:13.5px;font-weight:500;padding:14px 36px;border-radius:5px;text-decoration:none;letter-spacing:.02em;">Talk to our team</a>
+        </div>
+        <!-- Service nav panel -->
+        <div style="background:#fff;border:1px solid #DDE8F0;border-radius:14px;padding:8px;box-shadow:0 2px 16px rgba(11,30,48,.06);">
+          {SERVICES.map((s, i) => (
+            <a href={`#${s.id}`} style={`display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:10px;text-decoration:none;transition:background .15s;${i < SERVICES.length - 1 ? 'border-bottom:1px solid #F0F4F8;' : ''}`}>
+              <div style={`width:36px;height:36px;background:${s.gradient};border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;`} set:html={s.icon}></div>
+              <div>
+                <div style="font-size:13.5px;font-weight:600;color:#0B1E30;">{s.label}</div>
+                <div style="font-size:11.5px;font-weight:300;color:#8AA0B0;margin-top:1px;">{s.tagline}</div>
+              </div>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C8D8E4" stroke-width="2" stroke-linecap="round" style="margin-left:auto;flex-shrink:0;"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust strip -->
+  <section class="section-xs" style="background:#0B1E30;">
+    <div class="wrap">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;">
+        {[
+          'Deployed on AWS, GCP & Azure',
+          'Kubernetes-native delivery',
+          'IaC-first on every engagement',
+          'SRE principles embedded by default',
+          'Based in Dehradun · Serving globally',
+        ].map(t => (
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:5px;height:5px;background:#06B6D4;border-radius:50%;flex-shrink:0;"></div>
+            <span style="font-size:13px;font-weight:300;color:#8AA0B0;">{t}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Service sections -->
+  {SERVICES.map((s, idx) => (
+    <section id={s.id} class="section" style={`background:${idx % 2 === 0 ? '#fff' : '#FAFAF8'};`}>
+      <div class="wrap">
+        <!-- Section header -->
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:56px;">
+          <div>
+            <div style={`display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;`}>
+              <div style={`width:20px;height:1px;background:${s.accent};`}></div>
+              <span style={`font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:${s.accent};`}>{s.label}</span>
+            </div>
+            <h2 class="h2-lg" style="max-width:560px;">{s.tagline.split(' ').map((w, i) => i === 0 ? w : ` ${w}`).join('')}</h2>
+          </div>
+          <div style={`width:52px;height:52px;background:${s.gradient};border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:4px;`} set:html={s.icon}></div>
+        </div>
+
+        <p style="font-size:16px;font-weight:300;line-height:1.8;color:#5A7080;max-width:720px;margin-bottom:56px;">{s.intro}</p>
+
+        <!-- Why / How grid -->
+        <div class="grid-2" style="margin-bottom:48px;">
+          <!-- Why this matters -->
+          <div style="border:1px solid #E2EAF0;border-radius:14px;padding:32px;background:#FAFAF8;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
+              <div style={`width:3px;height:24px;background:${s.accent};border-radius:2px;`}></div>
+              <span style="font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#4A5F72;">Why this matters</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:20px;">
+              {s.why.map(w => (
+                <div>
+                  <div style={`font-size:14px;font-weight:600;color:#0B1E30;margin-bottom:4px;`}>{w.head}</div>
+                  <div style="font-size:13.5px;font-weight:300;line-height:1.7;color:#5A7080;">{w.body}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <!-- How we deliver -->
+          <div style="border:1px solid #E2EAF0;border-radius:14px;padding:32px;background:#FAFAF8;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
+              <div style={`width:3px;height:24px;background:${s.accent};border-radius:2px;`}></div>
+              <span style="font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#4A5F72;">How we deliver</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:20px;">
+              {s.how.map((h, i) => (
+                <div style="display:flex;align-items:flex-start;gap:14px;">
+                  <div style={`width:24px;height:24px;border-radius:50%;background:${s.gradient};display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;`}>
+                    <span style="font-size:10px;font-weight:700;color:#fff;">{i + 1}</span>
+                  </div>
+                  <div>
+                    <div style="font-size:14px;font-weight:600;color:#0B1E30;margin-bottom:4px;">{h.head}</div>
+                    <div style="font-size:13.5px;font-weight:300;line-height:1.7;color:#5A7080;">{h.body}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Stack pills + CTA -->
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            {s.stack.map(t => (
+              <span style={`font-size:12px;font-weight:500;color:${s.accent};padding:5px 14px;border:1px solid ${s.accent}28;border-radius:20px;background:${s.accent}0A;`}>{t}</span>
+            ))}
+          </div>
+          <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style={`display:inline-block;background:${s.accent};color:#FAFAF8;font-size:13px;font-weight:500;padding:11px 28px;border-radius:5px;text-decoration:none;white-space:nowrap;letter-spacing:.02em;`}>
+            Discuss {s.label} →
+          </a>
+        </div>
+      </div>
+
+      {idx < SERVICES.length - 1 && (
+        <div class="wrap" style="padding-top:0;">
+          <div style="height:1px;background:#E2EAF0;margin-top:64px;"></div>
+        </div>
+      )}
+    </section>
+  ))}
+
+  <!-- CTA -->
+  <section class="section" style="background:#0B1E30;text-align:center;">
+    <div class="wrap">
+      <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;">
+        <div style="width:20px;height:1px;background:#06B6D4;"></div>
+        <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#06B6D4;">Work with us</span>
+        <div style="width:20px;height:1px;background:#06B6D4;"></div>
+      </div>
+      <h2 class="h2-xl h2-white" style="margin-bottom:16px;">Not sure which service<br>fits your situation? <em style="font-style:italic;color:#06B6D4;">Let's talk.</em></h2>
+      <p style="font-size:15px;font-weight:300;line-height:1.75;color:#6A8EA0;max-width:480px;margin:0 auto 36px;">Most engagements start with a 30-minute discovery call. We'll map your infrastructure to the right practice — no sales pitch, just a technical conversation.</p>
+      <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="display:inline-block;background:#0891B2;color:#FAFAF8;font-size:14px;font-weight:500;padding:15px 44px;border-radius:5px;text-decoration:none;letter-spacing:.02em;">Book a free 30-min call</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background:#0B1E30;padding:64px 0 0;border-top:1px solid rgba(255,255,255,.06);">
+    <div class="wrap" style="padding-top:0;">
+      <div class="grid-footer" style="padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08);">
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#fff;margin-bottom:14px;">Techtious Labs</div>
+          <p style="font-size:13.5px;font-weight:300;line-height:1.7;color:#6A8EA0;max-width:240px;margin-bottom:16px;">Cloud intelligence agents and expert consulting. Dehradun, Uttarakhand, India.</p>
+          <a href="mailto:sales@techtious.com" style="font-size:13px;color:#0891B2;text-decoration:none;">sales@techtious.com</a>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:18px;">Products</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <a href={`${B}/optix-ai`} style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">Optix AI</a>
+            <a href={`${B}/sre-intelligence`} style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">SRE Intelligence</a>
+            <a href={`${B}/driftguard`} style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">DriftGuard</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:18px;">Services</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            {SERVICES.map(s => (
+              <a href={`#${s.id}`} style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">{s.label}</a>
+            ))}
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:18px;">Company</div>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:24px;">
+            <a href={`${B}/about`} style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">About Us</a>
+            <a href={`${B}/careers`} style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">Careers</a>
+          </div>
+          <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="display:inline-block;background:#0891B2;color:#FAFAF8;font-size:13px;font-weight:500;padding:13px 24px;border-radius:5px;text-decoration:none;">Book a Consultation</a>
+        </div>
+      </div>
+      <div style="padding:20px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+        <span style="font-size:12.5px;color:#3D5A6A;">© 2026 Techtious Labs. All rights reserved.</span>
+        <span style="font-size:12.5px;color:#3D5A6A;">Dehradun, Uttarakhand, India</span>
+      </div>
+    </div>
+  </footer>
+
+</Base>
