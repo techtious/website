@@ -7,33 +7,29 @@ import Nav from '../components/Nav.tsx';
   <Nav client:load />
 
   <!-- ═══════ HERO ═══════ -->
-  <section style="position:relative;overflow:hidden;background:#FAFAF8;padding-bottom:96px;">
+  <section class="section" style="position:relative;overflow:hidden;background:#FAFAF8;padding-bottom:96px;">
     <div class="dot-grid" style="position:absolute;inset:0;opacity:.42;pointer-events:none;"></div>
     <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#0891B2,#06B6D4 40%,transparent);"></div>
 
-    <div style="max-width:1440px;margin:0 auto;padding:88px 72px 0;position:relative;">
+    <div class="wrap" style="padding-top:72px;">
       <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:28px;">
         <div style="width:20px;height:1px;background:#0891B2;"></div>
         <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#0891B2;">Cloud Intelligence Product Suite</span>
       </div>
 
-      <div style="display:grid;grid-template-columns:1fr 440px;gap:80px;align-items:start;">
+      <div class="hero-grid">
         <div>
-          <h1 style="font-family:'Cormorant Garamond',serif;font-size:80px;font-weight:600;line-height:1.03;letter-spacing:-.025em;color:#0B1E30;margin-bottom:28px;">
+          <h1 class="h1-xl">
             The Cloud<br>Intelligence <em style="font-style:italic;color:#0891B2;">Suite</em>
           </h1>
-          <p style="font-size:17px;font-weight:300;line-height:1.72;color:#5A7080;max-width:520px;margin-bottom:20px;">
-            Three autonomous agents that deploy directly inside your cloud — eliminating waste, catching drift, and keeping your platform stable. Automatically, continuously, without leaving your environment.
-          </p>
-          <p style="font-size:14px;font-weight:400;line-height:1.65;color:#0891B2;max-width:460px;margin-bottom:44px;display:flex;align-items:center;gap:8px;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+          <p style="font-size:17px;font-weight:300;line-height:1.72;color:#5A7080;max-width:520px;margin-bottom:20px;">Three autonomous agents that deploy directly inside your cloud — eliminating waste, catching drift, and keeping your platform stable. Automatically, continuously, without leaving your environment.</p>
+          <p style="font-size:14px;font-weight:400;line-height:1.65;color:#0891B2;max-width:460px;margin-bottom:44px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Runs inside your AWS, GCP or Azure account. Zero data egress. You stay in control.
           </p>
-          <div style="display:flex;gap:14px;align-items:center;margin-bottom:60px;">
+          <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:48px;">
             <button style="background:#0891B2;color:#FAFAF8;font-size:14px;font-weight:500;padding:15px 36px;border:none;border-radius:5px;cursor:pointer;letter-spacing:.02em;">Explore the Suite</button>
-            <a style="font-size:14px;font-weight:500;color:#0891B2;text-decoration:none;display:flex;align-items:center;gap:6px;cursor:pointer;">See how agents deploy <span>→</span></a>
+            <a style="font-size:14px;font-weight:500;color:#0891B2;text-decoration:none;display:flex;align-items:center;gap:6px;cursor:pointer;">See how agents deploy →</a>
           </div>
 
           <div>
@@ -68,7 +64,6 @@ import Nav from '../components/Nav.tsx';
               <div style="flex:1;padding:7px 10px;background:#FFF7ED;border:1px solid #FED7AA;border-radius:6px;text-align:center;font-size:11.5px;font-weight:500;color:#EA580C;">Azure</div>
             </div>
             <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">
-              <!-- Optix AI -->
               <div style="border:1.5px solid #06B6D4;border-radius:10px;padding:14px 16px;background:linear-gradient(135deg,#F0FBFF,#FAFAF8);">
                 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
                   <div style="display:flex;align-items:center;gap:8px;">
@@ -93,7 +88,6 @@ import Nav from '../components/Nav.tsx';
                   </div>
                 </div>
               </div>
-              <!-- SRE Intelligence -->
               <div style="border:1.5px solid #F59E0B;border-radius:10px;padding:14px 16px;background:linear-gradient(135deg,#FFFDF0,#FAFAF8);">
                 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
                   <div style="display:flex;align-items:center;gap:8px;">
@@ -109,7 +103,6 @@ import Nav from '../components/Nav.tsx';
                 </div>
                 <div style="font-size:12px;color:#6A7E8A;font-weight:300;">Log anomaly detection · Platform stability · SLO tracking</div>
               </div>
-              <!-- DriftGuard -->
               <div style="border:1.5px dashed #C8D8E4;border-radius:10px;padding:14px 16px;background:#F8FAFB;">
                 <div style="display:flex;align-items:center;justify-content:space-between;">
                   <div style="display:flex;align-items:center;gap:8px;">
@@ -133,25 +126,25 @@ import Nav from '../components/Nav.tsx';
   </section>
 
   <!-- ═══════ PRODUCT SUITE ═══════ -->
-  <section style="background:#fff;padding:96px 0;">
-    <div style="max-width:1440px;margin:0 auto;padding:0 72px;">
-      <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:56px;">
+  <section class="section" style="background:#fff;">
+    <div class="wrap">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:56px;">
         <div>
           <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;">
             <div style="width:20px;height:1px;background:#0891B2;"></div>
             <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#0891B2;">Agent Suite</span>
           </div>
-          <h2 style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:600;letter-spacing:-.02em;color:#0B1E30;line-height:1.08;max-width:600px;">A growing suite of cloud intelligence agents</h2>
+          <h2 class="h2-xl" style="max-width:600px;">A growing suite of cloud intelligence agents</h2>
         </div>
-        <p style="font-size:14px;font-weight:300;line-height:1.7;color:#5A7080;max-width:320px;text-align:right;padding-bottom:6px;">Start with one agent. Each deploys in minutes into your existing cloud — no rip-and-replace required.</p>
+        <p style="font-size:14px;font-weight:300;line-height:1.7;color:#5A7080;max-width:320px;">Start with one agent. Each deploys in minutes into your existing cloud — no rip-and-replace required.</p>
       </div>
 
       <!-- Optix AI full card -->
       <div style="border:1px solid #DDE8F0;border-radius:16px;overflow:hidden;margin-bottom:24px;background:#FAFAF8;">
-        <div style="display:grid;grid-template-columns:1fr 400px;">
-          <div style="padding:48px;border-right:1px solid #E8EEF6;">
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:28px;">
-              <div style="width:44px;height:44px;background:linear-gradient(135deg,#0891B2,#06B6D4);border-radius:11px;display:flex;align-items:center;justify-content:center;">
+        <div class="grid-halves" style="gap:0;">
+          <div style="padding:40px;border-bottom:1px solid #E8EEF6;">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:28px;flex-wrap:wrap;">
+              <div style="width:44px;height:44px;background:linear-gradient(135deg,#0891B2,#06B6D4);border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L9 9l-7 3 7 3 3 7 3-7 7-3-7-3z" fill="#fff"/></svg>
               </div>
               <div>
@@ -163,8 +156,8 @@ import Nav from '../components/Nav.tsx';
                 <span style="font-size:11px;font-weight:600;color:#059669;text-transform:uppercase;letter-spacing:.06em;">Live</span>
               </div>
             </div>
-            <p style="font-size:15px;font-weight:300;line-height:1.75;color:#5A7080;margin-bottom:32px;max-width:480px;">One agent. Full visibility into cloud waste across your entire estate — and inside your Kubernetes clusters. It detects, recommends, and auto-remediates continuously.</p>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:36px;">
+            <p style="font-size:15px;font-weight:300;line-height:1.75;color:#5A7080;margin-bottom:28px;">One agent. Full visibility into cloud waste across your entire estate — and inside your Kubernetes clusters. It detects, recommends, and auto-remediates continuously.</p>
+            <div class="grid-2" style="margin-bottom:32px;">
               {['Cloud cost anomaly detection','Kubernetes pod right-sizing','Idle resource auto-cleanup','Unified FinOps dashboard','Reserved instance intelligence','Multi-cloud cost allocation'].map(f => (
                 <div style="display:flex;align-items:center;gap:10px;">
                   <div style="width:5px;height:5px;background:#0891B2;border-radius:50%;flex-shrink:0;"></div>
@@ -174,7 +167,7 @@ import Nav from '../components/Nav.tsx';
             </div>
             <a href="/optix-ai" style="display:inline-block;background:#0891B2;color:#FAFAF8;font-size:13.5px;font-weight:500;padding:13px 32px;border-radius:6px;cursor:pointer;letter-spacing:.02em;text-decoration:none;">Explore Optix AI</a>
           </div>
-          <div style="padding:48px;background:#F4F8FB;display:flex;flex-direction:column;justify-content:center;gap:28px;">
+          <div style="padding:40px;background:#F4F8FB;display:flex;flex-direction:column;justify-content:center;gap:24px;">
             <div>
               <div style="font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:700;color:#0891B2;line-height:1;">43%</div>
               <div style="font-size:13px;font-weight:400;color:#5A7080;margin-top:4px;">Average cloud waste eliminated</div>
@@ -194,58 +187,41 @@ import Nav from '../components/Nav.tsx';
       </div>
 
       <!-- SRE + DriftGuard row -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
-        <div style="border:1px solid #FDDCAA;border-radius:16px;padding:40px;background:#FFFDF8;">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
+      <div class="grid-2">
+        <div style="border:1px solid #FDDCAA;border-radius:16px;padding:36px;background:#FFFDF8;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
             <div style="display:flex;align-items:center;gap:12px;">
-              <div style="width:44px;height:44px;background:linear-gradient(135deg,#D97706,#F59E0B);border-radius:11px;display:flex;align-items:center;justify-content:center;">
+              <div style="width:44px;height:44px;background:linear-gradient(135deg,#D97706,#F59E0B);border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="#fff"/></svg>
               </div>
               <div>
-                <div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:#0B1E30;">SRE Intelligence</div>
-                <div style="font-size:12px;color:#9A7A50;font-weight:300;">Logs, stability &amp; reliability agent</div>
+                <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#0B1E30;">SRE Intelligence</div>
+                <div style="font-size:12px;color:#9A7A50;font-weight:300;">Logs, stability &amp; reliability</div>
               </div>
             </div>
             <div style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:20px;padding:5px 12px;">
               <span style="font-size:11px;font-weight:600;color:#D97706;text-transform:uppercase;letter-spacing:.06em;">Beta</span>
             </div>
           </div>
-          <p style="font-size:14.5px;font-weight:300;line-height:1.75;color:#6A5A40;margin-bottom:28px;">An agent that lives inside your platform and continuously watches logs, traces, and metrics — surfacing anomalies before they become incidents.</p>
-          <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px;">
-            {['AI-powered log anomaly detection','Platform stability scoring & SLO tracking','Incident correlation & root-cause suggestions','Works with existing observability stack'].map(f => (
-              <div style="display:flex;align-items:center;gap:10px;">
-                <div style="width:5px;height:5px;background:#F59E0B;border-radius:50%;flex-shrink:0;"></div>
-                <span style="font-size:13.5px;font-weight:300;color:#6A5A40;">{f}</span>
-              </div>
-            ))}
-          </div>
+          <p style="font-size:14px;font-weight:300;line-height:1.75;color:#6A5A40;margin-bottom:24px;">An agent that lives inside your platform and continuously watches logs, traces, and metrics — surfacing anomalies before they become incidents.</p>
           <a href="/sre-intelligence" style="display:inline-block;background:transparent;color:#D97706;font-size:13px;font-weight:500;padding:11px 24px;border:1.5px solid #F59E0B;border-radius:6px;text-decoration:none;">Join Beta</a>
         </div>
-
-        <div style="border:1.5px dashed #C8D8E4;border-radius:16px;padding:40px;background:#F8FAFB;">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
+        <div style="border:1.5px dashed #C8D8E4;border-radius:16px;padding:36px;background:#F8FAFB;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
             <div style="display:flex;align-items:center;gap:12px;">
-              <div style="width:44px;height:44px;background:#DDE8F0;border-radius:11px;display:flex;align-items:center;justify-content:center;">
+              <div style="width:44px;height:44px;background:#DDE8F0;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><polyline points="17 1 21 5 17 9" stroke="#6A8EA0" stroke-width="1.8" stroke-linecap="round"/><path d="M3 11V9a4 4 0 0 1 4-4h14" stroke="#6A8EA0" stroke-width="1.8" stroke-linecap="round"/><polyline points="7 23 3 19 7 15" stroke="#6A8EA0" stroke-width="1.8" stroke-linecap="round"/><path d="M21 13v2a4 4 0 0 1-4 4H3" stroke="#6A8EA0" stroke-width="1.8" stroke-linecap="round"/></svg>
               </div>
               <div>
-                <div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:#6A8EA0;">DriftGuard</div>
+                <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#6A8EA0;">DriftGuard</div>
                 <div style="font-size:12px;color:#8AA0B0;font-weight:300;">Environment sync &amp; drift detection</div>
               </div>
             </div>
             <div style="background:#F1F5F9;border:1px solid #CBD5E1;border-radius:20px;padding:5px 12px;">
-              <span style="font-size:11px;font-weight:600;color:#64748B;text-transform:uppercase;letter-spacing:.06em;">Coming Soon</span>
+              <span style="font-size:11px;font-weight:600;color:#64748B;text-transform:uppercase;letter-spacing:.06em;">Soon</span>
             </div>
           </div>
-          <p style="font-size:14.5px;font-weight:300;line-height:1.75;color:#6A7E8A;margin-bottom:28px;">Solves the classic problem: it works in dev but breaks in prod. DriftGuard continuously compares configurations across environments and flags every divergence before it causes an outage.</p>
-          <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px;">
-            {['Dev / staging / prod config comparison','Secrets, env vars & infra drift alerts','Automated remediation suggestions','Kubernetes & Terraform state awareness'].map(f => (
-              <div style="display:flex;align-items:center;gap:10px;">
-                <div style="width:5px;height:5px;background:#94A3B8;border-radius:50%;flex-shrink:0;"></div>
-                <span style="font-size:13.5px;font-weight:300;color:#6A7E8A;">{f}</span>
-              </div>
-            ))}
-          </div>
+          <p style="font-size:14px;font-weight:300;line-height:1.75;color:#6A7E8A;margin-bottom:24px;">Continuously compares configurations across environments and flags every divergence before it causes an outage.</p>
           <a href="/driftguard" style="display:inline-block;background:transparent;color:#6A8EA0;font-size:13px;font-weight:500;padding:11px 24px;border:1.5px solid #C8D8E4;border-radius:6px;text-decoration:none;">Get Early Access</a>
         </div>
       </div>
@@ -253,112 +229,91 @@ import Nav from '../components/Nav.tsx';
   </section>
 
   <!-- ═══════ HOW IT WORKS ═══════ -->
-  <section style="background:#0B1E30;padding:96px 0;">
-    <div style="max-width:1440px;margin:0 auto;padding:0 72px;">
-      <div style="margin-bottom:64px;">
+  <section class="section" style="background:#0B1E30;">
+    <div class="wrap">
+      <div style="margin-bottom:56px;">
         <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;">
           <div style="width:20px;height:1px;background:#06B6D4;"></div>
           <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#06B6D4;">Deployment model</span>
         </div>
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:600;letter-spacing:-.02em;color:#fff;line-height:1.08;">
-          Agents that run in <em style="font-style:italic;color:#06B6D4;">your</em> infrastructure
-        </h2>
+        <h2 class="h2-xl h2-white">Agents that run in <em style="font-style:italic;color:#06B6D4;">your</em> infrastructure</h2>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;">
-        <div style="position:absolute;top:27px;left:calc(12.5% + 18px);right:calc(12.5% + 18px);height:1px;background:rgba(255,255,255,.1);"></div>
-        <div style="padding-right:40px;">
-          <div style="width:56px;height:56px;border:1px solid rgba(255,255,255,.12);border-radius:50%;background:rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;margin-bottom:28px;position:relative;z-index:1;">
-            <span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#06B6D4;">01</span>
+      <div class="grid-4">
+        <div class="step-connector" style="background:rgba(255,255,255,.1);"></div>
+        {[
+          { n:'01', title:'Connect Your Cloud', body:'We deploy a lightweight agent into your AWS, GCP, or Azure account using a read-write IAM role you control. No data leaves your perimeter.' },
+          { n:'02', title:'Agents Start Learning', body:'Within hours, the agent profiles your environment — workloads, spend patterns, config drift, log anomalies — and builds a baseline model.' },
+          { n:'03', title:'Insights & Actions', body:'Recommendations surface in your dashboard. Approve auto-remediation or act manually. Every action is logged and explainable.' },
+          { n:'04', title:'Continuous Optimization', body:'Agents improve over time. As your infrastructure evolves, so does the intelligence — compounding savings and stability every week.' },
+        ].map((s, i) => (
+          <div style="padding-right:32px;padding-bottom:8px;">
+            <div style={`width:56px;height:56px;border:1px solid rgba(255,255,255,${i===3?.3:.12});border-radius:50%;background:rgba(255,255,255,.04);display:flex;align-items:center;justify-content:center;margin-bottom:24px;position:relative;z-index:1;`}>
+              <span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#06B6D4;">{s.n}</span>
+            </div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:#fff;margin-bottom:10px;">{s.title}</h3>
+            <p style="font-size:13.5px;font-weight:300;line-height:1.72;color:#6A8EA0;">{s.body}</p>
           </div>
-          <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#fff;margin-bottom:10px;">Connect Your Cloud</h3>
-          <p style="font-size:13.5px;font-weight:300;line-height:1.72;color:#6A8EA0;">We deploy a lightweight agent into your AWS, GCP, or Azure account using a read-write IAM role you control. No data leaves your perimeter.</p>
-        </div>
-        <div style="padding-right:40px;">
-          <div style="width:56px;height:56px;border:1px solid rgba(255,255,255,.12);border-radius:50%;background:rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;margin-bottom:28px;position:relative;z-index:1;">
-            <span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#06B6D4;">02</span>
-          </div>
-          <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#fff;margin-bottom:10px;">Agents Start Learning</h3>
-          <p style="font-size:13.5px;font-weight:300;line-height:1.72;color:#6A8EA0;">Within hours, the agent profiles your environment — workloads, spend patterns, config drift, log anomalies — and builds a baseline model of your system.</p>
-        </div>
-        <div style="padding-right:40px;">
-          <div style="width:56px;height:56px;border:1px solid rgba(255,255,255,.12);border-radius:50%;background:rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;margin-bottom:28px;position:relative;z-index:1;">
-            <span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#06B6D4;">03</span>
-          </div>
-          <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#fff;margin-bottom:10px;">Insights &amp; Actions</h3>
-          <p style="font-size:13.5px;font-weight:300;line-height:1.72;color:#6A8EA0;">Recommendations surface in your dashboard. Approve auto-remediation or act manually. Every action is logged and explainable.</p>
-        </div>
-        <div>
-          <div style="width:56px;height:56px;border:1px solid rgba(6,182,212,.3);border-radius:50%;background:rgba(6,182,212,.1);display:flex;align-items:center;justify-content:center;margin-bottom:28px;position:relative;z-index:1;">
-            <span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#06B6D4;">04</span>
-          </div>
-          <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#fff;margin-bottom:10px;">Continuous Optimization</h3>
-          <p style="font-size:13.5px;font-weight:300;line-height:1.72;color:#6A8EA0;">Agents improve over time. As your infrastructure evolves, so does the intelligence — compounding savings and stability with every passing week.</p>
-        </div>
+        ))}
       </div>
     </div>
   </section>
 
   <!-- ═══════ CONSULTING STRIP ═══════ -->
-  <section style="background:#F4F7FA;padding:56px 0;border-top:1px solid #E2EAF0;">
-    <div style="max-width:1440px;margin:0 auto;padding:0 72px;display:flex;align-items:center;justify-content:space-between;gap:64px;">
-      <div style="flex:1;">
-        <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;">
-          <div style="width:16px;height:1px;background:#0891B2;"></div>
-          <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#0891B2;">Expert Consulting</span>
+  <section class="section-sm" style="background:#F4F7FA;border-top:1px solid #E2EAF0;">
+    <div class="wrap">
+      <div class="grid-halves">
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;">
+            <div style="width:16px;height:1px;background:#0891B2;"></div>
+            <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#0891B2;">Expert Consulting</span>
+          </div>
+          <h2 class="h2-xl" style="max-width:480px;">Need help building the cloud foundations your agents run on?</h2>
         </div>
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:600;letter-spacing:-.02em;color:#0B1E30;line-height:1.15;max-width:480px;">Need help building the cloud foundations your agents run on?</h2>
-      </div>
-      <div style="flex-shrink:0;max-width:380px;">
-        <p style="font-size:14px;font-weight:300;line-height:1.8;color:#5A7080;margin-bottom:28px;">Our engineering team covers Cloud Architecture, Platform Engineering, Migration &amp; Modernization, Observability &amp; SRE, and Gen AI implementation — ensuring your cloud is production-ready from day one.</p>
-        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:28px;">
-          {['Cloud Engineering','Platform Engineering','Migration & Modernization','Observability & SRE','Gen AI Solutions'].map(s => (
-            <span style="font-size:12px;font-weight:500;color:#4A5F72;padding:5px 14px;border:1px solid #C8D8E4;border-radius:20px;background:#fff;">{s}</span>
-          ))}
+        <div>
+          <p style="font-size:14px;font-weight:300;line-height:1.8;color:#5A7080;margin-bottom:24px;">Our engineering team covers Cloud Architecture, Platform Engineering, Migration &amp; Modernization, Observability &amp; SRE, and Gen AI implementation — ensuring your cloud is production-ready from day one.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;">
+            {['Cloud Engineering','Platform Engineering','Migration & Modernization','Observability & SRE','Gen AI Solutions'].map(s => (
+              <span style="font-size:12px;font-weight:500;color:#4A5F72;padding:5px 14px;border:1px solid #C8D8E4;border-radius:20px;background:#fff;">{s}</span>
+            ))}
+          </div>
+          <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="display:inline-block;background:#0891B2;color:#FAFAF8;font-size:13px;font-weight:500;padding:13px 28px;border-radius:5px;text-decoration:none;letter-spacing:.02em;">Talk to our team →</a>
         </div>
-        <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="display:inline-block;background:#0891B2;color:#FAFAF8;font-size:13px;font-weight:500;padding:13px 28px;border-radius:5px;text-decoration:none;letter-spacing:.02em;">Talk to our team →</a>
       </div>
     </div>
   </section>
 
   <!-- ═══════ FOOTER ═══════ -->
   <footer style="background:#0B1E30;padding:72px 0 0;">
-    <div style="max-width:1440px;margin:0 auto;padding:0 72px;">
-      <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.08);">
+    <div class="wrap" style="padding-top:0;">
+      <div class="grid-footer" style="padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08);">
         <div>
-          <div style="margin-bottom:16px;">
-            <img src="https://techtious.com/images/Logo.svg" alt="Techtious" style="height:32px;width:auto;filter:brightness(0) invert(1);" />
-          </div>
-          <p style="font-size:13.5px;font-weight:300;line-height:1.7;color:#6A8EA0;max-width:260px;margin-bottom:24px;">A cloud intelligence product company. We build agents that live inside your infrastructure — reducing costs, catching drift, and keeping your platform stable.</p>
-          <div style="font-size:13px;color:#6A8EA0;margin-bottom:6px;">Dehradun, Uttarakhand, India</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#fff;margin-bottom:14px;">Techtious Labs</div>
+          <p style="font-size:13.5px;font-weight:300;line-height:1.7;color:#6A8EA0;max-width:260px;margin-bottom:20px;">A cloud intelligence product company. Dehradun, Uttarakhand, India.</p>
           <a href="mailto:sales@techtious.com" style="font-size:13px;color:#0891B2;text-decoration:none;">sales@techtious.com</a>
-          <div style="display:flex;gap:14px;margin-top:24px;">
-            <a style="font-size:12px;font-weight:500;color:#5A7A8C;text-decoration:none;">LinkedIn</a>
-            <a style="font-size:12px;font-weight:500;color:#5A7A8C;text-decoration:none;">GitHub</a>
-          </div>
         </div>
         <div>
-          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:20px;">Products</div>
-          <div style="display:flex;flex-direction:column;gap:13px;">
-            <a href="/optix-ai" style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">Optix AI — FinOps Agent</a>
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:18px;">Products</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <a href="/optix-ai" style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">Optix AI</a>
             <a href="/sre-intelligence" style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">SRE Intelligence</a>
             <a href="/driftguard" style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">DriftGuard</a>
           </div>
         </div>
         <div>
-          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:20px;">Services</div>
-          <div style="display:flex;flex-direction:column;gap:13px;">
-            {['Cloud Engineering','Platform Engineering','Gen AI Solutions','Migration & Modernization','Observability & SRE'].map(s => (
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:18px;">Services</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            {['Cloud Engineering','Platform Engineering','Gen AI Solutions','Observability & SRE','Migration & Modernization'].map(s => (
               <a style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">{s}</a>
             ))}
           </div>
         </div>
         <div>
-          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:20px;">Get in Touch</div>
-          <p style="font-size:13.5px;font-weight:300;line-height:1.7;color:#6A8EA0;margin-bottom:24px;">Ready to deploy your first agent or modernize your cloud? Let's talk.</p>
-          <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="display:inline-block;background:#0891B2;color:#fff;font-size:13px;font-weight:500;padding:13px 28px;border-radius:5px;text-decoration:none;letter-spacing:.02em;">Book a Free Consultation</a>
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:18px;">Get in Touch</div>
+          <p style="font-size:13.5px;font-weight:300;line-height:1.7;color:#6A8EA0;margin-bottom:20px;">Ready to deploy your first agent? Let's talk.</p>
+          <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="display:inline-block;background:#0891B2;color:#FAFAF8;font-size:13px;font-weight:500;padding:13px 28px;border-radius:5px;text-decoration:none;letter-spacing:.02em;">Book a Free Consultation</a>
         </div>
       </div>
-      <div style="padding:24px 0;display:flex;align-items:center;justify-content:space-between;">
+      <div style="padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
         <span style="font-size:12.5px;color:#3D5A6A;">© 2026 Techtious Labs. All rights reserved.</span>
         <a href="/careers" style="font-size:12.5px;color:#3D5A6A;text-decoration:none;">Dehradun, Uttarakhand, India · Careers</a>
       </div>

@@ -7,16 +7,16 @@ import Nav from '../components/Nav.tsx';
   <Nav client:load />
 
   <!-- Hero -->
-  <section style="position:relative;overflow:hidden;background:#FAFAF8;padding:96px 0;">
+  <section class="section" style="position:relative;overflow:hidden;background:#FAFAF8;">
     <div class="dot-grid" style="position:absolute;inset:0;opacity:.35;pointer-events:none;"></div>
     <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#0891B2,#06B6D4 40%,transparent);"></div>
-    <div style="max-width:1440px;margin:0 auto;padding:0 72px;position:relative;">
+    <div class="wrap">
       <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:24px;">
         <div style="width:20px;height:1px;background:#0891B2;"></div>
         <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#0891B2;">About us</span>
       </div>
       <div style="max-width:760px;">
-        <h1 style="font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:600;line-height:1.05;letter-spacing:-.025em;color:#0B1E30;margin-bottom:28px;">
+        <h1 class="h1-xl">
           Built by engineers<br>who ran the clouds<br>we now <em style="font-style:italic;color:#0891B2;">optimise</em>
         </h1>
         <p style="font-size:18px;font-weight:300;line-height:1.8;color:#5A7080;max-width:600px;">Techtious Labs started with a simple frustration: cloud bills that kept climbing despite best efforts, and SRE teams that spent more time reacting than building. We set out to solve both — with agents that live inside your infrastructure and work continuously, not just when you log in.</p>
@@ -25,15 +25,15 @@ import Nav from '../components/Nav.tsx';
   </section>
 
   <!-- Mission -->
-  <section style="background:#0B1E30;padding:96px 0;">
-    <div style="max-width:1440px;margin:0 auto;padding:0 72px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+  <section class="section" style="background:#0B1E30;">
+    <div class="wrap">
+      <div class="grid-halves">
         <div>
           <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;">
             <div style="width:20px;height:1px;background:#06B6D4;"></div>
             <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#06B6D4;">Our mission</span>
           </div>
-          <h2 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;letter-spacing:-.02em;color:#fff;line-height:1.1;margin-bottom:24px;">Make cloud infrastructure<br><em style="font-style:italic;color:#06B6D4;">self-managing</em></h2>
+          <h2 class="h2-lg h2-white" style="margin-bottom:24px;">Make cloud infrastructure<br><em style="font-style:italic;color:#06B6D4;">self-managing</em></h2>
           <p style="font-size:15px;font-weight:300;line-height:1.8;color:#6A8EA0;margin-bottom:20px;">We believe the next generation of cloud tooling isn't dashboards you stare at — it's agents that act. Agents that catch the cost spike before it lands on the bill. That page you with a probable cause, not just an alert. That keep your environments in sync without a manual audit.</p>
           <p style="font-size:15px;font-weight:300;line-height:1.8;color:#6A8EA0;">And crucially — agents that run inside your cloud, not ours. Your data, your perimeter, your control.</p>
         </div>
@@ -55,45 +55,27 @@ import Nav from '../components/Nav.tsx';
   </section>
 
   <!-- Values -->
-  <section style="background:#fff;padding:96px 0;">
-    <div style="max-width:1440px;margin:0 auto;padding:0 72px;">
-      <div style="margin-bottom:56px;">
+  <section class="section" style="background:#fff;">
+    <div class="wrap">
+      <div style="margin-bottom:48px;">
         <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;">
           <div style="width:20px;height:1px;background:#0891B2;"></div>
           <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#0891B2;">How we work</span>
         </div>
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;letter-spacing:-.02em;color:#0B1E30;line-height:1.1;">The principles that <em style="font-style:italic;color:#0891B2;">guide us</em></h2>
+        <h2 class="h2-lg">The principles that <em style="font-style:italic;color:#0891B2;">guide us</em></h2>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <div class="grid-3">
         {[
-          {
-            title: 'Your cloud stays yours',
-            body: 'Every agent deploys inside your AWS, GCP, or Azure account using a role you control. No data leaves your perimeter. No vendor lock-in. We have read-write access only to what you explicitly grant.',
-          },
-          {
-            title: 'Explainability over magic',
-            body: 'Every recommendation, every automated action, every alert comes with a plain-language explanation. We want your team to understand what the agent did and why — not just trust a black box.',
-          },
-          {
-            title: 'Compound, not one-shot',
-            body: "Cost savings and platform stability aren't one-time wins. Our agents get smarter as your infrastructure evolves — continuously compounding the value they deliver week over week.",
-          },
-          {
-            title: 'Engineering-led, product-minded',
-            body: 'We are engineers who build tools for engineers. Every feature decision is grounded in real operational experience — not analyst reports or feature-request bingo.',
-          },
-          {
-            title: 'Deliberate product scope',
-            body: 'We build fewer things, better. Rather than shipping a sprawling platform no one fully uses, we ship agents with clear scope and genuine depth — then expand once each is excellent.',
-          },
-          {
-            title: 'Honest about limitations',
-            body: "We tell you when a recommendation is uncertain. We show confidence levels. We don't oversell what AI can do — we show you what it actually does in your specific environment.",
-          },
+          { title:'Your cloud stays yours', body:'Every agent deploys inside your AWS, GCP, or Azure account using a role you control. No data leaves your perimeter. No vendor lock-in. We have read-write access only to what you explicitly grant.' },
+          { title:'Explainability over magic', body:'Every recommendation, every automated action, every alert comes with a plain-language explanation. We want your team to understand what the agent did and why — not just trust a black box.' },
+          { title:'Compound, not one-shot', body:"Cost savings and platform stability aren't one-time wins. Our agents get smarter as your infrastructure evolves — continuously compounding the value they deliver week over week." },
+          { title:'Engineering-led, product-minded', body:'We are engineers who build tools for engineers. Every feature decision is grounded in real operational experience — not analyst reports or feature-request bingo.' },
+          { title:'Deliberate product scope', body:'We build fewer things, better. Rather than shipping a sprawling platform no one fully uses, we ship agents with clear scope and genuine depth — then expand once each is excellent.' },
+          { title:'Honest about limitations', body:"We tell you when a recommendation is uncertain. We show confidence levels. We don't oversell what AI can do — we show you what it actually does in your specific environment." },
         ].map(v => (
-          <div style="padding:32px;border:1px solid #E2EAF0;border-radius:12px;background:#FAFAF8;">
-            <div style="width:36px;height:3px;background:linear-gradient(90deg,#0891B2,#06B6D4);border-radius:2px;margin-bottom:20px;"></div>
-            <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#0B1E30;margin-bottom:12px;">{v.title}</h3>
+          <div style="padding:28px;border:1px solid #E2EAF0;border-radius:12px;background:#FAFAF8;">
+            <div style="width:36px;height:3px;background:linear-gradient(90deg,#0891B2,#06B6D4);border-radius:2px;margin-bottom:18px;"></div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:#0B1E30;margin-bottom:10px;">{v.title}</h3>
             <p style="font-size:13.5px;font-weight:300;line-height:1.75;color:#5A7080;">{v.body}</p>
           </div>
         ))}
@@ -101,82 +83,71 @@ import Nav from '../components/Nav.tsx';
     </div>
   </section>
 
-  <!-- Location & team -->
-  <section style="background:#F4F7FA;padding:96px 0;border-top:1px solid #E2EAF0;">
-    <div style="max-width:1440px;margin:0 auto;padding:0 72px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+  <!-- Location -->
+  <section class="section" style="background:#F4F7FA;border-top:1px solid #E2EAF0;">
+    <div class="wrap">
+      <div class="grid-halves">
         <div>
           <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;">
             <div style="width:20px;height:1px;background:#0891B2;"></div>
             <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#0891B2;">Where we are</span>
           </div>
-          <h2 style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:600;letter-spacing:-.02em;color:#0B1E30;line-height:1.1;margin-bottom:20px;">Dehradun, Uttarakhand, <em style="font-style:italic;color:#0891B2;">India</em></h2>
-          <p style="font-size:15px;font-weight:300;line-height:1.8;color:#5A7080;margin-bottom:28px;">We're headquartered in Dehradun — building world-class cloud intelligence from the foothills of the Himalayas. Our team works across India and serves customers globally on AWS, GCP, and Azure.</p>
+          <h2 class="h2-lg" style="margin-bottom:20px;">Dehradun, Uttarakhand, <em style="font-style:italic;color:#0891B2;">India</em></h2>
+          <p style="font-size:15px;font-weight:300;line-height:1.8;color:#5A7080;margin-bottom:28px;">We're headquartered in Dehradun — building world-class cloud intelligence from the foothills of the Himalayas. Our team serves customers globally on AWS, GCP, and Azure.</p>
           <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="display:inline-block;background:#0891B2;color:#FAFAF8;font-size:13.5px;font-weight:500;padding:14px 32px;border-radius:5px;text-decoration:none;letter-spacing:.02em;">Talk to the team</a>
         </div>
-        <div style="display:flex;flex-direction:column;gap:20px;">
-          <div style="background:#fff;border:1px solid #DDE8F0;border-radius:12px;padding:28px;display:flex;align-items:center;gap:16px;">
-            <div style="width:44px;height:44px;background:#EEF6FB;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          {[
+            { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>, label:'Headquarters', value:'Dehradun, Uttarakhand, India' },
+            { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>, label:'Email', value:'sales@techtious.com', href:'mailto:sales@techtious.com' },
+            { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>, label:"We're hiring", value:'View open roles →', href:'/careers' },
+          ].map(item => (
+            <div style="background:#fff;border:1px solid #DDE8F0;border-radius:12px;padding:24px;display:flex;align-items:center;gap:16px;">
+              <div style="width:44px;height:44px;background:#EEF6FB;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">{item.icon}</div>
+              <div>
+                <div style="font-size:13px;font-weight:600;color:#0B1E30;margin-bottom:2px;">{item.label}</div>
+                {item.href
+                  ? <a href={item.href} style="font-size:13px;font-weight:300;color:#0891B2;text-decoration:none;">{item.value}</a>
+                  : <div style="font-size:13px;font-weight:300;color:#5A7080;">{item.value}</div>
+                }
+              </div>
             </div>
-            <div>
-              <div style="font-size:13px;font-weight:600;color:#0B1E30;margin-bottom:2px;">Headquarters</div>
-              <div style="font-size:13px;font-weight:300;color:#5A7080;">Dehradun, Uttarakhand, India</div>
-            </div>
-          </div>
-          <div style="background:#fff;border:1px solid #DDE8F0;border-radius:12px;padding:28px;display:flex;align-items:center;gap:16px;">
-            <div style="width:44px;height:44px;background:#EEF6FB;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div>
-              <div style="font-size:13px;font-weight:600;color:#0B1E30;margin-bottom:2px;">Email</div>
-              <a href="mailto:sales@techtious.com" style="font-size:13px;font-weight:300;color:#0891B2;text-decoration:none;">sales@techtious.com</a>
-            </div>
-          </div>
-          <div style="background:#fff;border:1px solid #DDE8F0;border-radius:12px;padding:28px;display:flex;align-items:center;gap:16px;">
-            <div style="width:44px;height:44px;background:#EEF6FB;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            </div>
-            <div>
-              <div style="font-size:13px;font-weight:600;color:#0B1E30;margin-bottom:2px;">We're hiring</div>
-              <a href="/careers" style="font-size:13px;font-weight:300;color:#0891B2;text-decoration:none;">View open roles →</a>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer style="background:#0B1E30;padding:72px 0 0;">
-    <div style="max-width:1440px;margin:0 auto;padding:0 72px;">
-      <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.08);">
+  <footer style="background:#0B1E30;padding:64px 0 0;">
+    <div class="wrap" style="padding-top:0;">
+      <div class="grid-footer" style="padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08);">
         <div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#fff;margin-bottom:14px;">Techtious Labs</div>
-          <p style="font-size:13.5px;font-weight:300;line-height:1.7;color:#6A8EA0;max-width:260px;margin-bottom:24px;">Cloud intelligence agents that deploy inside your infrastructure. Dehradun, Uttarakhand, India.</p>
+          <p style="font-size:13.5px;font-weight:300;line-height:1.7;color:#6A8EA0;max-width:240px;margin-bottom:16px;">Cloud intelligence agents. Dehradun, Uttarakhand, India.</p>
           <a href="mailto:sales@techtious.com" style="font-size:13px;color:#0891B2;text-decoration:none;">sales@techtious.com</a>
         </div>
         <div>
-          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:20px;">Products</div>
-          <div style="display:flex;flex-direction:column;gap:13px;">
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:18px;">Products</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
             <a href="/optix-ai" style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">Optix AI</a>
             <a href="/sre-intelligence" style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">SRE Intelligence</a>
             <a href="/driftguard" style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">DriftGuard</a>
           </div>
         </div>
         <div>
-          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:20px;">Company</div>
-          <div style="display:flex;flex-direction:column;gap:13px;">
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:18px;">Company</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
             <a href="/about" style="font-size:13.5px;color:#06B6D4;text-decoration:none;font-weight:400;">About Us</a>
             <a href="/careers" style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">Careers</a>
           </div>
         </div>
         <div>
-          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:20px;">Get in Touch</div>
-          <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="display:inline-block;background:#0891B2;color:#FAFAF8;font-size:13px;font-weight:500;padding:13px 28px;border-radius:5px;text-decoration:none;letter-spacing:.02em;">Book a Free Consultation</a>
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:18px;">Get in Touch</div>
+          <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="display:inline-block;background:#0891B2;color:#FAFAF8;font-size:13px;font-weight:500;padding:13px 28px;border-radius:5px;text-decoration:none;">Book a Free Consultation</a>
         </div>
       </div>
-      <div style="padding:24px 0;display:flex;align-items:center;justify-content:space-between;">
+      <div style="padding:20px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
         <span style="font-size:12.5px;color:#3D5A6A;">© 2026 Techtious Labs. All rights reserved.</span>
         <span style="font-size:12.5px;color:#3D5A6A;">Dehradun, Uttarakhand, India</span>
       </div>

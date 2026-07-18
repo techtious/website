@@ -7,12 +7,12 @@ import Nav from '../components/Nav.tsx';
   <Nav client:load />
 
   <!-- Hero -->
-  <section style="position:relative;overflow:hidden;background:#FAFAF8;padding:96px 0;">
+  <section class="section" style="position:relative;overflow:hidden;background:#FAFAF8;">
     <div class="dot-grid" style="position:absolute;inset:0;opacity:.35;pointer-events:none;"></div>
     <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#0891B2,#06B6D4 50%,transparent);"></div>
-    <div style="max-width:1440px;margin:0 auto;padding:0 72px;position:relative;">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
-        <div style="width:40px;height:40px;background:linear-gradient(135deg,#0891B2,#06B6D4);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+    <div class="wrap">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;flex-wrap:wrap;">
+        <div style="width:40px;height:40px;background:linear-gradient(135deg,#0891B2,#06B6D4);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L9 9l-7 3 7 3 3 7 3-7 7-3-7-3z" fill="#fff"/></svg>
         </div>
         <div style="display:flex;align-items:center;gap:8px;">
@@ -20,21 +20,21 @@ import Nav from '../components/Nav.tsx';
           <span style="font-size:10px;font-weight:600;color:#059669;background:#ECFDF5;border:1px solid #A7F3D0;padding:2px 8px;border-radius:10px;text-transform:uppercase;letter-spacing:.06em;">Live</span>
         </div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 420px;gap:80px;align-items:center;">
+      <div class="hero-grid-mid">
         <div>
-          <h1 style="font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:600;line-height:1.05;letter-spacing:-.025em;color:#0B1E30;margin-bottom:24px;">
+          <h1 class="h1-lg">
             Cloud costs,<br><em style="font-style:italic;color:#0891B2;">under control</em>
           </h1>
-          <p style="font-size:17px;font-weight:300;line-height:1.75;color:#5A7080;max-width:500px;margin-bottom:36px;">An autonomous FinOps agent that deploys inside your AWS, GCP, or Azure account — continuously finding waste, right-sizing Kubernetes workloads, and giving your team real-time cost intelligence. No agents phoning home. Your cloud, your data.</p>
-          <div style="display:flex;gap:14px;align-items:center;">
+          <p style="font-size:17px;font-weight:300;line-height:1.75;color:#5A7080;max-width:500px;margin-bottom:36px;">An autonomous FinOps agent that deploys inside your AWS, GCP, or Azure account — continuously finding waste, right-sizing Kubernetes workloads, and giving your team real-time cost intelligence. Your cloud, your data.</p>
+          <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
             <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="display:inline-block;background:#0891B2;color:#FAFAF8;font-size:13.5px;font-weight:500;padding:14px 36px;border-radius:5px;text-decoration:none;letter-spacing:.02em;">Book a demo</a>
             <a href="#how-it-works" style="font-size:13.5px;font-weight:500;color:#0891B2;text-decoration:none;display:flex;align-items:center;gap:6px;">See how it works →</a>
           </div>
         </div>
         <!-- Stats panel -->
         <div style="background:#fff;border:1px solid #DDE8F0;border-radius:16px;padding:36px;box-shadow:0 4px 24px rgba(11,30,48,.07);">
-          <div style="font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#8AA0B0;margin-bottom:28px;">Real customer outcomes</div>
-          <div style="display:flex;flex-direction:column;gap:0;">
+          <div style="font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#8AA0B0;margin-bottom:24px;">Real customer outcomes</div>
+          <div>
             <div style="padding:20px 0;border-bottom:1px solid #E2EAF0;">
               <div style="font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:700;color:#0891B2;line-height:1;">43%</div>
               <div style="font-size:13px;color:#5A7080;margin-top:4px;font-weight:300;">Average cloud waste eliminated in 90 days</div>
@@ -53,53 +53,27 @@ import Nav from '../components/Nav.tsx';
     </div>
   </section>
 
-  <!-- What it does -->
-  <section style="background:#fff;padding:96px 0;">
-    <div style="max-width:1440px;margin:0 auto;padding:0 72px;">
-      <div style="margin-bottom:56px;">
+  <!-- Capabilities -->
+  <section class="section" style="background:#fff;">
+    <div class="wrap">
+      <div style="margin-bottom:48px;">
         <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;">
           <div style="width:20px;height:1px;background:#0891B2;"></div>
           <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#0891B2;">Capabilities</span>
         </div>
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;letter-spacing:-.02em;color:#0B1E30;line-height:1.1;max-width:600px;">One agent. Full-stack cost <em style="font-style:italic;color:#0891B2;">visibility</em></h2>
+        <h2 class="h2-lg">One agent. Full-stack cost <em style="font-style:italic;color:#0891B2;">visibility</em></h2>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <div class="grid-3">
         {[
-          {
-            icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>,
-            title: 'Cloud Cost Anomaly Detection',
-            body: 'Optix continuously monitors spend across all services. When costs spike outside normal patterns, you get an alert — before the bill arrives.',
-          },
-          {
-            icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>,
-            title: 'Kubernetes Pod Right-Sizing',
-            body: 'Optix profiles CPU and memory requests against real usage. It recommends — or automatically applies — right-sized resource limits per namespace.',
-          },
-          {
-            icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>,
-            title: 'Idle Resource Auto-Cleanup',
-            body: 'Orphaned volumes, forgotten snapshots, idle load balancers — Optix finds and flags them. With approval, it removes them automatically.',
-          },
-          {
-            icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>,
-            title: 'Reserved Instance Intelligence',
-            body: 'Optix analyses your on-demand patterns and recommends the optimal RI or Savings Plan commitment — with payback period projections.',
-          },
-          {
-            icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>,
-            title: 'Multi-Cloud Cost Allocation',
-            body: 'Tag-based cost allocation across AWS, GCP, and Azure in a single dashboard. Break down spend by team, product, or environment.',
-          },
-          {
-            icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>,
-            title: 'Unified FinOps Dashboard',
-            body: 'A single pane of glass for your entire cloud estate — with forecasting, budget alerts, and exportable reports for finance teams.',
-          },
+          { title:'Cloud Cost Anomaly Detection', body:'Optix continuously monitors spend across all services. When costs spike outside normal patterns, you get an alert — before the bill arrives.' },
+          { title:'Kubernetes Pod Right-Sizing', body:'Optix profiles CPU and memory requests against real usage. It recommends — or automatically applies — right-sized resource limits per namespace.' },
+          { title:'Idle Resource Auto-Cleanup', body:'Orphaned volumes, forgotten snapshots, idle load balancers — Optix finds and flags them. With approval, it removes them automatically.' },
+          { title:'Reserved Instance Intelligence', body:'Optix analyses your on-demand patterns and recommends the optimal RI or Savings Plan commitment — with payback period projections.' },
+          { title:'Multi-Cloud Cost Allocation', body:'Tag-based cost allocation across AWS, GCP, and Azure in a single dashboard. Break down spend by team, product, or environment.' },
+          { title:'Unified FinOps Dashboard', body:'A single pane of glass for your entire cloud estate — with forecasting, budget alerts, and exportable reports for finance teams.' },
         ].map(c => (
-          <div style="border:1px solid #E2EAF0;border-radius:12px;padding:32px;background:#FAFAF8;">
-            <div style="width:44px;height:44px;background:#EEF6FB;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-              {c.icon}
-            </div>
+          <div style="border:1px solid #E2EAF0;border-radius:12px;padding:28px;background:#FAFAF8;">
+            <div style="width:36px;height:3px;background:linear-gradient(90deg,#0891B2,#06B6D4);border-radius:2px;margin-bottom:18px;"></div>
             <h3 style="font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:#0B1E30;margin-bottom:10px;">{c.title}</h3>
             <p style="font-size:13.5px;font-weight:300;line-height:1.75;color:#5A7080;">{c.body}</p>
           </div>
@@ -109,25 +83,25 @@ import Nav from '../components/Nav.tsx';
   </section>
 
   <!-- How it works -->
-  <section id="how-it-works" style="background:#0B1E30;padding:96px 0;">
-    <div style="max-width:1440px;margin:0 auto;padding:0 72px;">
-      <div style="margin-bottom:64px;">
+  <section id="how-it-works" class="section" style="background:#0B1E30;">
+    <div class="wrap">
+      <div style="margin-bottom:56px;">
         <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;">
           <div style="width:20px;height:1px;background:#06B6D4;"></div>
           <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#06B6D4;">Deployment model</span>
         </div>
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;letter-spacing:-.02em;color:#fff;line-height:1.1;">Up and running in <em style="font-style:italic;color:#06B6D4;">under an hour</em></h2>
+        <h2 class="h2-lg h2-white">Up and running in <em style="font-style:italic;color:#06B6D4;">under an hour</em></h2>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;">
-        <div style="position:absolute;top:27px;left:calc(12.5% + 18px);right:calc(12.5% + 18px);height:1px;background:rgba(255,255,255,.1);"></div>
+      <div class="grid-4">
+        <div class="step-connector" style="background:rgba(255,255,255,.1);"></div>
         {[
           { n:'01', title:'Connect your cloud', body:'We deploy a lightweight read-write IAM role into your AWS, GCP, or Azure account. The agent runs inside your VPC — zero data leaves your environment.' },
           { n:'02', title:'Agent profiles your estate', body:'Within hours, Optix maps every resource: EC2, RDS, EKS clusters, S3 buckets, Lambda functions. It builds a baseline of normal spend patterns.' },
           { n:'03', title:'Recommendations surface', body:'You see ranked opportunities in the dashboard — from quick wins (idle EBS volumes) to structural changes (RI conversions) — with projected savings.' },
           { n:'04', title:'Automate or stay manual', body:'Approve individual actions or enable auto-remediation policies. Every action is logged, reversible, and explained in plain language.' },
         ].map((s, i) => (
-          <div style="padding-right:40px;">
-            <div style={`width:56px;height:56px;border:1px solid rgba(255,255,255,${i===3?.3:.12});border-radius:50%;background:rgba(255,255,255,${i===3?.05:.03});display:flex;align-items:center;justify-content:center;margin-bottom:28px;position:relative;z-index:1;`}>
+          <div style="padding-right:32px;padding-bottom:8px;">
+            <div style={`width:56px;height:56px;border:1px solid rgba(255,255,255,${i===3?.3:.12});border-radius:50%;background:rgba(255,255,255,.04);display:flex;align-items:center;justify-content:center;margin-bottom:24px;position:relative;z-index:1;`}>
               <span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#06B6D4;">{s.n}</span>
             </div>
             <h3 style="font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:#fff;margin-bottom:10px;">{s.title}</h3>
@@ -138,75 +112,70 @@ import Nav from '../components/Nav.tsx';
     </div>
   </section>
 
-  <!-- Security & trust strip -->
-  <section style="background:#F4F7FA;border-top:1px solid #E2EAF0;border-bottom:1px solid #E2EAF0;padding:48px 0;">
-    <div style="max-width:1440px;margin:0 auto;padding:0 72px;">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:48px;flex-wrap:wrap;">
-        <div style="display:flex;align-items:center;gap:10px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"/></svg>
-          <span style="font-size:13.5px;font-weight:400;color:#4A5F72;">Runs entirely inside your cloud account</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"/></svg>
-          <span style="font-size:13.5px;font-weight:400;color:#4A5F72;">Zero data egress — no data leaves your perimeter</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><polyline points="9 11 12 14 22 4" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"/></svg>
-          <span style="font-size:13.5px;font-weight:400;color:#4A5F72;">Every action logged and reversible</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="#0891B2" stroke-width="1.8"/><path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"/><path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"/></svg>
-          <span style="font-size:13.5px;font-weight:400;color:#4A5F72;">You control every permission and policy</span>
-        </div>
+  <!-- Security strip -->
+  <section class="section-xs" style="background:#F4F7FA;border-top:1px solid #E2EAF0;border-bottom:1px solid #E2EAF0;">
+    <div class="wrap">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;">
+        {[
+          { text:'Runs entirely inside your cloud account' },
+          { text:'Zero data egress — no data leaves your perimeter' },
+          { text:'Every action logged and reversible' },
+          { text:'You control every permission and policy' },
+        ].map(t => (
+          <div style="display:flex;align-items:center;gap:10px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span style="font-size:13.5px;font-weight:400;color:#4A5F72;">{t.text}</span>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section style="background:#fff;padding:96px 0;">
-    <div style="max-width:1440px;margin:0 auto;padding:0 72px;text-align:center;">
+  <section class="section" style="background:#fff;text-align:center;">
+    <div class="wrap">
       <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;">
         <div style="width:20px;height:1px;background:#0891B2;"></div>
         <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#0891B2;">Get started</span>
         <div style="width:20px;height:1px;background:#0891B2;"></div>
       </div>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:600;letter-spacing:-.02em;color:#0B1E30;margin-bottom:16px;line-height:1.1;">Ready to see what Optix finds<br>in <em style="font-style:italic;color:#0891B2;">your</em> cloud?</h2>
+      <h2 class="h2-xl" style="margin-bottom:16px;">Ready to see what Optix finds<br>in <em style="font-style:italic;color:#0891B2;">your</em> cloud?</h2>
       <p style="font-size:15px;font-weight:300;line-height:1.75;color:#5A7080;max-width:480px;margin:0 auto 36px;">Most customers see their first savings opportunities within 24 hours of deployment. No commitment required for the initial assessment.</p>
       <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="display:inline-block;background:#0891B2;color:#FAFAF8;font-size:14px;font-weight:500;padding:15px 44px;border-radius:5px;text-decoration:none;letter-spacing:.02em;">Book a free demo</a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer style="background:#0B1E30;padding:72px 0 0;">
-    <div style="max-width:1440px;margin:0 auto;padding:0 72px;">
-      <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.08);">
+  <footer style="background:#0B1E30;padding:64px 0 0;">
+    <div class="wrap" style="padding-top:0;">
+      <div class="grid-footer" style="padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08);">
         <div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#fff;margin-bottom:14px;">Techtious Labs</div>
-          <p style="font-size:13.5px;font-weight:300;line-height:1.7;color:#6A8EA0;max-width:260px;margin-bottom:24px;">Cloud intelligence agents that deploy inside your infrastructure and compound savings week over week.</p>
+          <p style="font-size:13.5px;font-weight:300;line-height:1.7;color:#6A8EA0;max-width:240px;margin-bottom:16px;">Cloud intelligence agents that deploy inside your infrastructure.</p>
           <a href="mailto:sales@techtious.com" style="font-size:13px;color:#0891B2;text-decoration:none;">sales@techtious.com</a>
         </div>
         <div>
-          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:20px;">Products</div>
-          <div style="display:flex;flex-direction:column;gap:13px;">
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:18px;">Products</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
             <a href="/optix-ai" style="font-size:13.5px;color:#06B6D4;text-decoration:none;font-weight:400;">Optix AI</a>
             <a href="/sre-intelligence" style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">SRE Intelligence</a>
             <a href="/driftguard" style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">DriftGuard</a>
           </div>
         </div>
         <div>
-          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:20px;">Services</div>
-          <div style="display:flex;flex-direction:column;gap:13px;">
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:18px;">Services</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
             {['Cloud Engineering','Platform Engineering','Gen AI Solutions','Migration & Modernization','Observability & SRE'].map(s => (
               <a style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">{s}</a>
             ))}
           </div>
         </div>
         <div>
-          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:20px;">Get in Touch</div>
-          <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="display:inline-block;background:#0891B2;color:#FAFAF8;font-size:13px;font-weight:500;padding:13px 28px;border-radius:5px;text-decoration:none;letter-spacing:.02em;">Book a Free Consultation</a>
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:18px;">Get in Touch</div>
+          <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="display:inline-block;background:#0891B2;color:#FAFAF8;font-size:13px;font-weight:500;padding:13px 28px;border-radius:5px;text-decoration:none;">Book a Free Consultation</a>
         </div>
       </div>
-      <div style="padding:24px 0;display:flex;align-items:center;justify-content:space-between;">
+      <div style="padding:20px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
         <span style="font-size:12.5px;color:#3D5A6A;">© 2026 Techtious Labs. All rights reserved.</span>
         <span style="font-size:12.5px;color:#3D5A6A;">Dehradun, Uttarakhand, India</span>
       </div>
