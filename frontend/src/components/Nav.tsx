@@ -164,7 +164,7 @@ export default function Nav() {
 
         {/* CTA */}
         <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style={{
-          background: '#0B1E30', color: '#fff', fontSize: 13, fontWeight: 500,
+          background: '#0891B2', color: '#FAFAF8', fontSize: 13, fontWeight: 500,
           padding: '11px 28px', border: 'none', borderRadius: 5, cursor: 'pointer', letterSpacing: '.025em',
           textDecoration: 'none', display: 'inline-block',
         }}>
