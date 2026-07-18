@@ -1,10 +1,12 @@
 import { useState } from 'react';
 
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const SOLUTIONS = [
   {
     name: 'Optix AI',
     sub: 'FinOps & K8s cost intelligence',
-    href: '/optix-ai',
+    href: `${BASE}/optix-ai`,
     gradient: 'linear-gradient(135deg,#0891B2,#06B6D4)',
     badge: 'Live', badgeColor: '#10B981', badgeBg: '#ECFDF5',
     icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 2L9 9l-7 3 7 3 3 7 3-7 7-3-7-3z" fill="#fff"/></svg>,
@@ -12,7 +14,7 @@ const SOLUTIONS = [
   {
     name: 'SRE Intelligence',
     sub: 'Log analytics & stability',
-    href: '/sre-intelligence',
+    href: `${BASE}/sre-intelligence`,
     gradient: 'linear-gradient(135deg,#D97706,#F59E0B)',
     badge: 'Beta', badgeColor: '#D97706', badgeBg: '#FFFBEB',
     icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="#fff" strokeWidth="2"/><circle cx="12" cy="12" r="3" fill="#fff"/></svg>,
@@ -20,7 +22,7 @@ const SOLUTIONS = [
   {
     name: 'DriftGuard',
     sub: 'Environment sync & drift detection',
-    href: '/driftguard',
+    href: `${BASE}/driftguard`,
     gradient: 'linear-gradient(135deg,#3B82F6,#60A5FA)',
     badge: 'Soon', badgeColor: '#64748B', badgeBg: '#F1F5F9',
     icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><polyline points="17 1 21 5 17 9" stroke="#fff" strokeWidth="2" strokeLinecap="round"/><path d="M3 11V9a4 4 0 0 1 4-4h14" stroke="#fff" strokeWidth="2" strokeLinecap="round"/><polyline points="7 23 3 19 7 15" stroke="#fff" strokeWidth="2" strokeLinecap="round"/><path d="M21 13v2a4 4 0 0 1-4 4H3" stroke="#fff" strokeWidth="2" strokeLinecap="round"/></svg>,
@@ -54,7 +56,7 @@ export default function Nav() {
     <nav className="site-nav">
       <div className="nav-inner">
         {/* Logo */}
-        <a href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+        <a href={`${BASE}/`} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
           <img src="https://techtious.com/images/Logo.svg" alt="Techtious" style={{ height: 36, width: 'auto' }} />
         </a>
 
@@ -107,7 +109,7 @@ export default function Nav() {
             )}
           </div>
 
-          <a href="/about" style={{ cursor: 'pointer', color: '#4A5F72', textDecoration: 'none' }}>About Us</a>
+          <a href={`${BASE}/about`} style={{ cursor: 'pointer', color: '#4A5F72', textDecoration: 'none' }}>About Us</a>
           <span style={{ cursor: 'pointer', color: '#4A5F72' }}>Blog</span>
         </div>
 
@@ -157,7 +159,7 @@ export default function Nav() {
             </div>
           )}
 
-          <a href="/about" className="nav-mobile-link" style={{ textDecoration: 'none' }}>About Us</a>
+          <a href={`${BASE}/about`} className="nav-mobile-link" style={{ textDecoration: 'none' }}>About Us</a>
           <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" className="nav-mobile-cta">Book a Call</a>
         </div>
       </div>

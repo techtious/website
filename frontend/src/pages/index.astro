@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Nav from '../components/Nav.tsx';
+const B = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <Base title="Techtious Labs — Cloud Intelligence Suite" description="Three autonomous agents that deploy inside your cloud — eliminating waste, catching drift, and keeping your platform stable.">
 
@@ -165,7 +166,7 @@ import Nav from '../components/Nav.tsx';
                 </div>
               ))}
             </div>
-            <a href="/optix-ai" style="display:inline-block;background:#0891B2;color:#FAFAF8;font-size:13.5px;font-weight:500;padding:13px 32px;border-radius:6px;cursor:pointer;letter-spacing:.02em;text-decoration:none;">Explore Optix AI</a>
+            <a href={`${B}/optix-ai`} style="display:inline-block;background:#0891B2;color:#FAFAF8;font-size:13.5px;font-weight:500;padding:13px 32px;border-radius:6px;cursor:pointer;letter-spacing:.02em;text-decoration:none;">Explore Optix AI</a>
           </div>
           <div style="padding:40px;background:#F4F8FB;display:flex;flex-direction:column;justify-content:center;gap:24px;">
             <div>
@@ -204,7 +205,7 @@ import Nav from '../components/Nav.tsx';
             </div>
           </div>
           <p style="font-size:14px;font-weight:300;line-height:1.75;color:#6A5A40;margin-bottom:24px;">An agent that lives inside your platform and continuously watches logs, traces, and metrics — surfacing anomalies before they become incidents.</p>
-          <a href="/sre-intelligence" style="display:inline-block;background:transparent;color:#D97706;font-size:13px;font-weight:500;padding:11px 24px;border:1.5px solid #F59E0B;border-radius:6px;text-decoration:none;">Join Beta</a>
+          <a href={`${B}/sre-intelligence`} style="display:inline-block;background:transparent;color:#D97706;font-size:13px;font-weight:500;padding:11px 24px;border:1.5px solid #F59E0B;border-radius:6px;text-decoration:none;">Join Beta</a>
         </div>
         <div style="border:1.5px dashed #C8D8E4;border-radius:16px;padding:36px;background:#F8FAFB;">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
@@ -222,7 +223,7 @@ import Nav from '../components/Nav.tsx';
             </div>
           </div>
           <p style="font-size:14px;font-weight:300;line-height:1.75;color:#6A7E8A;margin-bottom:24px;">Continuously compares configurations across environments and flags every divergence before it causes an outage.</p>
-          <a href="/driftguard" style="display:inline-block;background:transparent;color:#6A8EA0;font-size:13px;font-weight:500;padding:11px 24px;border:1.5px solid #C8D8E4;border-radius:6px;text-decoration:none;">Get Early Access</a>
+          <a href={`${B}/driftguard`} style="display:inline-block;background:transparent;color:#6A8EA0;font-size:13px;font-weight:500;padding:11px 24px;border:1.5px solid #C8D8E4;border-radius:6px;text-decoration:none;">Get Early Access</a>
         </div>
       </div>
     </div>
@@ -294,9 +295,9 @@ import Nav from '../components/Nav.tsx';
         <div>
           <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:18px;">Products</div>
           <div style="display:flex;flex-direction:column;gap:12px;">
-            <a href="/optix-ai" style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">Optix AI</a>
-            <a href="/sre-intelligence" style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">SRE Intelligence</a>
-            <a href="/driftguard" style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">DriftGuard</a>
+            <a href={`${B}/optix-ai`} style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">Optix AI</a>
+            <a href={`${B}/sre-intelligence`} style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">SRE Intelligence</a>
+            <a href={`${B}/driftguard`} style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">DriftGuard</a>
           </div>
         </div>
         <div>
@@ -315,7 +316,7 @@ import Nav from '../components/Nav.tsx';
       </div>
       <div style="padding:20px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
         <span style="font-size:12.5px;color:#3D5A6A;">© 2026 Techtious Labs. All rights reserved.</span>
-        <a href="/careers" style="font-size:12.5px;color:#3D5A6A;text-decoration:none;">Dehradun, Uttarakhand, India · Careers</a>
+        <a href={`${B}/careers`} style="font-size:12.5px;color:#3D5A6A;text-decoration:none;">Dehradun, Uttarakhand, India · Careers</a>
       </div>
     </div>
   </footer>
