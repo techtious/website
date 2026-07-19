@@ -28,8 +28,60 @@ const B = import.meta.env.BASE_URL.replace(/\/$/, '');
     </div>
   </section>
 
+  <!-- Team -->
+  <section class="section" style="background:#fff;">
+    <div class="wrap">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:56px;">
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;">
+            <div style="width:20px;height:1px;background:#0891B2;"></div>
+            <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#0891B2;">The Team</span>
+          </div>
+          <h2 class="h2-lg">The people <em style="font-style:italic;color:#0891B2;">building this</em></h2>
+        </div>
+        <p style="font-size:14px;font-weight:300;color:#8AA0B0;max-width:280px;">More team members joining as we grow.</p>
+      </div>
+
+      <!-- Founder card -->
+      <div style="display:grid;grid-template-columns:320px 1fr;border:1px solid #E2EAF0;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(11,30,48,.06);">
+        <!-- Photo -->
+        <div style="background:#EEF6FB;min-height:400px;overflow:hidden;">
+          <img src={`${B}/rahul-lamba.jpg`} alt="Rahul Lamba" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" />
+        </div>
+        <!-- Details -->
+        <div style="padding:52px 60px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:20px;">
+            <div style="width:20px;height:1px;background:#0891B2;"></div>
+            <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:#0891B2;">Founder</span>
+          </div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;color:#0B1E30;line-height:1.08;margin-bottom:20px;">Rahul Lamba</h3>
+          <p style="font-size:15px;font-weight:300;line-height:1.8;color:#5A7080;max-width:520px;margin-bottom:28px;">Engineer turned founder. Built and operated cloud infrastructure at scale across AWS, GCP, and Azure before starting Techtious. Obsessed with making cloud systems intelligent and self-managing — so engineering teams spend their time building, not firefighting.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;">
+            {['Cloud Architecture','Platform Engineering','Gen AI','SRE','FinOps'].map(tag => (
+              <span style={`font-size:12px;font-weight:500;color:#0891B2;padding:4px 14px;border:1px solid #0891B228;border-radius:20px;background:#0891B20A;`}>{tag}</span>
+            ))}
+          </div>
+          <a href="https://www.linkedin.com/in/connectwithrl/" target="_blank" rel="noopener"
+            style="display:inline-flex;align-items:center;gap:8px;background:#0A66C2;color:#fff;font-size:13px;font-weight:500;padding:10px 22px;border-radius:6px;text-decoration:none;align-self:flex-start;letter-spacing:.02em;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            Connect on LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <!-- Future team placeholder -->
+      <div style="margin-top:24px;border:1.5px dashed #DDE8F0;border-radius:16px;padding:48px;text-align:center;background:#FAFAF8;">
+        <div style="width:48px;height:48px;background:#EEF6FB;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <p style="font-size:15px;font-weight:500;color:#0B1E30;margin-bottom:6px;">More team members coming soon</p>
+        <p style="font-size:13px;font-weight:300;color:#8AA0B0;">We're hiring engineers who care about craft. <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="color:#0891B2;text-decoration:none;font-weight:400;">Talk to us →</a></p>
+      </div>
+    </div>
+  </section>
+
   <!-- Values -->
-  <section style="background:#fff;padding:96px 0;">
+  <section style="background:#F4F7FA;padding:96px 0;border-top:1px solid #E2EAF0;">
     <div class="wrap">
 
       <!-- Section header -->
@@ -229,6 +281,30 @@ const B = import.meta.env.BASE_URL.replace(/\/$/, '');
   </footer>
 
 <style>
+  /* Founder card responsive */
+  @media (max-width: 1024px) {
+    [style*="grid-template-columns:320px 1fr"] {
+      grid-template-columns: 1fr !important;
+    }
+    [style*="padding:52px 60px"] {
+      padding: 36px 32px !important;
+    }
+    [style*="min-height:400px"] {
+      min-height: 300px !important;
+    }
+  }
+  @media (max-width: 640px) {
+    [style*="padding:52px 60px"] {
+      padding: 28px 20px !important;
+    }
+    [style*="font-size:48px;font-weight:600;color:#0B1E30;line-height:1.08"] {
+      font-size: 34px !important;
+    }
+    [style*="min-height:400px"] {
+      min-height: 260px !important;
+    }
+  }
+
   /* Responsive adjustments for the values panels */
   @media (max-width: 1024px) {
     [style*="grid-template-columns:560px"] {
