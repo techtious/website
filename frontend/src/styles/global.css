@@ -80,7 +80,42 @@
   background: #0891B2; color: #FAFAF8; font-size: 13px; font-weight: 500;
   padding: 11px 28px; border-radius: 5px; text-decoration: none;
   letter-spacing: .025em; display: inline-block; white-space: nowrap;
+  transition: background .15s ease;
 }
+.nav-cta-btn:hover { background: #0779A0; }
+
+/* Nav trigger (Solutions / Services) */
+.nav-trigger {
+  cursor: pointer; font-weight: 500; color: #0B1E30;
+  display: flex; align-items: center; gap: 5px;
+  transition: color .15s ease; user-select: none;
+}
+.nav-trigger.active { color: #0891B2; }
+.nav-trigger:hover  { color: #0891B2; }
+
+/* Plain nav links (About, Blog) */
+.nav-plain-link {
+  color: #4A5F72; text-decoration: none; transition: color .15s ease;
+}
+.nav-plain-link:hover { color: #0B1E30; }
+
+/* Desktop dropdown panel */
+.nav-dropdown-panel {
+  background: #fff;
+  border: 1px solid #E2EAF0;
+  border-radius: 12px;
+  padding: 6px;
+  box-shadow: 0 12px 36px rgba(11,30,48,.13), 0 2px 8px rgba(11,30,48,.06);
+}
+
+/* Desktop dropdown item */
+.nav-dropdown-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 12px; border-radius: 8px;
+  text-decoration: none; cursor: pointer;
+  transition: background .12s ease;
+}
+.nav-dropdown-item:hover { background: #F0F6FA; }
 .nav-hamburger {
   display: none; background: none; border: none; cursor: pointer;
   padding: 6px; flex-direction: column; gap: 5px; align-items: center;
