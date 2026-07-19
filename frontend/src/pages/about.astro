@@ -2,6 +2,40 @@
 import Base from '../layouts/Base.astro';
 import Nav from '../components/Nav.tsx';
 const B = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const values = [
+  {
+    num: '01',
+    label: 'Energetic',
+    title: 'Pursuit of Excellence',
+    body: 'We push ourselves and each other toward better work, bigger impact, continuous growth. Good enough is never the goal.',
+  },
+  {
+    num: '02',
+    label: 'Pragmatic',
+    title: 'Pragmatic Problem Solving',
+    body: "We ship solutions. We don't over-engineer or overthink. Results over process — always.",
+  },
+  {
+    num: '03',
+    label: 'Integrity',
+    title: 'Integrity in Commitment',
+    body: 'We say what we do and do what we say. No empty promises. Accountability in every word.',
+  },
+  {
+    num: '04',
+    label: 'People',
+    title: 'Respect Contributors',
+    body: 'We build fairly. Everyone who works with us — team, contractors, partners — gets paid well, credited honestly, treated with dignity. No shortcuts on people.',
+  },
+  {
+    num: '05',
+    label: 'Customer Focus',
+    title: 'Customer-Centric Delivery',
+    body: 'We know who we serve and what they actually need. We respect their time by shipping lean, focused solutions. We only commit to customers we can deliver for — not every deal is worth taking.',
+    quote: '"Not every deal is worth taking."',
+  },
+];
 ---
 <Base title="About Techtious Labs — Cloud Intelligence from Dehradun" description="We build autonomous cloud intelligence agents that deploy inside your infrastructure. Learn about our team and mission.">
 
@@ -79,8 +113,10 @@ const B = import.meta.env.BASE_URL.replace(/\/$/, '');
   </section>
 
   <!-- Values -->
-  <section style="background:#F4F7FA;padding:96px 0;border-top:1px solid #E2EAF0;">
+  <section class="section" style="background:#F4F7FA;border-top:1px solid #E2EAF0;">
     <div class="wrap">
+
+      <!-- Header -->
       <div class="values-header">
         <div>
           <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;">
@@ -91,124 +127,27 @@ const B = import.meta.env.BASE_URL.replace(/\/$/, '');
         </div>
         <p style="font-size:14px;font-weight:300;line-height:1.8;color:#5A7080;max-width:340px;">Five principles, lived every day. Real commitments that shape how we build, how we work, and who we are as a team.</p>
       </div>
-    </div>
 
-    <!-- Value 01 — graphic left, content right, light -->
-    <div class="value-row">
-      <div class="value-graphic">
-        <div style="width:100%;height:100%;background:linear-gradient(135deg,#EFF8FB 0%,#C8E6F0 50%,#A8D4E8 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-          <svg viewBox="0 0 400 420" style="width:100%;height:100%;position:absolute;inset:0;opacity:.18;" fill="none"><circle cx="200" cy="210" r="180" stroke="#0891B2" stroke-width="1"/><circle cx="200" cy="210" r="130" stroke="#0891B2" stroke-width="1"/><circle cx="200" cy="210" r="80" stroke="#0891B2" stroke-width="1"/><line x1="20" y1="210" x2="380" y2="210" stroke="#0891B2" stroke-width=".8"/><line x1="200" y1="30" x2="200" y2="390" stroke="#0891B2" stroke-width=".8"/></svg>
-          <div style="text-align:center;z-index:1;padding:32px;">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:700;color:#0891B2;opacity:.4;line-height:1;">01</div>
+      <!-- Values list -->
+      <div class="values-grid">
+        {values.map(v => (
+          <div class="value-card">
+            <div class="value-card-num">{v.num}</div>
+            <div class="value-card-content">
+              <div class="value-card-label">{v.label}</div>
+              <h3 class="value-card-title">{v.title}</h3>
+              <p class="value-card-body">{v.body}</p>
+              {v.quote && (
+                <div class="value-card-quote">
+                  <div class="value-card-dot"></div>
+                  <span>{v.quote}</span>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
+        ))}
       </div>
-      <div class="value-content value-content--light" style="background:#FAFAF8;border:1px solid #E2EAF0;border-left:none;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
-          <span style="font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:#0891B2;">Energetic</span>
-          <div style="flex:1;height:1px;background:#E2EAF0;"></div>
-          <span style="font-size:11px;font-weight:600;color:#C8D8E4;">01</span>
-        </div>
-        <h3 class="value-heading">Pursuit of<br><em style="font-style:italic;color:#0891B2;">Excellence</em></h3>
-        <p style="font-size:16px;font-weight:300;line-height:1.8;color:#5A7080;max-width:420px;">We push ourselves and each other toward better work, bigger impact, continuous growth. Good enough is never the goal.</p>
-      </div>
-    </div>
 
-    <!-- Value 02 — content left, graphic right, light -->
-    <div class="value-row value-row--reverse">
-      <div class="value-content value-content--light" style="background:#FAFAF8;border:1px solid #E2EAF0;border-right:none;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
-          <span style="font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:#0891B2;">Energetic</span>
-          <div style="flex:1;height:1px;background:#E2EAF0;"></div>
-          <span style="font-size:11px;font-weight:600;color:#C8D8E4;">02</span>
-        </div>
-        <h3 class="value-heading">Pragmatic<br><em style="font-style:italic;color:#0891B2;">Problem Solving</em></h3>
-        <p style="font-size:16px;font-weight:300;line-height:1.8;color:#5A7080;max-width:420px;">We ship solutions. We don't over-engineer or overthink. Results over process — always.</p>
-      </div>
-      <div class="value-graphic">
-        <div style="width:100%;height:100%;background:linear-gradient(225deg,#EFF8FB 0%,#BDD8E8 50%,#92C0D8 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-          <svg viewBox="0 0 400 420" style="width:100%;height:100%;position:absolute;inset:0;opacity:.15;" fill="none"><rect x="40" y="40" width="320" height="340" stroke="#0891B2" stroke-width="1" rx="8"/><rect x="80" y="80" width="240" height="260" stroke="#0891B2" stroke-width="1" rx="6"/><rect x="120" y="120" width="160" height="180" stroke="#0891B2" stroke-width="1" rx="4"/></svg>
-          <div style="text-align:center;z-index:1;padding:32px;">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:700;color:#0891B2;opacity:.4;line-height:1;">02</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Value 03 — graphic left, content right, dark navy -->
-    <div class="value-row">
-      <div class="value-graphic">
-        <div style="width:100%;height:100%;background:linear-gradient(135deg,#0B1E30 0%,#132D45 60%,#1A3D5C 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-          <svg viewBox="0 0 400 420" style="width:100%;height:100%;position:absolute;inset:0;opacity:.12;" fill="none"><polygon points="200,30 370,380 30,380" stroke="#06B6D4" stroke-width="1"/><polygon points="200,80 320,340 80,340" stroke="#06B6D4" stroke-width="1"/><polygon points="200,130 270,300 130,300" stroke="#06B6D4" stroke-width="1"/></svg>
-          <div style="text-align:center;z-index:1;padding:32px;">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:700;color:#06B6D4;opacity:.3;line-height:1;">03</div>
-          </div>
-        </div>
-      </div>
-      <div class="value-content value-content--dark" style="background:#0B1E30;border:1px solid #0E2840;border-left:none;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
-          <span style="font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:#0891B2;">Discipline &amp; Consistency</span>
-          <div style="flex:1;height:1px;background:rgba(255,255,255,.1);"></div>
-          <span style="font-size:11px;font-weight:600;color:rgba(255,255,255,.2);">03</span>
-        </div>
-        <h3 class="value-heading value-heading--dark">Integrity in<br><em style="font-style:italic;color:#06B6D4;">Commitment</em></h3>
-        <p style="font-size:16px;font-weight:300;line-height:1.8;color:#8AADBE;max-width:420px;">We say what we do and do what we say. No empty promises. Accountability in every word.</p>
-      </div>
-    </div>
-
-    <!-- Value 04 — content left, graphic right, dark navy -->
-    <div class="value-row value-row--reverse">
-      <div class="value-content value-content--dark" style="background:#0B1E30;border:1px solid #0E2840;border-right:none;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
-          <span style="font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:#0891B2;">Discipline &amp; Consistency</span>
-          <div style="flex:1;height:1px;background:rgba(255,255,255,.1);"></div>
-          <span style="font-size:11px;font-weight:600;color:rgba(255,255,255,.2);">04</span>
-        </div>
-        <h3 class="value-heading value-heading--dark">Respect<br><em style="font-style:italic;color:#06B6D4;">Contributors</em></h3>
-        <p style="font-size:16px;font-weight:300;line-height:1.8;color:#8AADBE;max-width:420px;">We build fairly. Everyone who works with us — team, contractors, partners — gets paid well, credited honestly, treated with dignity. No shortcuts on people.</p>
-      </div>
-      <div class="value-graphic">
-        <div style="width:100%;height:100%;background:linear-gradient(225deg,#0B1E30 0%,#0E2840 50%,#142E48 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-          <svg viewBox="0 0 400 420" style="width:100%;height:100%;position:absolute;inset:0;opacity:.14;" fill="none">
-            <circle cx="200" cy="210" r="140" stroke="#06B6D4" stroke-width="1"/>
-            <circle cx="140" cy="210" r="80" stroke="#0891B2" stroke-width="1"/>
-            <circle cx="260" cy="210" r="80" stroke="#0891B2" stroke-width="1"/>
-          </svg>
-          <div style="text-align:center;z-index:1;padding:32px;">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:700;color:#06B6D4;opacity:.3;line-height:1;">04</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Value 05 — graphic left, content right, teal, tall -->
-    <div class="value-row" style="margin-bottom:0;">
-      <div class="value-graphic value-graphic--tall">
-        <div style="width:100%;height:100%;background:linear-gradient(135deg,#EFF8FB 0%,#D0EBF4 40%,#BDDFF0 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-          <svg viewBox="0 0 400 460" style="width:100%;height:100%;position:absolute;inset:0;opacity:.2;" fill="none">
-            <path d="M200 40 L360 420 L40 420 Z" stroke="#0891B2" stroke-width="1"/>
-            <path d="M200 100 L320 400 L80 400 Z" stroke="#0891B2" stroke-width=".7"/>
-            <line x1="40" y1="420" x2="360" y2="420" stroke="#0891B2" stroke-width="1"/>
-            <line x1="200" y1="40" x2="200" y2="420" stroke="#0891B2" stroke-width=".7" stroke-dasharray="6 4"/>
-          </svg>
-          <div style="text-align:center;z-index:1;padding:32px;">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:700;color:#0891B2;opacity:.35;line-height:1;">05</div>
-          </div>
-        </div>
-      </div>
-      <div class="value-content value-content--teal" style="background:linear-gradient(135deg,#EFF8FB,#F0F7FF);border:1px solid #DDE8F0;border-left:none;">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
-          <span style="font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:#0891B2;">Customer Needs</span>
-          <div style="flex:1;height:1px;background:#DDE8F0;"></div>
-          <span style="font-size:11px;font-weight:600;color:#C8D8E4;">05</span>
-        </div>
-        <h3 class="value-heading value-heading--lg">Customer-Centric<br><em style="font-style:italic;color:#0891B2;">Delivery</em></h3>
-        <p style="font-size:16px;font-weight:300;line-height:1.8;color:#5A7080;max-width:480px;margin-bottom:28px;">We know who we serve and what they actually need. We respect their time by shipping lean, focused solutions. We only commit to customers we can deliver for — not every deal is worth taking.</p>
-        <div style="display:flex;align-items:center;gap:10px;padding-top:24px;border-top:1px solid #DDE8F0;">
-          <div style="width:6px;height:6px;background:#0891B2;border-radius:50%;flex-shrink:0;"></div>
-          <span style="font-size:13.5px;font-weight:500;color:#0891B2;font-style:italic;">"Not every deal is worth taking."</span>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -320,54 +259,93 @@ const B = import.meta.env.BASE_URL.replace(/\/$/, '');
     align-items: baseline;
     justify-content: space-between;
     gap: 48px;
-    margin-bottom: 80px;
+    margin-bottom: 56px;
     padding-bottom: 32px;
     border-bottom: 1px solid #E2EAF0;
     flex-wrap: wrap;
   }
 
-  /* ─── Value panels ─── */
-  .value-row {
-    display: grid;
-    grid-template-columns: 560px 1fr;
-    max-width: 1440px;
-    margin: 0 auto 3px;
-    padding: 0 72px;
-    gap: 0;
-    overflow: hidden;
-  }
-  .value-row--reverse {
-    grid-template-columns: 1fr 560px;
-  }
-
-  .value-graphic {
-    height: 420px;
-    overflow: hidden;
-  }
-  .value-graphic--tall { height: 460px; }
-
-  .value-row .value-graphic        { border-radius: 12px 0 0 12px; }
-  .value-row--reverse .value-graphic { border-radius: 0 12px 12px 0; }
-
-  .value-content {
-    padding: 60px 64px;
+  /* ─── Values list ─── */
+  .values-grid {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 16px;
   }
-  .value-row .value-content          { border-radius: 0 12px 12px 0; }
-  .value-row--reverse .value-content { border-radius: 12px 0 0 12px; }
 
-  .value-heading {
+  .value-card {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    background: #fff;
+    border: 1px solid #E2EAF0;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: box-shadow .2s ease, transform .2s ease;
+  }
+  .value-card:hover {
+    box-shadow: 0 8px 28px rgba(11,30,48,.08);
+    transform: translateY(-2px);
+  }
+
+  .value-card-num {
+    background: #F4F7FA;
+    border-right: 3px solid #0891B2;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 48px;
+    font-size: 44px;
+    font-weight: 700;
+    color: #C8D8E4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+  }
+
+  .value-card-content {
+    padding: 32px 40px;
+  }
+
+  .value-card-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    color: #0891B2;
+    margin-bottom: 8px;
+  }
+  .value-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
     font-weight: 600;
     color: #0B1E30;
-    line-height: 1.06;
-    margin-bottom: 22px;
+    line-height: 1.15;
+    margin-bottom: 10px;
   }
-  .value-heading--dark { color: #fff; }
-  .value-heading--lg   { font-size: 52px; line-height: 1.04; }
+  .value-card-body {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.78;
+    color: #5A7080;
+  }
+  .value-card-quote {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #E2EAF0;
+  }
+  .value-card-dot {
+    width: 6px;
+    height: 6px;
+    background: #0891B2;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .value-card-quote span {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #0891B2;
+    font-style: italic;
+  }
 
   /* ─── Location row ─── */
   .location-row {
@@ -383,40 +361,12 @@ const B = import.meta.env.BASE_URL.replace(/\/$/, '');
   ═══════════════════════════════════════════ */
   @media (max-width: 1024px) {
     .about-hero-grid { grid-template-columns: 1fr; gap: 40px; }
-
     .founder-grid    { grid-template-columns: 1fr; }
     .founder-photo   { min-height: 300px; }
     .founder-details { padding: 36px 32px; }
-
-    .value-row,
-    .value-row--reverse {
-      grid-template-columns: 1fr;
-      padding: 0 40px;
-    }
-    /* On reverse rows, move the graphic (2nd in DOM) above the content */
-    .value-row--reverse .value-graphic { order: -1; }
-
-    .value-graphic {
-      height: 240px !important;
-      border-radius: 12px 12px 0 0 !important;
-    }
-    .value-content {
-      padding: 36px 40px;
-      border-radius: 0 0 12px 12px !important;
-    }
-    /* Restore side borders removed inline for desktop layout */
-    .value-content--light {
-      border-left:  1px solid #E2EAF0 !important;
-      border-right: 1px solid #E2EAF0 !important;
-    }
-    .value-content--dark {
-      border-left:  1px solid #0E2840 !important;
-      border-right: 1px solid #0E2840 !important;
-    }
-    .value-content--teal {
-      border-left:  1px solid #DDE8F0 !important;
-      border-right: 1px solid #DDE8F0 !important;
-    }
+    .value-card      { grid-template-columns: 96px 1fr; }
+    .value-card-num  { font-size: 36px; }
+    .value-card-content { padding: 28px 32px; }
   }
 
   /* ═══════════════════════════════════════════
@@ -428,31 +378,13 @@ const B = import.meta.env.BASE_URL.replace(/\/$/, '');
     .founder-details { padding: 28px 20px; }
     .founder-grid h3 { font-size: 34px !important; }
 
-    .value-row,
-    .value-row--reverse { padding: 0 20px; margin-bottom: 12px; }
+    .value-card         { grid-template-columns: 68px 1fr; }
+    .value-card-num     { font-size: 28px; padding: 24px 12px; }
+    .value-card-content { padding: 22px 20px; }
+    .value-card-title   { font-size: 22px; }
+    .value-card-body    { font-size: 14px; }
 
-    /* Hide decorative graphics on mobile — content only */
-    .value-graphic { display: none !important; }
-
-    .value-content {
-      padding: 28px 24px;
-      border-radius: 12px !important;
-    }
-    /* Full border on all sides since graphic is hidden */
-    .value-content--light {
-      border: 1px solid #E2EAF0 !important;
-    }
-    .value-content--dark {
-      border: 1px solid #0E2840 !important;
-    }
-    .value-content--teal {
-      border: 1px solid #DDE8F0 !important;
-    }
-
-    .value-heading         { font-size: 28px !important; line-height: 1.14 !important; margin-bottom: 14px !important; }
-    .value-heading--lg     { font-size: 28px !important; }
-
-    .values-header { flex-direction: column; gap: 16px; margin-bottom: 40px; }
+    .values-header { flex-direction: column; gap: 16px; margin-bottom: 36px; }
     .values-header p { max-width: 100% !important; }
     .values-header h2 { font-size: 32px !important; }
 
