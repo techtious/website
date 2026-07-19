@@ -157,6 +157,13 @@
   text-decoration: none; text-align: center; letter-spacing: .02em;
 }
 
+/* ─── Anchor scroll offset (accounts for sticky nav) ─── */
+section[id] { scroll-margin-top: 88px; }
+
+@media (max-width: 640px) {
+  section[id] { scroll-margin-top: 72px; }
+}
+
 /* ═══════════════════════════════════════════
    LAYOUT UTILITIES
 ═══════════════════════════════════════════ */
