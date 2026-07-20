@@ -29,6 +29,8 @@ jobs:
 
       - name: Build Astro site
         working-directory: frontend
+        env:
+          PUBLIC_CHAT_API_URL: https://api.techtious.com
         run: npm run build
 
       - name: Deploy to techtious-beta
