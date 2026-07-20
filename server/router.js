@@ -12,6 +12,7 @@ const client = new OpenAI({
 
 const MODEL = process.env.MODEL || 'anthropic/claude-sonnet-4-5';
 const MAX_TOKENS = parseInt(process.env.MAX_TOKENS || '1024');
+const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || 'https://beta.techtious.com').split(',');
 
 export async function handleChat(request, reply) {
   const { messages } = request.body;
@@ -26,10 +27,16 @@ export async function handleChat(request, reply) {
     content: String(m.content).slice(0, 4000),
   }));
 
+  // reply.raw bypasses Fastify's CORS plugin, so set the header manually
+  const origin = request.headers.origin;
+  if (origin && ALLOWED_ORIGINS.includes(origin)) {
+    reply.raw.setHeader('Access-Control-Allow-Origin', origin);
+    reply.raw.setHeader('Vary', 'Origin');
+  }
   reply.raw.setHeader('Content-Type', 'text/event-stream');
   reply.raw.setHeader('Cache-Control', 'no-cache');
   reply.raw.setHeader('Connection', 'keep-alive');
-  reply.raw.setHeader('X-Accel-Buffering', 'no'); // disable Nginx buffering
+  reply.raw.setHeader('X-Accel-Buffering', 'no');
   reply.raw.flushHeaders();
 
   try {
