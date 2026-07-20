@@ -1,0 +1,15 @@
+{
+  "name": "techtious-chat-server",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "fastify": "^5.3.3",
+    "@fastify/cors": "^10.0.2",
+    "openai": "^4.103.0"
+  }
+}

@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import ChatWidget from '../components/ChatWidget.tsx';
 interface Props {
   title?: string;
   description?: string;
@@ -19,5 +20,6 @@ const { title = 'Techtious Labs', description = 'Cloud intelligence agents that 
 </head>
 <body>
   <slot />
+  <ChatWidget client:load />
 </body>
 </html>
