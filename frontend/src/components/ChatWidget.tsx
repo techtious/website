@@ -1,4 +1,32 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, type ReactNode } from 'react';
+
+function renderInline(text: string): ReactNode[] {
+  return text.split(/(\*\*[^*]+\*\*|https?:\/\/[^\s,)]+)/g).map((part, i) => {
+    if (/^\*\*[^*]+\*\*$/.test(part)) return <strong key={i}>{part.slice(2, -2)}</strong>;
+    if (/^https?:\/\//.test(part)) return <a key={i} href={part} target="_blank" rel="noopener noreferrer" style={{ color: '#0891B2', textDecoration: 'underline', wordBreak: 'break-all' }}>{part}</a>;
+    return part as unknown as ReactNode;
+  });
+}
+
+function renderContent(text: string): ReactNode {
+  const blocks = text.split(/\n\n+/);
+  return (
+    <>
+      {blocks.map((block, bi) => {
+        const lines = block.split('\n').filter(l => l.trim());
+        const isList = lines.length > 0 && lines.every(l => /^[-*]\s/.test(l));
+        if (isList) return (
+          <ul key={bi} style={{ margin: bi === 0 ? 0 : '8px 0 0', paddingLeft: 18, lineHeight: 1.7 }}>
+            {lines.map((item, ii) => <li key={ii}>{renderInline(item.replace(/^[-*]\s/, ''))}</li>)}
+          </ul>
+        );
+        const heading = block.match(/^#{1,3}\s+(.+)/);
+        if (heading) return <p key={bi} style={{ margin: bi === 0 ? 0 : '8px 0 0', fontWeight: 600 }}>{renderInline(heading[1])}</p>;
+        return <p key={bi} style={{ margin: bi === 0 ? 0 : '8px 0 0' }}>{renderInline(block.replace(/\n/g, ' '))}</p>;
+      })}
+    </>
+  );
+}
 
 interface Message {
   role: 'user' | 'assistant';
@@ -224,15 +252,16 @@ export default function ChatWidget() {
                     fontSize: 14.5,
                     fontWeight: 300,
                     lineHeight: 1.7,
-                    whiteSpace: 'pre-wrap',
                     wordBreak: 'break-word',
                     boxShadow: m.role === 'assistant' ? '0 2px 12px rgba(11,30,48,.07)' : 'none',
                     border: m.role === 'assistant' ? '1px solid #E2EAF0' : 'none',
                   }}>
-                    {m.content || (loading && i === messages.length - 1
-                      ? <span style={{ opacity: .4, fontStyle: 'italic' }}>Thinking…</span>
-                      : ''
-                    )}
+                    {m.content
+                      ? (m.role === 'assistant' ? renderContent(m.content) : m.content)
+                      : (loading && i === messages.length - 1
+                        ? <span style={{ opacity: .4, fontStyle: 'italic' }}>Thinking…</span>
+                        : '')
+                    }
                   </div>
 
                   {/* User avatar */}
