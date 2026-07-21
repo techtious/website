@@ -55,70 +55,31 @@ const B = import.meta.env.BASE_URL.replace(/\/$/, '');
           </div>
         </div>
 
-        <!-- Architecture visual -->
-        <div>
-          <div style="background:#fff;border:1px solid #DDE8F0;border-radius:14px;padding:28px;box-shadow:0 2px 16px rgba(11,30,48,.06);">
-            <div style="font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#8AA0B0;margin-bottom:20px;">Your Cloud Environment</div>
-            <div style="display:flex;gap:8px;margin-bottom:20px;">
-              <div style="flex:1;padding:7px 10px;background:#F0F7FF;border:1px solid #DBEAFE;border-radius:6px;text-align:center;font-size:11.5px;font-weight:500;color:#3B82F6;">AWS</div>
-              <div style="flex:1;padding:7px 10px;background:#F0FDF4;border:1px solid #BBF7D0;border-radius:6px;text-align:center;font-size:11.5px;font-weight:500;color:#16A34A;">GCP</div>
-              <div style="flex:1;padding:7px 10px;background:#FFF7ED;border:1px solid #FED7AA;border-radius:6px;text-align:center;font-size:11.5px;font-weight:500;color:#EA580C;">Azure</div>
+        <!-- Hero image -->
+        <div style="position:relative;border-radius:14px;overflow:hidden;min-height:460px;box-shadow:0 8px 40px rgba(11,30,48,.13);">
+          <img
+            src={`${B}/hero-dev.jpg`}
+            alt="Continuous development — engineers building cloud infrastructure"
+            style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"
+          />
+          <!-- Gradient overlay so badges are legible -->
+          <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(11,30,48,.08) 30%,rgba(11,30,48,.82));"></div>
+          <!-- Agent status badges -->
+          <div style="position:absolute;bottom:24px;left:24px;right:24px;display:flex;flex-wrap:wrap;gap:8px;">
+            <div style="display:flex;align-items:center;gap:7px;padding:7px 14px;background:rgba(11,30,48,.72);border:1px solid rgba(16,185,129,.35);border-radius:40px;backdrop-filter:blur(8px);">
+              <div style="width:6px;height:6px;background:#10B981;border-radius:50%;animation:pulse 2s ease infinite;"></div>
+              <span style="font-size:12px;font-weight:500;color:#fff;">Optix AI</span>
+              <span style="font-size:10px;color:#10B981;font-weight:600;">Live</span>
             </div>
-            <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">
-              <div style="border:1.5px solid #06B6D4;border-radius:10px;padding:14px 16px;background:linear-gradient(135deg,#F0FBFF,#FAFAF8);">
-                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
-                  <div style="display:flex;align-items:center;gap:8px;">
-                    <div style="width:28px;height:28px;background:linear-gradient(135deg,#0891B2,#06B6D4);border-radius:7px;display:flex;align-items:center;justify-content:center;">
-                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 2L9 9l-7 3 7 3 3 7 3-7 7-3-7-3z" fill="#fff"/></svg>
-                    </div>
-                    <span style="font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;color:#0B1E30;">Optix AI</span>
-                  </div>
-                  <div style="display:flex;align-items:center;gap:5px;">
-                    <div style="width:6px;height:6px;background:#10B981;border-radius:50%;animation:pulse 2s ease infinite;"></div>
-                    <span style="font-size:10.5px;color:#10B981;font-weight:500;">Active</span>
-                  </div>
-                </div>
-                <div style="display:flex;gap:8px;">
-                  <div style="flex:1;background:rgba(8,145,178,.08);border-radius:6px;padding:8px 10px;">
-                    <div style="font-size:10px;color:#5A8A9E;margin-bottom:2px;">Cloud Waste</div>
-                    <div style="font-size:16px;font-weight:600;color:#0891B2;font-family:'Cormorant Garamond',serif;">-43%</div>
-                  </div>
-                  <div style="flex:1;background:rgba(8,145,178,.08);border-radius:6px;padding:8px 10px;">
-                    <div style="font-size:10px;color:#5A8A9E;margin-bottom:2px;">K8s Savings</div>
-                    <div style="font-size:16px;font-weight:600;color:#0891B2;font-family:'Cormorant Garamond',serif;">$18K/mo</div>
-                  </div>
-                </div>
-              </div>
-              <div style="border:1.5px solid #F59E0B;border-radius:10px;padding:14px 16px;background:linear-gradient(135deg,#FFFDF0,#FAFAF8);">
-                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
-                  <div style="display:flex;align-items:center;gap:8px;">
-                    <div style="width:28px;height:28px;background:linear-gradient(135deg,#D97706,#F59E0B);border-radius:7px;display:flex;align-items:center;justify-content:center;">
-                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="#fff"/></svg>
-                    </div>
-                    <span style="font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;color:#0B1E30;">SRE Intelligence</span>
-                  </div>
-                  <div style="display:flex;align-items:center;gap:5px;">
-                    <div style="width:6px;height:6px;background:#F59E0B;border-radius:50%;"></div>
-                    <span style="font-size:10.5px;color:#D97706;font-weight:500;">Beta</span>
-                  </div>
-                </div>
-                <div style="font-size:12px;color:#6A7E8A;font-weight:300;">Log anomaly detection · Platform stability · SLO tracking</div>
-              </div>
-              <div style="border:1.5px dashed #C8D8E4;border-radius:10px;padding:14px 16px;background:#F8FAFB;">
-                <div style="display:flex;align-items:center;justify-content:space-between;">
-                  <div style="display:flex;align-items:center;gap:8px;">
-                    <div style="width:28px;height:28px;background:#DDE8F0;border-radius:7px;display:flex;align-items:center;justify-content:center;">
-                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><polyline points="17 1 21 5 17 9" stroke="#8AA0B0" stroke-width="2"/><path d="M3 11V9a4 4 0 0 1 4-4h14" stroke="#8AA0B0" stroke-width="2"/><polyline points="7 23 3 19 7 15" stroke="#8AA0B0" stroke-width="2"/><path d="M21 13v2a4 4 0 0 1-4 4H3" stroke="#8AA0B0" stroke-width="2"/></svg>
-                    </div>
-                    <span style="font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;color:#8AA0B0;">DriftGuard</span>
-                  </div>
-                  <span style="font-size:10.5px;color:#8AA0B0;font-weight:500;">Coming Soon</span>
-                </div>
-              </div>
+            <div style="display:flex;align-items:center;gap:7px;padding:7px 14px;background:rgba(11,30,48,.72);border:1px solid rgba(245,158,11,.3);border-radius:40px;backdrop-filter:blur(8px);">
+              <div style="width:6px;height:6px;background:#F59E0B;border-radius:50%;"></div>
+              <span style="font-size:12px;font-weight:500;color:#fff;">SRE Intelligence</span>
+              <span style="font-size:10px;color:#F59E0B;font-weight:600;">Beta</span>
             </div>
-            <div style="padding:12px 14px;background:#F4F7FA;border-radius:8px;display:flex;align-items:center;gap:10px;">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#0891B2" stroke-width="1.8"/></svg>
-              <span style="font-size:11.5px;color:#5A7080;font-weight:300;">All agents run inside <strong style="font-weight:500;color:#0B1E30;">your</strong> cloud account. Zero data egress.</span>
+            <div style="display:flex;align-items:center;gap:7px;padding:7px 14px;background:rgba(11,30,48,.72);border:1px solid rgba(255,255,255,.12);border-radius:40px;backdrop-filter:blur(8px);">
+              <div style="width:6px;height:6px;background:#8AA0B0;border-radius:50%;"></div>
+              <span style="font-size:12px;font-weight:500;color:rgba(255,255,255,.6);">DriftGuard</span>
+              <span style="font-size:10px;color:#8AA0B0;font-weight:600;">Soon</span>
             </div>
           </div>
         </div>
