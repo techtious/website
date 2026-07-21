@@ -198,7 +198,7 @@ export default function ChatWidget() {
           position: 'fixed', inset: 0, zIndex: 1050,
           display: 'flex', flexDirection: 'column',
           background: '#0B1E30',
-          animation: 'chatFadeIn .18s ease',
+          animation: 'chatFadeIn .5s cubic-bezier(.16,1,.3,1)',
         }}>
 
           {/* Top-right controls */}
@@ -428,8 +428,8 @@ export default function ChatWidget() {
           to   { opacity: 1; transform: scale(1)  translateY(0); }
         }
         @keyframes chatFadeIn {
-          from { opacity: 0; }
-          to   { opacity: 1; }
+          from { opacity: 0; transform: scale(.97) translateY(12px); }
+          to   { opacity: 1; transform: scale(1)   translateY(0); }
         }
         @keyframes dotPulse {
           0%, 80%, 100% { transform: scale(1);   opacity: .35; }
