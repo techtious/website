@@ -2,7 +2,7 @@ import OpenAI from 'openai';
 import { SYSTEM_PROMPT } from './system-prompt.js';
 
 const client = new OpenAI({
-  apiKey: process.env.OPENROUTER_API_KEY,
+  apiKey: (process.env.OPENROUTER_API_KEY || '').replace(/^['"]|['"]$/g, ''),
   baseURL: 'https://openrouter.ai/api/v1',
   defaultHeaders: {
     'HTTP-Referer': process.env.SITE_URL || 'https://beta.techtious.com',
