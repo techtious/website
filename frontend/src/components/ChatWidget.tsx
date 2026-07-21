@@ -53,6 +53,27 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState<Message[]>([WELCOME]);
   const [input, setInput]       = useState('');
   const [loading, setLoading]   = useState(false);
+  const [leadName, setLeadName]         = useState('');
+  const [leadEmail, setLeadEmail]       = useState('');
+  const [leadSubmitting, setLeadSubmitting] = useState(false);
+  const [leadDone, setLeadDone]         = useState(false);
+
+  const showLeadForm = messages.length >= 3 && !leadDone;
+
+  async function submitLead() {
+    if (!leadName.trim() || !leadEmail.trim() || leadSubmitting) return;
+    setLeadSubmitting(true);
+    try {
+      await fetch(`${API_URL}/api/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: leadName.trim(), email: leadEmail.trim() }),
+      });
+    } finally {
+      setLeadSubmitting(false);
+      setLeadDone(true);
+    }
+  }
   const bottomRef               = useRef<HTMLDivElement>(null);
   const inputRef                = useRef<HTMLTextAreaElement>(null);
 
@@ -244,6 +265,72 @@ export default function ChatWidget() {
                   </div>
                 )
               ))}
+
+              {/* Lead capture card */}
+              {showLeadForm && (
+                <div style={{
+                  background: 'rgba(8,145,178,0.07)',
+                  border: '1px solid rgba(8,145,178,0.2)',
+                  borderRadius: 16, padding: '20px 24px',
+                }}>
+                  {leadDone ? null : (
+                    <>
+                      <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: 14, margin: '0 0 14px', lineHeight: 1.5 }}>
+                        <strong>Connect with our team.</strong> Leave your details and we'll reach out.
+                      </p>
+                      <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center' }}>
+                        <input
+                          placeholder="Your name"
+                          value={leadName}
+                          onChange={e => setLeadName(e.target.value)}
+                          style={{
+                            flex: 1, minWidth: 120,
+                            background: 'rgba(255,255,255,0.06)',
+                            border: '1px solid rgba(255,255,255,0.15)',
+                            borderRadius: 24, padding: '9px 16px',
+                            fontSize: 13.5, color: '#fff', outline: 'none',
+                            fontFamily: 'inherit',
+                          }}
+                        />
+                        <input
+                          placeholder="Work email"
+                          type="email"
+                          value={leadEmail}
+                          onChange={e => setLeadEmail(e.target.value)}
+                          onKeyDown={e => e.key === 'Enter' && submitLead()}
+                          style={{
+                            flex: 1, minWidth: 160,
+                            background: 'rgba(255,255,255,0.06)',
+                            border: '1px solid rgba(255,255,255,0.15)',
+                            borderRadius: 24, padding: '9px 16px',
+                            fontSize: 13.5, color: '#fff', outline: 'none',
+                            fontFamily: 'inherit',
+                          }}
+                        />
+                        <button
+                          onClick={submitLead}
+                          disabled={!leadName.trim() || !leadEmail.trim() || leadSubmitting}
+                          style={{
+                            background: '#0891B2', border: 'none',
+                            borderRadius: 24, padding: '9px 22px',
+                            fontSize: 13.5, fontWeight: 500, color: '#fff',
+                            cursor: 'pointer', whiteSpace: 'nowrap',
+                            opacity: (!leadName.trim() || !leadEmail.trim()) ? 0.45 : 1,
+                            transition: 'opacity .15s, background .15s',
+                          }}
+                        >
+                          {leadSubmitting ? 'Sending…' : 'Get in touch'}
+                        </button>
+                      </div>
+                    </>
+                  )}
+                </div>
+              )}
+              {leadDone && (
+                <p style={{ fontSize: 13, color: 'rgba(8,145,178,0.8)', margin: 0 }}>
+                  Thanks, {leadName.split(' ')[0]}! We'll reach out to {leadEmail} shortly.
+                </p>
+              )}
 
               {/* Typing dots */}
               {loading && messages[messages.length - 1]?.content === '' && (

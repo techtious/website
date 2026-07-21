@@ -18,6 +18,24 @@ await app.register(cors, {
 // Health check
 app.get('/health', async () => ({ status: 'ok', model: process.env.MODEL || 'anthropic/claude-sonnet-4-5' }));
 
+// Contact / lead capture
+app.post('/api/contact', {
+  schema: {
+    body: {
+      type: 'object',
+      required: ['name', 'email'],
+      properties: {
+        name:  { type: 'string', minLength: 1, maxLength: 200 },
+        email: { type: 'string', minLength: 3, maxLength: 200 },
+      },
+    },
+  },
+}, async (request, reply) => {
+  const { name, email } = request.body;
+  console.log(`[LEAD] ${name} <${email}>`);
+  return reply.send({ ok: true });
+});
+
 // Chat endpoint
 app.post('/api/chat', {
   schema: {
