@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect, type ReactNode } from 'react';
 
 function renderInline(text: string): ReactNode[] {
-  return text.split(/(\*\*[^*]+\*\*|https?:\/\/[^\s,)]+)/g).map((part, i) => {
+  return text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\(https?:\/\/[^)]+\)|https?:\/\/[^\s,)]+)/g).map((part, i) => {
     if (/^\*\*[^*]+\*\*$/.test(part)) return <strong key={i}>{part.slice(2, -2)}</strong>;
+    const mdLink = part.match(/^\[([^\]]+)\]\((https?:\/\/[^)]+)\)$/);
+    if (mdLink) return <a key={i} href={mdLink[2]} target="_blank" rel="noopener noreferrer" style={{ color: '#0891B2', textDecoration: 'underline' }}>{mdLink[1]}</a>;
     if (/^https?:\/\//.test(part)) return <a key={i} href={part} target="_blank" rel="noopener noreferrer" style={{ color: '#0891B2', textDecoration: 'underline', wordBreak: 'break-all' }}>{part}</a>;
     return part as unknown as ReactNode;
   });
@@ -14,13 +16,19 @@ function renderContent(text: string): ReactNode {
     <>
       {blocks.map((block, bi) => {
         const lines = block.split('\n').filter(l => l.trim());
-        const isList = lines.length > 0 && lines.every(l => /^[-*]\s/.test(l));
-        if (isList) return (
+        const isBulletList = lines.length > 0 && lines.every(l => /^[-*✅]\s?/.test(l));
+        const isNumberedList = lines.length > 0 && lines.every(l => /^\d+\.\s/.test(l));
+        if (isBulletList) return (
           <ul key={bi} style={{ margin: bi === 0 ? 0 : '8px 0 0', paddingLeft: 18, lineHeight: 1.7 }}>
-            {lines.map((item, ii) => <li key={ii}>{renderInline(item.replace(/^[-*]\s/, ''))}</li>)}
+            {lines.map((item, ii) => <li key={ii}>{renderInline(item.replace(/^[-*✅]\s?/, ''))}</li>)}
           </ul>
         );
-        const heading = block.match(/^#{1,3}\s+(.+)/);
+        if (isNumberedList) return (
+          <ol key={bi} style={{ margin: bi === 0 ? 0 : '8px 0 0', paddingLeft: 18, lineHeight: 1.7 }}>
+            {lines.map((item, ii) => <li key={ii}>{renderInline(item.replace(/^\d+\.\s/, ''))}</li>)}
+          </ol>
+        );
+        const heading = block.match(/^#{1,6}\s+(.+)/);
         if (heading) return <p key={bi} style={{ margin: bi === 0 ? 0 : '8px 0 0', fontWeight: 600 }}>{renderInline(heading[1])}</p>;
         return <p key={bi} style={{ margin: bi === 0 ? 0 : '8px 0 0' }}>{renderInline(block.replace(/\n/g, ' '))}</p>;
       })}
