@@ -58,7 +58,7 @@ export default function ChatWidget() {
   const [leadSubmitting, setLeadSubmitting] = useState(false);
   const [leadDone, setLeadDone]         = useState(false);
 
-  const showLeadForm = messages.length >= 3 && !leadDone;
+  const showLeadForm = messages.length >= 3 && !loading && !leadDone;
 
   async function submitLead() {
     if (!leadName.trim() || !leadEmail.trim() || leadSubmitting) return;

@@ -1,6 +1,7 @@
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
 import { handleChat } from './router.js';
+import { appendFileSync } from 'fs';
 
 const PORT = parseInt(process.env.PORT || '3001');
 const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || 'https://beta.techtious.com').split(',');
@@ -32,7 +33,13 @@ app.post('/api/contact', {
   },
 }, async (request, reply) => {
   const { name, email } = request.body;
+  const lead = { name, email, ts: new Date().toISOString() };
   console.log(`[LEAD] ${name} <${email}>`);
+  try {
+    appendFileSync('/app/leads.jsonl', JSON.stringify(lead) + '\n');
+  } catch (err) {
+    console.error('Failed to save lead:', err.message);
+  }
   return reply.send({ ok: true });
 });
 
