@@ -82,6 +82,12 @@ export default function ChatWidget() {
   }, [messages, loading]);
 
   useEffect(() => {
+    const handler = () => setOpen(true);
+    window.addEventListener('techtious:open-chat', handler);
+    return () => window.removeEventListener('techtious:open-chat', handler);
+  }, []);
+
+  useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden';
       setTimeout(() => inputRef.current?.focus(), 180);
@@ -165,32 +171,6 @@ export default function ChatWidget() {
 
   return (
     <>
-      {/* ── Floating trigger button ── */}
-      <button
-        onClick={() => setOpen(o => !o)}
-        aria-label={open ? 'Close chat' : 'Open chat'}
-        style={{
-          position: 'fixed', bottom: 28, right: 28, zIndex: 1100,
-          width: 54, height: 54, borderRadius: '50%',
-          background: open ? '#0B1E30' : '#0891B2',
-          border: 'none', cursor: 'pointer',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          boxShadow: '0 4px 24px rgba(8,145,178,.4)',
-          transition: 'background .2s ease, transform .2s ease',
-          animation: 'chatBtnIn .4s ease .3s both',
-        }}
-      >
-        {open ? (
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.4" strokeLinecap="round">
-            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-          </svg>
-        ) : (
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.9" strokeLinecap="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-          </svg>
-        )}
-      </button>
-
       {/* ── Full-page overlay ── */}
       {open && (
         <div style={{
@@ -207,11 +187,16 @@ export default function ChatWidget() {
             display: 'flex', alignItems: 'center', gap: 16,
             zIndex: 10,
           }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2L13.9 8.6H21L15.5 12.9L17.5 19.5L12 15.2L6.5 19.5L8.5 12.9L3 8.6H10.1L12 2Z" fill="#0891B2"/>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              {/* AI chip icon */}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0891B2" strokeWidth="1.5" strokeLinecap="round">
+                <rect x="7" y="7" width="10" height="10" rx="1.5"/>
+                <line x1="9" y1="7" x2="9" y2="4"/><line x1="12" y1="7" x2="12" y2="4"/><line x1="15" y1="7" x2="15" y2="4"/>
+                <line x1="9" y1="17" x2="9" y2="20"/><line x1="12" y1="17" x2="12" y2="20"/><line x1="15" y1="17" x2="15" y2="20"/>
+                <line x1="7" y1="9" x2="4" y2="9"/><line x1="7" y1="12" x2="4" y2="12"/><line x1="7" y1="15" x2="4" y2="15"/>
+                <line x1="17" y1="9" x2="20" y2="9"/><line x1="17" y1="12" x2="20" y2="12"/><line x1="17" y1="15" x2="20" y2="15"/>
               </svg>
-              <span style={{ fontSize: 12, color: '#0891B2', fontWeight: 500, letterSpacing: 0.4 }}>Techtious AI</span>
+              <span style={{ fontSize: 12, color: '#0891B2', fontWeight: 500, letterSpacing: 0.5 }}>Techtious AI</span>
             </div>
             <button
               onClick={() => setOpen(false)}
@@ -417,10 +402,6 @@ export default function ChatWidget() {
       )}
 
       <style>{`
-        @keyframes chatBtnIn {
-          from { opacity: 0; transform: scale(.7) translateY(12px); }
-          to   { opacity: 1; transform: scale(1)  translateY(0); }
-        }
         @keyframes chatFadeIn {
           from { opacity: 0; }
           to   { opacity: 1; }
