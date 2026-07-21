@@ -1,0 +1,140 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.tsx';
+const B = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<Base title="SRE Intelligence — Platform Stability & Log Analytics | Techtious Labs" description="An AI agent that watches your logs, traces, and metrics — detecting anomalies, scoring platform stability, and surfacing root causes before incidents escalate.">
+
+  <Nav client:load />
+
+  <!-- Hero -->
+  <section class="section" style="position:relative;overflow:hidden;background:#FAFAF8;">
+    <div class="dot-grid" style="position:absolute;inset:0;opacity:.35;pointer-events:none;"></div>
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#D97706,#F59E0B 50%,transparent);"></div>
+    <div class="wrap">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;flex-wrap:wrap;">
+        <div style="width:40px;height:40px;background:linear-gradient(135deg,#D97706,#F59E0B);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="#fff"/></svg>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#D97706;">SRE Intelligence</span>
+          <span style="font-size:10px;font-weight:600;color:#D97706;background:#FFFBEB;border:1px solid #FDE68A;padding:2px 8px;border-radius:10px;text-transform:uppercase;letter-spacing:.06em;">Beta</span>
+        </div>
+      </div>
+      <div class="hero-grid-mid">
+        <div>
+          <h1 class="h1-lg" style="color:#0B1E30;">
+            Catch incidents<br>before they <em style="font-style:italic;color:#D97706;">page you</em>
+          </h1>
+          <p style="font-size:17px;font-weight:300;line-height:1.75;color:#5A7080;max-width:500px;margin-bottom:36px;">SRE Intelligence is an AI-powered stability agent that lives inside your platform. It watches your logs, traces, and metrics continuously — surfacing anomalies, scoring SLO health, and correlating incidents to root causes before your on-call engineer wakes up.</p>
+          <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
+            <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="display:inline-block;background:#D97706;color:#FAFAF8;font-size:13.5px;font-weight:500;padding:14px 36px;border-radius:5px;text-decoration:none;letter-spacing:.02em;">Join the beta</a>
+            <a href="#capabilities" style="font-size:13.5px;font-weight:500;color:#D97706;text-decoration:none;display:flex;align-items:center;gap:6px;">See capabilities →</a>
+          </div>
+        </div>
+        <!-- Beta card -->
+        <div style="background:#FFFDF8;border:1.5px solid #FDDCAA;border-radius:16px;padding:32px;">
+          <div style="font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#B45309;margin-bottom:20px;">Currently in private beta</div>
+          <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:24px;">
+            {[
+              'AI-powered log anomaly detection across any log source',
+              'Platform stability score updated in real time',
+              'SLO tracking with burn-rate alerts',
+              'Incident correlation & root-cause suggestions',
+              'Works alongside your existing stack — no rip-and-replace',
+            ].map(f => (
+              <div style="display:flex;align-items:flex-start;gap:10px;">
+                <div style="width:18px;height:18px;background:#FEF3C7;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+                  <div style="width:6px;height:6px;background:#D97706;border-radius:50%;"></div>
+                </div>
+                <span style="font-size:13.5px;font-weight:300;line-height:1.65;color:#5A4A30;">{f}</span>
+              </div>
+            ))}
+          </div>
+          <div style="padding:14px 16px;background:#FEF3C7;border-radius:8px;">
+            <p style="font-size:12.5px;font-weight:400;line-height:1.6;color:#92400E;margin:0;">Beta customers get dedicated onboarding, direct access to the team, and founding pricing locked in at launch.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities -->
+  <section id="capabilities" class="section" style="background:#fff;">
+    <div class="wrap">
+      <div style="margin-bottom:48px;">
+        <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;">
+          <div style="width:20px;height:1px;background:#D97706;"></div>
+          <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#D97706;">What it does</span>
+        </div>
+        <h2 class="h2-lg">Platform intelligence, <em style="font-style:italic;color:#D97706;">always on</em></h2>
+      </div>
+      <div class="grid-2">
+        {[
+          { title:'Log Anomaly Detection', body:'SRE Intelligence ingests logs from CloudWatch, Datadog, Loki, or any structured source. Its ML model learns your normal patterns and flags deviations — error spikes, latency degradations, unusual request volumes — before they compound.' },
+          { title:'Platform Stability Scoring', body:'A real-time stability score (0–100) that aggregates signal from logs, traces, and uptime checks. Instead of hunting across five dashboards, you see one authoritative number with a drill-down when it drops.' },
+          { title:'SLO Tracking & Burn-Rate Alerts', body:'Define your error budget. SRE Intelligence tracks consumption in real time and pages you when burn rate is on a trajectory to exhaust the budget before the window closes — not after it already has.' },
+          { title:'Incident Correlation & Root Cause', body:'When something goes wrong, SRE Intelligence correlates log lines, deploys, config changes, and infra events to surface a ranked list of probable causes — cutting mean time to diagnose from hours to minutes.' },
+          { title:'Works With Your Stack', body:'No agents to rip out, no vendor lock-in. SRE Intelligence integrates with Datadog, Grafana, Prometheus, PagerDuty, OpsGenie, CloudWatch, and any OpenTelemetry-compatible setup.' },
+          { title:'Automated Runbook Suggestions', body:'For known failure modes, the agent surfaces the relevant runbook and — where policies permit — can trigger automated remediation steps directly, closing the loop without waking anyone up.' },
+        ].map(c => (
+          <div style="border:1px solid #FDDCAA;border-radius:12px;padding:28px;background:#FFFDF8;">
+            <div style="width:36px;height:3px;background:linear-gradient(90deg,#D97706,#F59E0B);border-radius:2px;margin-bottom:18px;"></div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:#0B1E30;margin-bottom:10px;">{c.title}</h3>
+            <p style="font-size:13.5px;font-weight:300;line-height:1.75;color:#5A7080;">{c.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background:#0B1E30;text-align:center;">
+    <div class="wrap">
+      <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;">
+        <div style="width:20px;height:1px;background:#F59E0B;"></div>
+        <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#F59E0B;">Join the beta</span>
+        <div style="width:20px;height:1px;background:#F59E0B;"></div>
+      </div>
+      <h2 class="h2-xl h2-white" style="margin-bottom:16px;">Be among the first teams<br>to <em style="font-style:italic;color:#F59E0B;">ship with confidence</em></h2>
+      <p style="font-size:15px;font-weight:300;line-height:1.75;color:#6A8EA0;max-width:480px;margin:0 auto 36px;">We're onboarding a small group of beta customers now. Founding pricing is locked in at sign-up.</p>
+      <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="display:inline-block;background:#D97706;color:#FAFAF8;font-size:14px;font-weight:500;padding:15px 44px;border-radius:5px;text-decoration:none;letter-spacing:.02em;">Apply for beta access</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background:#0B1E30;padding:64px 0 0;border-top:1px solid rgba(255,255,255,.06);">
+    <div class="wrap" style="padding-top:0;">
+      <div class="grid-footer" style="padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08);">
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#fff;margin-bottom:14px;">Techtious Labs</div>
+          <a href="mailto:sales@techtious.com" style="font-size:13px;color:#0891B2;text-decoration:none;">sales@techtious.com</a>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:18px;">Products</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <a href={`${B}/optix-ai`} style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">Optix AI</a>
+            <a href={`${B}/sre-intelligence`} style="font-size:13.5px;color:#F59E0B;text-decoration:none;font-weight:400;">SRE Intelligence</a>
+            <a href={`${B}/driftguard`} style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">DriftGuard</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:18px;">Services</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            {['Cloud Engineering','Platform Engineering','Gen AI Solutions','Observability & SRE'].map(s => (
+              <a style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">{s}</a>
+            ))}
+          </div>
+        </div>
+        <div>
+          <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="display:inline-block;background:#0891B2;color:#FAFAF8;font-size:13px;font-weight:500;padding:13px 28px;border-radius:5px;text-decoration:none;">Book a Consultation</a>
+        </div>
+      </div>
+      <div style="padding:20px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+        <span style="font-size:12.5px;color:#3D5A6A;">© 2026 Techtious Labs. All rights reserved.</span>
+        <span style="font-size:12.5px;color:#3D5A6A;">Dehradun, Uttarakhand, India</span>
+      </div>
+    </div>
+  </footer>
+
+</Base>

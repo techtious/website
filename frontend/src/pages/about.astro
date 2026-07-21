@@ -1,0 +1,410 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.tsx';
+const B = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const values = [
+  {
+    num: '01',
+    label: 'Energetic',
+    title: 'Pursuit of Excellence',
+    body: 'We push ourselves and each other toward better work, bigger impact, continuous growth. Good enough is never the goal.',
+  },
+  {
+    num: '02',
+    label: 'Pragmatic',
+    title: 'Pragmatic Problem Solving',
+    body: "We ship solutions. We don't over-engineer or overthink. Results over process — always.",
+  },
+  {
+    num: '03',
+    label: 'Integrity',
+    title: 'Integrity in Commitment',
+    body: 'We say what we do and do what we say. No empty promises. Accountability in every word.',
+  },
+  {
+    num: '04',
+    label: 'People',
+    title: 'Respect Contributors',
+    body: 'We build fairly. Everyone who works with us — team, contractors, partners — gets paid well, credited honestly, treated with dignity. No shortcuts on people.',
+  },
+  {
+    num: '05',
+    label: 'Customer Focus',
+    title: 'Customer-Centric Delivery',
+    body: 'We know exactly who we serve — and we show up fully for every one of them. Our solutions are lean, focused, and built to deliver real value fast. Every partnership we take on gets our complete commitment, because the right customers deserve our absolute best.',
+    quote: '"The right partnership always gets our best."',
+  },
+];
+---
+<Base title="About Techtious Labs — Cloud Intelligence from Dehradun" description="We build autonomous cloud intelligence agents that deploy inside your infrastructure. Learn about our team and mission.">
+
+  <Nav client:load />
+
+  <!-- Hero -->
+  <section class="section" style="position:relative;overflow:hidden;background:#FAFAF8;padding-bottom:80px;">
+    <div class="dot-grid" style="position:absolute;inset:0;opacity:.38;pointer-events:none;"></div>
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#0891B2,#06B6D4 40%,transparent);"></div>
+    <div class="wrap">
+      <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:28px;">
+        <div style="width:20px;height:1px;background:#0891B2;"></div>
+        <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#0891B2;">About Techtious</span>
+      </div>
+      <div class="about-hero-grid">
+        <h1 class="h1-xl" style="margin-bottom:0;">
+          We build products.<br>We ship what<br>we <em style="font-style:italic;color:#0891B2;">promise.</em>
+        </h1>
+        <div style="padding-bottom:8px;">
+          <p style="font-size:17px;font-weight:300;line-height:1.75;color:#5A7080;margin-bottom:24px;">Techtious Labs is a cloud intelligence product company based in Dehradun, Uttarakhand, India. We build autonomous agents that deploy inside your cloud — reducing costs, catching drift, and keeping platforms stable.</p>
+          <p style="font-size:15px;font-weight:300;line-height:1.75;color:#7A8EA0;">We're a small, focused team that goes all in for every customer we work with. We choose our partnerships carefully — because when we commit, we deliver completely.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section" style="background:#fff;">
+    <div class="wrap">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:56px;">
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;">
+            <div style="width:20px;height:1px;background:#0891B2;"></div>
+            <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#0891B2;">The Team</span>
+          </div>
+          <h2 class="h2-lg">The people <em style="font-style:italic;color:#0891B2;">building this</em></h2>
+        </div>
+        <p style="font-size:14px;font-weight:300;color:#8AA0B0;max-width:280px;">More team members joining as we grow.</p>
+      </div>
+
+      <!-- Founder card -->
+      <div class="founder-grid">
+        <div class="founder-photo">
+          <img src={`${B}/rahul-lamba.jpg`} alt="Rahul Lamba" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" />
+        </div>
+        <div class="founder-details">
+          <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:20px;">
+            <div style="width:20px;height:1px;background:#0891B2;"></div>
+            <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:#0891B2;">Founder</span>
+          </div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;color:#0B1E30;line-height:1.08;margin-bottom:20px;">Rahul Lamba</h3>
+          <p style="font-size:15px;font-weight:300;line-height:1.8;color:#5A7080;max-width:520px;margin-bottom:28px;">Engineer turned founder. Built and operated cloud infrastructure at scale across AWS, GCP, and Azure before starting Techtious. Obsessed with making cloud systems intelligent and self-managing — so engineering teams spend their time building, not firefighting.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;">
+            {['Cloud Architecture','Platform Engineering','Gen AI','SRE','FinOps'].map(tag => (
+              <span style={`font-size:12px;font-weight:500;color:#0891B2;padding:4px 14px;border:1px solid #0891B228;border-radius:20px;background:#0891B20A;`}>{tag}</span>
+            ))}
+          </div>
+          <a href="https://www.linkedin.com/in/connectwithrl/" target="_blank" rel="noopener"
+            style="display:inline-flex;align-items:center;gap:8px;background:#0A66C2;color:#fff;font-size:13px;font-weight:500;padding:10px 22px;border-radius:6px;text-decoration:none;align-self:flex-start;letter-spacing:.02em;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            Connect on LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <!-- Future team placeholder -->
+      <div style="margin-top:24px;border:1.5px dashed #DDE8F0;border-radius:16px;padding:48px;text-align:center;background:#FAFAF8;">
+        <div style="width:48px;height:48px;background:#EEF6FB;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <p style="font-size:15px;font-weight:500;color:#0B1E30;margin-bottom:6px;">More team members coming soon</p>
+        <p style="font-size:13px;font-weight:300;color:#8AA0B0;">We're hiring engineers who care about craft. <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="color:#0891B2;text-decoration:none;font-weight:400;">Talk to us →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="section" style="background:#F4F7FA;border-top:1px solid #E2EAF0;">
+    <div class="wrap">
+
+      <!-- Header -->
+      <div class="values-header">
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;">
+            <div style="width:20px;height:1px;background:#0891B2;"></div>
+            <span style="font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#0891B2;">Core Values</span>
+          </div>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:600;letter-spacing:-.02em;color:#0B1E30;line-height:1.08;">What we stand for</h2>
+        </div>
+        <p style="font-size:14px;font-weight:300;line-height:1.8;color:#5A7080;max-width:340px;">Five principles, lived every day. Real commitments that shape how we build, how we work, and who we are as a team.</p>
+      </div>
+
+      <!-- Values list -->
+      <div class="values-grid">
+        {values.map(v => (
+          <div class="value-card">
+            <div class="value-card-num">{v.num}</div>
+            <div class="value-card-content">
+              <div class="value-card-label">{v.label}</div>
+              <h3 class="value-card-title">{v.title}</h3>
+              <p class="value-card-body">{v.body}</p>
+              {v.quote && (
+                <div class="value-card-quote">
+                  <div class="value-card-dot"></div>
+                  <span>{v.quote}</span>
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Location strip -->
+  <section class="section-sm" style="background:#F4F7FA;border-top:1px solid #E2EAF0;">
+    <div class="wrap">
+      <div class="location-row">
+        <div>
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#8AA0B0;margin-bottom:12px;">Registered in</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:#0B1E30;line-height:1.1;">Dehradun, Uttarakhand</div>
+          <div style="font-size:13.5px;font-weight:300;color:#8AA0B0;margin-top:6px;">India · Operating across UAE &amp; beyond</div>
+        </div>
+        <div style="display:flex;gap:48px;flex-wrap:wrap;">
+          <div>
+            <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#8AA0B0;margin-bottom:8px;">Reach us</div>
+            <a href="mailto:sales@techtious.com" style="font-size:15px;color:#0891B2;text-decoration:none;font-weight:400;">sales@techtious.com</a>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#8AA0B0;margin-bottom:8px;">Follow</div>
+            <div style="display:flex;gap:16px;">
+              <a href="https://www.linkedin.com/company/techtious" target="_blank" rel="noopener" style="font-size:14px;font-weight:500;color:#4A5F72;text-decoration:none;">LinkedIn</a>
+              <a href="https://github.com/techtious" target="_blank" rel="noopener" style="font-size:14px;font-weight:500;color:#4A5F72;text-decoration:none;">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="background:#0891B2;color:#FAFAF8;font-size:13px;font-weight:500;padding:13px 28px;border-radius:5px;text-decoration:none;letter-spacing:.02em;flex-shrink:0;">Book a Free Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background:#0B1E30;padding:64px 0 0;">
+    <div class="wrap" style="padding-top:0;">
+      <div class="grid-footer" style="padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08);">
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#fff;margin-bottom:14px;">Techtious Labs</div>
+          <p style="font-size:13.5px;font-weight:300;line-height:1.7;color:#6A8EA0;max-width:240px;margin-bottom:16px;">Cloud intelligence agents. Dehradun, Uttarakhand, India.</p>
+          <a href="mailto:sales@techtious.com" style="font-size:13px;color:#0891B2;text-decoration:none;">sales@techtious.com</a>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:18px;">Products</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <a href={`${B}/optix-ai`} style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">Optix AI</a>
+            <a href={`${B}/sre-intelligence`} style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">SRE Intelligence</a>
+            <a href={`${B}/driftguard`} style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">DriftGuard</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:18px;">Company</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <a href={`${B}/about`} style="font-size:13.5px;color:#06B6D4;text-decoration:none;font-weight:400;">About Us</a>
+            <a href={`${B}/careers`} style="font-size:13.5px;color:#7AACBE;text-decoration:none;font-weight:300;">Careers</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#4A6878;margin-bottom:18px;">Get in Touch</div>
+          <a href="https://cal.com/techtious/30min" target="_blank" rel="noopener" style="display:inline-block;background:#0891B2;color:#FAFAF8;font-size:13px;font-weight:500;padding:13px 28px;border-radius:5px;text-decoration:none;">Book a Free Consultation</a>
+        </div>
+      </div>
+      <div style="padding:20px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+        <span style="font-size:12.5px;color:#3D5A6A;">© 2026 Techtious Labs. All rights reserved.</span>
+        <span style="font-size:12.5px;color:#3D5A6A;">Dehradun, Uttarakhand, India</span>
+      </div>
+    </div>
+  </footer>
+
+<style>
+  /* ─── Hero ─── */
+  .about-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    gap: 96px;
+    align-items: end;
+  }
+
+  /* ─── Founder photo zoom-in animation ─── */
+  .founder-photo img {
+    transform: scale(1.45);
+    transition: transform 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .founder-grid.is-visible .founder-photo img {
+    transform: scale(1);
+  }
+
+  /* ─── Founder card ─── */
+  .founder-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    border: 1px solid #E2EAF0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(11,30,48,.06);
+  }
+  .founder-photo {
+    background: #EEF6FB;
+    min-height: 400px;
+    overflow: hidden;
+  }
+  .founder-details {
+    padding: 52px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* ─── Values section header ─── */
+  .values-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 48px;
+    margin-bottom: 56px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #E2EAF0;
+    flex-wrap: wrap;
+  }
+
+  /* ─── Values list ─── */
+  .values-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .value-card {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    background: #fff;
+    border: 1px solid #E2EAF0;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: box-shadow .2s ease, transform .2s ease;
+  }
+  .value-card:hover {
+    box-shadow: 0 8px 28px rgba(11,30,48,.08);
+    transform: translateY(-2px);
+  }
+
+  .value-card-num {
+    background: #F4F7FA;
+    border-right: 3px solid #0891B2;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: #C8D8E4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+  }
+
+  .value-card-content {
+    padding: 32px 40px;
+  }
+
+  .value-card-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    color: #0891B2;
+    margin-bottom: 8px;
+  }
+  .value-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #0B1E30;
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+  .value-card-body {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.78;
+    color: #5A7080;
+  }
+  .value-card-quote {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #E2EAF0;
+  }
+  .value-card-dot {
+    width: 6px;
+    height: 6px;
+    background: #0891B2;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .value-card-quote span {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #0891B2;
+    font-style: italic;
+  }
+
+  /* ─── Location row ─── */
+  .location-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  /* ═══════════════════════════════════════════
+     TABLET (≤1024px)
+  ═══════════════════════════════════════════ */
+  @media (max-width: 1024px) {
+    .about-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .founder-grid    { grid-template-columns: 1fr; }
+    .founder-photo   { min-height: 300px; }
+    .founder-details { padding: 36px 32px; }
+    .value-card      { grid-template-columns: 96px 1fr; }
+    .value-card-num  { font-size: 36px; }
+    .value-card-content { padding: 28px 32px; }
+  }
+
+  /* ═══════════════════════════════════════════
+     MOBILE (≤640px)
+  ═══════════════════════════════════════════ */
+  @media (max-width: 640px) {
+    .about-hero-grid { gap: 24px; }
+
+    .founder-details { padding: 28px 20px; }
+    .founder-grid h3 { font-size: 34px !important; }
+
+    .value-card         { grid-template-columns: 68px 1fr; }
+    .value-card-num     { font-size: 28px; padding: 24px 12px; }
+    .value-card-content { padding: 22px 20px; }
+    .value-card-title   { font-size: 22px; }
+    .value-card-body    { font-size: 14px; }
+
+    .values-header { flex-direction: column; gap: 16px; margin-bottom: 36px; }
+    .values-header p { max-width: 100% !important; }
+    .values-header h2 { font-size: 32px !important; }
+
+    .location-row { flex-direction: column; align-items: flex-start; gap: 24px; }
+    .location-row [style*="font-size:36px"] { font-size: 24px !important; }
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+  document.querySelectorAll('.founder-grid').forEach(el => observer.observe(el));
+</script>
+</Base>
