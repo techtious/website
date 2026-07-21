@@ -4,8 +4,8 @@ function renderInline(text: string): ReactNode[] {
   return text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\(https?:\/\/[^)]+\)|https?:\/\/[^\s,)]+)/g).map((part, i) => {
     if (/^\*\*[^*]+\*\*$/.test(part)) return <strong key={i}>{part.slice(2, -2)}</strong>;
     const mdLink = part.match(/^\[([^\]]+)\]\((https?:\/\/[^)]+)\)$/);
-    if (mdLink) return <a key={i} href={mdLink[2]} target="_blank" rel="noopener noreferrer" style={{ color: '#0891B2', textDecoration: 'underline' }}>{mdLink[1]}</a>;
-    if (/^https?:\/\//.test(part)) return <a key={i} href={part} target="_blank" rel="noopener noreferrer" style={{ color: '#0891B2', textDecoration: 'underline', wordBreak: 'break-all' }}>{part}</a>;
+    if (mdLink) return <a key={i} href={mdLink[2]} target="_blank" rel="noopener noreferrer" style={{ color: '#38BDF8', textDecoration: 'underline' }}>{mdLink[1]}</a>;
+    if (/^https?:\/\//.test(part)) return <a key={i} href={part} target="_blank" rel="noopener noreferrer" style={{ color: '#38BDF8', textDecoration: 'underline', wordBreak: 'break-all' }}>{part}</a>;
     return part as unknown as ReactNode;
   });
 }
@@ -175,142 +175,85 @@ export default function ChatWidget() {
         <div style={{
           position: 'fixed', inset: 0, zIndex: 1050,
           display: 'flex', flexDirection: 'column',
-          background: '#F4F7FA',
+          background: '#0B1E30',
           animation: 'chatFadeIn .18s ease',
         }}>
 
-          {/* Header */}
+          {/* Top-right controls */}
           <div style={{
-            background: '#0B1E30',
-            padding: '0 32px',
-            height: 68,
-            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-            flexShrink: 0,
-            borderBottom: '1px solid rgba(255,255,255,.06)',
+            position: 'absolute', top: 0, right: 0,
+            padding: '20px 28px',
+            display: 'flex', alignItems: 'center', gap: 16,
+            zIndex: 10,
           }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-              <div style={{
-                width: 36, height: 36, borderRadius: '50%',
-                background: '#0891B2',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-              }}>
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                </svg>
-              </div>
-              <div>
-                <div style={{ fontSize: 15, fontWeight: 600, color: '#fff', lineHeight: 1.2 }}>Techtious Assistant</div>
-                <div style={{ fontSize: 11.5, color: '#6A8EA0', display: 'flex', alignItems: 'center', gap: 5, marginTop: 2 }}>
-                  <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#10B981', flexShrink: 0 }}/>
-                  Online · Ask me anything
-                </div>
-              </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L13.9 8.6H21L15.5 12.9L17.5 19.5L12 15.2L6.5 19.5L8.5 12.9L3 8.6H10.1L12 2Z" fill="#0891B2"/>
+              </svg>
+              <span style={{ fontSize: 12, color: '#0891B2', fontWeight: 500, letterSpacing: 0.4 }}>Techtious AI</span>
             </div>
             <button
               onClick={() => setOpen(false)}
+              aria-label="Close chat"
               style={{
-                background: 'rgba(255,255,255,.07)', border: '1px solid rgba(255,255,255,.1)',
-                borderRadius: 8, color: '#8AADBE', cursor: 'pointer',
-                padding: '7px 16px', fontSize: 13, fontWeight: 500,
-                display: 'flex', alignItems: 'center', gap: 6,
-                transition: 'background .15s ease',
+                background: 'none', border: 'none', cursor: 'pointer',
+                color: 'rgba(255,255,255,0.35)', padding: 4,
+                display: 'flex', alignItems: 'center',
+                transition: 'color .15s',
               }}
-              onMouseEnter={e => (e.currentTarget.style.background = 'rgba(255,255,255,.13)')}
-              onMouseLeave={e => (e.currentTarget.style.background = 'rgba(255,255,255,.07)')}
+              onMouseEnter={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.75)')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.35)')}
             >
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
               </svg>
-              Close
             </button>
           </div>
 
           {/* Messages area */}
-          <div style={{
-            flex: 1, overflowY: 'auto',
-            padding: '40px 0',
-          }}>
-            <div style={{ maxWidth: 720, margin: '0 auto', padding: '0 24px', display: 'flex', flexDirection: 'column', gap: 20 }}>
+          <div style={{ flex: 1, overflowY: 'auto', padding: '64px 0 24px' }}>
+            <div style={{
+              maxWidth: 860, margin: '0 auto', padding: '0 48px',
+              display: 'flex', flexDirection: 'column', gap: 32,
+            }}>
               {messages.map((m, i) => (
-                <div key={i} style={{
-                  display: 'flex',
-                  justifyContent: m.role === 'user' ? 'flex-end' : 'flex-start',
-                  gap: 12,
-                  alignItems: 'flex-end',
-                }}>
-                  {/* Assistant avatar */}
-                  {m.role === 'assistant' && (
+                m.role === 'user' ? (
+                  <div key={i} style={{ display: 'flex', justifyContent: 'flex-end' }}>
                     <div style={{
-                      width: 32, height: 32, borderRadius: '50%',
-                      background: '#0891B2', flexShrink: 0,
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      background: 'rgba(8,145,178,0.12)',
+                      border: '1px solid rgba(8,145,178,0.28)',
+                      borderRadius: 20, padding: '9px 20px',
+                      color: 'rgba(255,255,255,0.85)',
+                      fontSize: 14, lineHeight: 1.6, maxWidth: '60%',
                     }}>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                      </svg>
+                      {m.content}
                     </div>
-                  )}
-
-                  <div style={{
-                    maxWidth: '75%',
-                    background: m.role === 'user' ? '#0891B2' : '#fff',
-                    color: m.role === 'user' ? '#fff' : '#0B1E30',
-                    borderRadius: m.role === 'user' ? '18px 18px 4px 18px' : '18px 18px 18px 4px',
-                    padding: '13px 18px',
-                    fontSize: 14.5,
-                    fontWeight: 300,
-                    lineHeight: 1.7,
+                  </div>
+                ) : (
+                  <div key={i} style={{
+                    color: 'rgba(255,255,255,0.88)',
+                    fontSize: 15.5, lineHeight: 1.85, fontWeight: 300,
                     wordBreak: 'break-word',
-                    boxShadow: m.role === 'assistant' ? '0 2px 12px rgba(11,30,48,.07)' : 'none',
-                    border: m.role === 'assistant' ? '1px solid #E2EAF0' : 'none',
                   }}>
                     {m.content
-                      ? (m.role === 'assistant' ? renderContent(m.content) : m.content)
+                      ? renderContent(m.content)
                       : (loading && i === messages.length - 1
-                        ? <span style={{ opacity: .4, fontStyle: 'italic' }}>Thinking…</span>
+                        ? <span style={{ opacity: .35, fontStyle: 'italic' }}>Thinking…</span>
                         : '')
                     }
                   </div>
-
-                  {/* User avatar */}
-                  {m.role === 'user' && (
-                    <div style={{
-                      width: 32, height: 32, borderRadius: '50%',
-                      background: '#0B1E30', flexShrink: 0,
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontSize: 13, fontWeight: 600, color: '#6A8EA0',
-                    }}>
-                      U
-                    </div>
-                  )}
-                </div>
+                )
               ))}
 
               {/* Typing dots */}
               {loading && messages[messages.length - 1]?.content === '' && (
-                <div style={{ display: 'flex', alignItems: 'flex-end', gap: 12 }}>
-                  <div style={{
-                    width: 32, height: 32, borderRadius: '50%',
-                    background: '#0891B2', flexShrink: 0,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round">
-                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                    </svg>
-                  </div>
-                  <div style={{
-                    background: '#fff', border: '1px solid #E2EAF0',
-                    borderRadius: '18px 18px 18px 4px',
-                    padding: '14px 18px', display: 'flex', gap: 5, alignItems: 'center',
-                    boxShadow: '0 2px 12px rgba(11,30,48,.07)',
-                  }}>
-                    {[0, 1, 2].map(i => (
-                      <div key={i} style={{
-                        width: 7, height: 7, borderRadius: '50%', background: '#0891B2',
-                        animation: `dotPulse 1.2s ease ${i * 0.18}s infinite`,
-                      }}/>
-                    ))}
-                  </div>
+                <div style={{ display: 'flex', gap: 6, alignItems: 'center', paddingTop: 4 }}>
+                  {[0, 1, 2].map(i => (
+                    <div key={i} style={{
+                      width: 6, height: 6, borderRadius: '50%', background: '#0891B2',
+                      animation: `dotPulse 1.2s ease ${i * 0.18}s infinite`,
+                    }}/>
+                  ))}
                 </div>
               )}
               <div ref={bottomRef} />
@@ -319,12 +262,12 @@ export default function ChatWidget() {
 
           {/* Input bar */}
           <div style={{
-            borderTop: '1px solid #E2EAF0',
-            background: '#fff',
-            padding: '16px 24px',
+            background: 'rgba(0,0,0,0.28)',
+            borderTop: '1px solid rgba(255,255,255,0.07)',
+            padding: '16px 48px 20px',
             flexShrink: 0,
           }}>
-            <div style={{ maxWidth: 720, margin: '0 auto', display: 'flex', gap: 10, alignItems: 'flex-end' }}>
+            <div style={{ maxWidth: 860, margin: '0 auto', display: 'flex', gap: 10, alignItems: 'flex-end' }}>
               <textarea
                 ref={inputRef}
                 value={input}
@@ -339,36 +282,34 @@ export default function ChatWidget() {
                 rows={1}
                 style={{
                   flex: 1,
-                  border: '1.5px solid #E2EAF0',
+                  background: 'rgba(255,255,255,0.06)',
+                  border: '1px solid rgba(255,255,255,0.1)',
                   borderRadius: 12,
-                  padding: '11px 16px',
+                  padding: '12px 18px',
                   fontSize: 14.5,
                   fontFamily: 'inherit',
                   fontWeight: 300,
                   outline: 'none',
-                  color: '#0B1E30',
-                  background: '#FAFAF8',
+                  color: '#fff',
                   resize: 'none',
                   lineHeight: 1.5,
                   transition: 'border-color .15s ease',
                   overflowY: 'auto',
                 }}
-                onFocus={e => (e.target.style.borderColor = '#0891B2')}
-                onBlur={e => (e.target.style.borderColor = '#E2EAF0')}
+                onFocus={e => (e.target.style.borderColor = 'rgba(8,145,178,0.55)')}
+                onBlur={e => (e.target.style.borderColor = 'rgba(255,255,255,0.1)')}
               />
               <button
                 onClick={send}
                 disabled={!input.trim() || loading}
                 style={{
                   background: '#0891B2',
-                  border: 'none',
-                  borderRadius: 12,
-                  width: 44, height: 44,
-                  flexShrink: 0,
+                  border: 'none', borderRadius: 12,
+                  width: 46, height: 46, flexShrink: 0,
                   cursor: 'pointer',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  opacity: (!input.trim() || loading) ? 0.4 : 1,
-                  transition: 'opacity .15s ease, background .15s ease',
+                  opacity: (!input.trim() || loading) ? 0.35 : 1,
+                  transition: 'opacity .15s, background .15s',
                 }}
                 onMouseEnter={e => { if (input.trim() && !loading) e.currentTarget.style.background = '#0779A0'; }}
                 onMouseLeave={e => (e.currentTarget.style.background = '#0891B2')}
@@ -379,9 +320,9 @@ export default function ChatWidget() {
                 </svg>
               </button>
             </div>
-            <div style={{ maxWidth: 720, margin: '8px auto 0', textAlign: 'center' }}>
-              <span style={{ fontSize: 11.5, color: '#A0B4C0' }}>
-                Press Enter to send · Shift+Enter for new line · <a href="mailto:sales@techtious.com" style={{ color: '#0891B2', textDecoration: 'none' }}>sales@techtious.com</a>
+            <div style={{ maxWidth: 860, margin: '8px auto 0' }}>
+              <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.2)' }}>
+                Enter to send · Shift+Enter for new line · <a href="mailto:sales@techtious.com" style={{ color: 'rgba(8,145,178,0.6)', textDecoration: 'none' }}>sales@techtious.com</a>
               </span>
             </div>
           </div>
