@@ -100,7 +100,7 @@ export default function Nav() {
 
         {/* Logo */}
         <a href={`${BASE}/`} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-          <img src="https://techtious.com/images/Logo.svg" alt="Techtious" style={{ height: 36, width: 'auto' }} />
+          <img src={`${BASE}/images/Logo.svg`} alt="Techtious" style={{ height: 36, width: 'auto' }} />
         </a>
 
         {/* Desktop links */}

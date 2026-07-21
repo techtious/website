@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 84" role="img" aria-label="Techtious">
+  <defs>
+    <filter id="sun-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur">
+        <animate attributeName="stdDeviation" values="4;8;4" dur="3s" repeatCount="indefinite"/>
+      </feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Sun symbol: slow rotation + pulsing glow -->
+  <g filter="url(#sun-glow)">
+    <g stroke="#F59E0B" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="0 42 42"
+        to="360 42 42"
+        dur="20s"
+        repeatCount="indefinite"/>
+      <polygon points="42,18 63,30 63,54 42,66 21,54 21,30"/>
+      <line x1="42" y1="18" x2="42" y2="8"/>
+      <line x1="63" y1="30" x2="72" y2="25"/>
+      <line x1="63" y1="54" x2="72" y2="59"/>
+      <line x1="42" y1="66" x2="42" y2="76"/>
+      <line x1="21" y1="54" x2="12" y2="59"/>
+      <line x1="21" y1="30" x2="12" y2="25"/>
+    </g>
+  </g>
+
+  <!-- Wordmark: "o" in amber -->
+  <text
+    x="88"
+    y="63"
+    font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="64"
+    font-weight="500"
+    fill="#1C1C1E"
+    letter-spacing="-1">techtious</text>
+</svg>
