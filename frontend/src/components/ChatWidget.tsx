@@ -1,8 +1,11 @@
 import { useState, useRef, useEffect, type ReactNode } from 'react';
 
 function renderInline(text: string): ReactNode[] {
-  return text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\(https?:\/\/[^)]+\)|https?:\/\/[^\s,)]+)/g).map((part, i) => {
-    if (/^\*\*[^*]+\*\*$/.test(part)) return <strong key={i}>{part.slice(2, -2)}</strong>;
+  return text.split(/(\*{1,2}[^*]+\*{1,2}|\[[^\]]+\]\(https?:\/\/[^)]+\)|https?:\/\/[^\s,)]+)/g).map((part, i) => {
+    if (/^\*{1,2}[^*]+\*{1,2}$/.test(part)) {
+      const inner = part.replace(/^\*{1,2}/, '').replace(/\*{1,2}$/, '');
+      return <strong key={i} style={{ fontWeight: 600, color: '#fff' }}>{inner}</strong>;
+    }
     const mdLink = part.match(/^\[([^\]]+)\]\((https?:\/\/[^)]+)\)$/);
     if (mdLink) return <a key={i} href={mdLink[2]} target="_blank" rel="noopener noreferrer" style={{ color: '#38BDF8', textDecoration: 'underline' }}>{mdLink[1]}</a>;
     if (/^https?:\/\//.test(part)) return <a key={i} href={part} target="_blank" rel="noopener noreferrer" style={{ color: '#38BDF8', textDecoration: 'underline', wordBreak: 'break-all' }}>{part}</a>;
