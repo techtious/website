@@ -171,6 +171,27 @@ export default function ChatWidget() {
 
   return (
     <>
+      {/* ── Floating open button — hidden when chat is open ── */}
+      {!open && (
+        <button
+          onClick={() => setOpen(true)}
+          aria-label="Open chat"
+          style={{
+            position: 'fixed', bottom: 28, right: 28, zIndex: 1100,
+            width: 54, height: 54, borderRadius: '50%',
+            background: '#0891B2',
+            border: 'none', cursor: 'pointer',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            boxShadow: '0 4px 24px rgba(8,145,178,.4)',
+            animation: 'chatBtnIn .4s ease .3s both',
+          }}
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.9" strokeLinecap="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </button>
+      )}
+
       {/* ── Full-page overlay ── */}
       {open && (
         <div style={{
@@ -402,6 +423,10 @@ export default function ChatWidget() {
       )}
 
       <style>{`
+        @keyframes chatBtnIn {
+          from { opacity: 0; transform: scale(.7) translateY(12px); }
+          to   { opacity: 1; transform: scale(1)  translateY(0); }
+        }
         @keyframes chatFadeIn {
           from { opacity: 0; }
           to   { opacity: 1; }
