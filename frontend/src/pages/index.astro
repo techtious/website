@@ -81,11 +81,11 @@ const B = import.meta.env.BASE_URL.replace(/\/$/, '');
                 <div style="display:flex;gap:8px;">
                   <div style="flex:1;background:rgba(8,145,178,.08);border-radius:6px;padding:8px 10px;">
                     <div style="font-size:10px;color:#5A8A9E;margin-bottom:2px;">Cloud Waste</div>
-                    <div style="font-size:16px;font-weight:600;color:#0891B2;font-family:'Cormorant Garamond',serif;">-43%</div>
+                    <div style="font-size:13px;font-weight:500;color:#0891B2;">Reducing</div>
                   </div>
                   <div style="flex:1;background:rgba(8,145,178,.08);border-radius:6px;padding:8px 10px;">
                     <div style="font-size:10px;color:#5A8A9E;margin-bottom:2px;">K8s Savings</div>
-                    <div style="font-size:16px;font-weight:600;color:#0891B2;font-family:'Cormorant Garamond',serif;">$18K/mo</div>
+                    <div style="font-size:13px;font-weight:500;color:#0891B2;">Optimising</div>
                   </div>
                 </div>
               </div>
@@ -122,25 +122,6 @@ const B = import.meta.env.BASE_URL.replace(/\/$/, '');
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════ STATS / TRUST STRIP ═══════ -->
-  <section style="background:#0B1E30;padding:0;border-top:1px solid rgba(255,255,255,.06);">
-    <div class="wrap" style="padding-top:0;padding-bottom:0;">
-      <div style="display:flex;align-items:stretch;flex-wrap:wrap;border-left:1px solid rgba(255,255,255,.06);">
-        {[
-          { value:'43%', label:'Average cloud waste eliminated' },
-          { value:'$436K', label:'Average annual savings per customer' },
-          { value:'<30 min', label:'Agent deployment time' },
-          { value:'Zero', label:'Data leaves your environment' },
-        ].map(s => (
-          <div style="flex:1;min-width:180px;padding:32px 36px;border-right:1px solid rgba(255,255,255,.06);">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;color:#0891B2;line-height:1;margin-bottom:6px;">{s.value}</div>
-            <div style="font-size:12.5px;font-weight:300;color:#5A7A8E;line-height:1.5;">{s.label}</div>
-          </div>
-        ))}
       </div>
     </div>
   </section>
