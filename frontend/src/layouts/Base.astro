@@ -70,12 +70,9 @@ const ogImageUrl = new URL(ogImage, Astro.site).href;
   <!-- Zoho SalesIQ -->
   <script is:inline>
     window.$zoho = window.$zoho || {};
-    window.$zoho.salesiq = window.$zoho.salesiq || {
-      ready: function() {
-        window.$zoho.salesiq.chat.visible('hide');
-      }
-    };
+    window.$zoho.salesiq = window.$zoho.salesiq || { ready: function(){} };
   </script>
   <script id="zsiqscript" src="https://salesiq.zoho.com/widget?wc=siq488fa55cb9a0e264a5d66984752c47a5ba891f7aa9e5d109e75356bd10ae001d" defer></script>
+  <style>#zsiqwidget, #zsiqbtn { display: none !important; }</style>
 </body>
 </html>
