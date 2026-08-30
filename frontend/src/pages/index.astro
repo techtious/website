@@ -168,21 +168,19 @@ const B = import.meta.env.BASE_URL.replace(/\/$/, '');
             </div>
             <a href={`${B}/optix-ai`} style="display:inline-block;background:#0891B2;color:#FAFAF8;font-size:13.5px;font-weight:500;padding:13px 32px;border-radius:6px;cursor:pointer;letter-spacing:.02em;text-decoration:none;">Explore Optix AI</a>
           </div>
-          <div style="padding:40px;background:#F4F8FB;display:flex;flex-direction:column;justify-content:center;gap:24px;">
-            <div>
-              <div style="font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:700;color:#0891B2;line-height:1;">43%</div>
-              <div style="font-size:13px;font-weight:400;color:#5A7080;margin-top:4px;">Average cloud waste eliminated</div>
-            </div>
-            <div style="height:1px;background:#DDE8F0;"></div>
-            <div>
-              <div style="font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:700;color:#0B1E30;line-height:1;">$436K</div>
-              <div style="font-size:13px;font-weight:400;color:#5A7080;margin-top:4px;">Average annual savings per customer</div>
-            </div>
-            <div style="height:1px;background:#DDE8F0;"></div>
-            <div>
-              <div style="font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:700;color:#0B1E30;line-height:1;">&lt;30m</div>
-              <div style="font-size:13px;font-weight:400;color:#5A7080;margin-top:4px;">Time to deploy into your cloud</div>
-            </div>
+          <div style="padding:40px;background:#F4F8FB;display:flex;flex-direction:column;justify-content:center;gap:20px;">
+            {[
+              'Deploys inside your cloud — zero data egress',
+              'Continuous anomaly detection across all services',
+              'Kubernetes pod right-sizing, automatically applied',
+              'Multi-cloud cost allocation in one dashboard',
+              'Every action logged, reversible, and explainable',
+            ].map(f => (
+              <div style="display:flex;align-items:flex-start;gap:12px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:1px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#0891B2" strokeWidth="1.8" strokeLinecap="round"/></svg>
+                <span style="font-size:13.5px;font-weight:300;line-height:1.6;color:#4A5F72;">{f}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
