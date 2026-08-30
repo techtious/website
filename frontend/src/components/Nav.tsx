@@ -8,7 +8,7 @@ const SOLUTIONS = [
     sub: 'FinOps & K8s cost intelligence',
     href: `${BASE}/optix-ai`,
     gradient: 'linear-gradient(135deg,#0891B2,#06B6D4)',
-    badge: 'Live', badgeColor: '#10B981', badgeBg: '#ECFDF5',
+    badge: 'Beta', badgeColor: '#D97706', badgeBg: '#FFFBEB',
     icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2L9 9l-7 3 7 3 3 7 3-7 7-3-7-3z" fill="#fff"/></svg>,
   },
   {
@@ -16,7 +16,7 @@ const SOLUTIONS = [
     sub: 'Log analytics & stability',
     href: `${BASE}/sre-intelligence`,
     gradient: 'linear-gradient(135deg,#D97706,#F59E0B)',
-    badge: 'Beta', badgeColor: '#D97706', badgeBg: '#FFFBEB',
+    badge: 'Soon', badgeColor: '#64748B', badgeBg: '#F1F5F9',
     icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="#fff" strokeWidth="2"/><circle cx="12" cy="12" r="3" fill="#fff"/></svg>,
   },
   {
